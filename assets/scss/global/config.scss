@@ -1,0 +1,78 @@
+$breakpoints: (
+    "": 99999px,
+    "m": 1200px,
+    "s": 900px,
+    "xs": 600px
+);
+
+$block-widths: (
+    "xs": 450,
+    "s": 720,
+    "m": 1000
+);
+
+$spacings: (
+    "none": 0,
+    "3xs": 3,
+    "2xs": 5,
+    "xs": 10,
+    "s": 20,
+    "s-m": 30,
+    "m": 50,
+    "l": 60,
+    "xl": 100,
+    "2xl": 150
+);
+
+$gutters: (
+    "xl": 60,
+    "l": 30,
+    "m": 20,
+    "s": 10,
+    "xs": 5,
+    "2xs": 2,
+    "none": 0
+);
+
+$colors: (
+    "ft": #101010,
+    "ft-weak": #B5B5B5,
+
+    "white": #ffffff,
+    
+    "cherry": #BF0361,
+    "cherry-weak": #FD4293,
+    "cherry-xweak": #FFE7F1,
+
+    "blueberry": #5D13F3,
+    "blueberry-weak": #C7BDF7,
+    "blueberry-xweak": #F4F0FF,
+
+    "pineapple": #FF576E,
+    "pineapple-weak": #F6FFA6,
+    "pineapple-xweak": #FCFFE3,
+
+    "border": #E1E1E1,
+    "border-weak": #F5F5F5,
+    "border-strong": #B3B3B3,
+    
+    "disabled": #d3d4dc,
+    "error": #FF2D42,
+    "confirm": #10c773
+);
+
+$fonts: (
+    "ft": (
+        "name": "'Merriweather', serif",
+        "sizes": (
+            "xs": "12px/1.4",
+            "s": "14px/1.5",
+            "m": "16px/1.6",
+            "l": "18px/1.6",
+            "xl": "22px/1.8",
+            "2xl": "30px/1.4",
+            "3xl": "35px/1.35",
+            "4xl": "42px/1.35"
+        )
+    )
+);

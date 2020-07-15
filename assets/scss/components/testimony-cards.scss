@@ -1,0 +1,91 @@
+.TestimonyCards {
+    
+}
+
+.TestimonyCards_card {
+    margin: 50px 0;
+    background-color: var(--color-white);
+}
+
+.TestimonyCards_rail:nth-child(odd) {
+    margin-top: -25%;
+}
+
+/* TESTIMONY CARD */
+
+.TestimonyCard {
+    border: 2px solid var(--color-blueberry);
+    border-radius: 6px;
+    box-shadow: 3px 3px 0 0 var(--color-blueberry);
+    position: relative;
+
+    &::before {
+        @include ratio(125);
+    }
+}
+
+.TestimonyCard_content {
+    @include absolute-fill;
+    display: flex;
+    flex-direction: column;
+}
+
+.TestimonyCard_image {
+    flex-grow: 1;
+    margin: 6% 6% 0;
+    background-color: var(--color-blueberry-weak);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: var(--color-blueberry);
+}
+
+.TestimonyCard_name {
+    font: var(--ft-l);
+    text-align: center;
+    font-weight: bold;
+    padding: 6% 0;
+}
+
+.TestimonyCard_quote {
+    font: var(--ft-l);
+    font-weight: bold;
+    position: absolute;
+    z-index: 5;
+    bottom: 25px;
+    left: 75%;
+    width: 200%;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-blueberry);
+    padding: 15px 20px;
+}
+
+/* MODIFIERS */
+
+.TestimonyCard--cherry {
+    border-color: var(--color-cherry-weak);
+    box-shadow: 3px 3px 0 0 var(--color-cherry-weak);
+
+    .TestimonyCard_image {
+        background-color: var(--color-cherry-xweak);
+        fill: var(--color-cherry-weak);
+    }
+
+    .TestimonyCard_quote {
+        border-color: var(--color-cherry-weak);
+    }
+}
+
+.TestimonyCard--pineapple {
+    border-color: var(--color-pineapple);
+    box-shadow: 3px 3px 0 0 var(--color-pineapple);
+
+    .TestimonyCard_image {
+        background-color: var(--color-pineapple-weak);
+        fill: var(--color-pineapple);
+    }
+
+    .TestimonyCard_quote {
+        border-color: var(--color-pineapple);
+    }
+}

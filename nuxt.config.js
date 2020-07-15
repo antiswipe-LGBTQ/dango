@@ -28,14 +28,16 @@ export default {
   /*
   ** Global CSS
   */
-  css: [
-  ],
+    css: [
+        '@/assets/scss/global.scss'
+    ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-  ],
+    plugins: [
+        '~/plugins/base.js'
+    ],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -63,5 +65,13 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    extend (config, { isDev, isClient }) {
+        config.module.rules.push(
+          {
+            test: /\.svg.html$/,
+            loader: 'raw-loader'
+          }
+        )
+    }
   }
 }

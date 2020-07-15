@@ -1,0 +1,27 @@
+.HomePage_heading {
+    display: flex;
+    align-items: stretch;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.HomePage_mainTitle {
+    font: var(--ft-4xl);
+    font-weight: bold;
+    line-height: 1;
+}
+
+.HomePage_values {
+    background-color: var(--color-cherry-weak);
+    height: 25vh;
+}
+
+.HomePage_testimonies {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 70vw;
+    min-width: 700px;
+    max-width: 1000px;
+    transform: translateY(-50%) rotate(4deg);
+}

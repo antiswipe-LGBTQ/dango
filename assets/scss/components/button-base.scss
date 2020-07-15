@@ -1,0 +1,24 @@
+.ButtonBase {
+    display: inline-flex;
+    cursor: pointer;
+    font: var(--ft-s);
+
+    background-color: var(--color-cherry-weak);
+    padding: 10px 20px;
+    border-radius: 6px;
+
+    color: var(--color-white);
+    border: 2px solid var(--color-cherry);
+    box-shadow: 2px 2px 0 0 var(--color-cherry);
+    transition: all 150ms ease;
+
+    &:hover {
+        box-shadow: 1px 1px 0 0 var(--color-cherry);
+        color: var(--color-cherry-xweak);
+    }
+
+    &:active {
+        transform: translate3d(1px, 1px, 0);
+        box-shadow: 0 0 0 0 var(--color-cherry-weak);
+    }
+}
