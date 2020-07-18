@@ -1,5 +1,5 @@
 <template>
-    <div class="TestimonyCards row-l">
+    <div class="TestimonyCards row">
         <div class="TestimonyCards_rail col-4" v-for="i in 3" :key="i">
             <testimony-card
                 v-for="i in 4"

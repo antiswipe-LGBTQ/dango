@@ -1,0 +1,36 @@
+.EventBlock {
+    border: 1px solid var(--color-blueberry-weak);
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 0 var(--color-blueberry);
+    position: relative;
+    background-color: var(--color-white);
+    overflow: hidden;
+    transition: all 250ms ease;
+
+    &:hover {
+        transform: translate3d(-2px, -2px, 0);
+        box-shadow: 7px 7px 0 0 var(--color-blueberry);
+    }
+}
+
+.EventBlock_image {
+    background-size: cover;
+    background-position: center;
+    margin: 15px 15px 0 15px;
+
+    &::before {
+        @include ratio(50);
+    }
+}
+
+.EventBlock_content {
+    padding: 20px;
+}
+
+.EventBlock_actions {
+    background-color: var(--color-blueberry-xweak);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

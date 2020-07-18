@@ -9,8 +9,8 @@
             </div>
         </div>
 
-        <div class="TestimonyCard_quote">
-            Une diversité incroyable, que des gens intéressants
+        <div class="TestimonyCard_quote" v-if="quote">
+            {{ quote }}
         </div>
     </div>
 </template>
@@ -22,6 +22,9 @@ import IconBase from '@/components/base/IconBase'
 export default {
     name: 'TestimonyCard',
     components: { IconBase },
+    props: {
+        quote: { type: String, default: '' }
+    },
     methods: {
         getRandomColor () {
             const colors = ['TestimonyCard--blueberry', 'TestimonyCard--cherry', 'TestimonyCard--pineapple']
