@@ -8,19 +8,18 @@
 }
 
 .TestimonyCards_rail {
-    min-width: 250px;
+    max-width: 280px;
     
     &:nth-child(odd) {
-        margin-top: -25%;
+        margin-top: -15%;
     }
 }
 
 /* TESTIMONY CARD */
 
 .TestimonyCard {
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    box-shadow: 6px 6px 0 0 var(--color-blueberry);
+    border: 2px solid var(--color-blueberry);
+    box-shadow: 6px 6px 0 0 var(--color-blueberry-weak);
     position: relative;
 
     &::before {
@@ -44,15 +43,19 @@
     fill: var(--color-blueberry);
 }
 
+.TestimonyCard_character {
+    width: 60%;
+}
+
 .TestimonyCard_name {
-    font: var(--ft-l);
+    font: var(--ft-title-l);
     text-align: center;
     font-weight: bold;
     padding: 6% 0;
 }
 
 .TestimonyCard_quote {
-    font: var(--ft-l);
+    font: var(--ft-title-l);
     font-weight: bold;
     position: absolute;
     z-index: 5;
@@ -67,7 +70,8 @@
 /* MODIFIERS */
 
 .TestimonyCard--cherry {
-    box-shadow: 6px 6px 0 0 var(--color-cherry-weak);
+    border-color: var(--color-cherry-weak);
+    box-shadow: 6px 6px 0 0 var(--color-cherry-xweak);
 
     .TestimonyCard_image {
         background-color: var(--color-cherry-xweak);
@@ -80,7 +84,8 @@
 }
 
 .TestimonyCard--pineapple {
-    box-shadow: 6px 6px 0 0 var(--color-pineapple);
+    border-color: var(--color-pineapple);
+    box-shadow: 6px 6px 0 0 var(--color-pineapple-weak);
 
     .TestimonyCard_image {
         background-color: var(--color-pineapple-weak);

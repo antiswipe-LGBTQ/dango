@@ -7,8 +7,8 @@ $breakpoints: (
 
 $block-widths: (
     "xs": 300,
-    "s": 350,
-    "m": 1000
+    "s": 320,
+    "m": 650
 );
 
 $spacings: (
@@ -64,16 +64,30 @@ $colors: (
 
 $fonts: (
     "ft": (
-        "name": "'Merriweather', serif",
+        "name": "'Fira Sans', sans-serif",
         "sizes": (
-            "xs": "10px/1.4",
-            "s": "12px/1.5",
-            "m": "15px/1.6",
-            "l": "17px/1.6",
+            "xs": "12px/1.4",
+            "s": "14px/1.5",
+            "m": "16px/1.6",
+            "l": "18px/1.6",
             "xl": "22px/1.8",
             "2xl": "30px/1.4",
             "3xl": "35px/1.35",
             "4xl": "42px/1.35"
+        )
+    ),
+    "ft-title": (
+        "name": "'Domine', serif",
+        "sizes": (
+            "xs": "10px/1.2",
+            "s": "12px/1.2",
+            "m": "15px/1.2",
+            "l": "19px/1.2",
+            "xl": "22px/1.2",
+            "2xl": "30px/1.2",
+            "3xl": "40px/1.2",
+            "4xl": "42px/1.2",
+            "5xl": "48px/1.2"
         )
     )
 );

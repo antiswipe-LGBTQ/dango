@@ -9,8 +9,8 @@
                 <slot name="header"></slot>
             </div>
             <div>
-                <button-base @click="prev" :modifiers="['s', 'secondary']" fa="chevron-left" :disabled="passedElements <= 0" />
-                <button-base @click="next" :modifiers="['s', 'secondary']" fa="chevron-right" :disabled="passedElements >= (this.$data.itemsCount - itemsFit)" />
+                <button-base @click="prev" :modifiers="['s', 'secondary', 'blueberry', 'round']" fa="chevron-left" :disabled="passedElements <= 0" />
+                <button-base @click="next" :modifiers="['s', 'secondary', 'blueberry', 'round']" fa="chevron-right" :disabled="passedElements >= (this.$data.itemsCount - itemsFit)" />
             </div>
         </div>
         <div class="SliderSimple_rail" :style="{ transform: `translate3d(${state.transition ? position : panPosition}px, 0, 0)` }" ref="rail">

@@ -1,7 +1,9 @@
 <template>
-    <div class="ButtonBase" :class="{ ...$modifiers }" @click="$emit('click')">
+    <a class="ButtonBase" :target="target" :href="link" :class="{ ...$modifiers }" @click.prevent="$emit('click')">
         <slot></slot>
-    </div>
+
+        <i class="fal" :class="[`fa-${fa}`]" v-if="fa"></i>
+    </a>
 </template>
 
 <script>
@@ -11,7 +13,10 @@ export default {
     name: 'ButtonBase',
     mixins: [ modifiers ],
     props: { 
-        modifiers: { type: Array, default: () => [] }
+        modifiers: { type: Array, default: () => [] },
+        fa: { type: [ String, Boolean ], default: false },
+        target: { type: String, defaut: '_self' },
+        link: { type: String, default: '#' }
     }
 }
 </script>

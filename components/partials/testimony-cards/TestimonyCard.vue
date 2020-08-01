@@ -1,11 +1,11 @@
 <template>
-    <div class="TestimonyCard" :class="[ getRandomColor() ]">
+    <div class="TestimonyCard" :class="[ `TestimonyCard--${ color }` ]">
         <div class="TestimonyCard_content">
             <div class="TestimonyCard_image">
-                <icon-base :width="100" name="character-1" />
+                <icon-base class="TestimonyCard_character" :name="character" />
             </div>
             <div class="TestimonyCard_name">
-                Alicia
+                {{ name }}
             </div>
         </div>
 
@@ -23,14 +23,12 @@ export default {
     name: 'TestimonyCard',
     components: { IconBase },
     props: {
+        name: { type: String, default: '' },
+        character: { type: String, default: 'character-1' },
+        color: { type: String, default: 'cherry' },
         quote: { type: String, default: '' }
     },
     methods: {
-        getRandomColor () {
-            const colors = ['TestimonyCard--blueberry', 'TestimonyCard--cherry', 'TestimonyCard--pineapple']
-
-            return colors[Vue.randomBetween(0, colors.length - 1)]
-        }
     }
 }
 </script>
