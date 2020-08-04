@@ -5,6 +5,7 @@
 .SliderSimple_rail {
     display: flex;
     position: relative;
+    cursor: grab;
 
     & > * {
         flex-shrink: 0;

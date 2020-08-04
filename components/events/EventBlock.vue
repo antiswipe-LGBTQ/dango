@@ -8,7 +8,7 @@
                 <p class="mt-10">{{ excerpt }}</p>
             </div>
             <div class="EventBlock_actions">
-                <button-base :modifiers="['blueberry', 's']" :link="link" target="_blank">Plus de détails</button-base>
+                <button-base :modifiers="['blueberry', 's', 'no-shadow']" :link="link" target="_blank">Plus de détails</button-base>
             </div>
         </div>
     </div>

@@ -1,12 +1,12 @@
 <template>
-    <section class="pv-40" :class="current.color" @click="onClick">
+    <section class="ValuesSlider pv-40" :class="current.color" @click="onClick">
         <div class="Wrapper Wrapper--s">
             <div class="d-flex fx-align-center">
-                <div class="fx-no-shrink">
-                    <h2 class="ft-title-5xl"><b>{{ current.title }}</b></h2>
+                <div class="fx-no-shrink ValuesSlider_left">
+                    <h2 class="ft-title-5xl d-inline-block underline-cherry"><b>{{ current.title }}</b></h2>
                     <p class="ft-title-xl"><b>{{ current.subtitle }}</b></p>
                 </div>
-                <div class="pl-40 max-width-m m-auto" v-html="current.text"></div>
+                <div class="max-width-m m-auto" v-html="current.text"></div>
             </div>
         </div>
     </section>

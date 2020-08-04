@@ -1,8 +1,9 @@
 .ButtonBase {
-    display: inline-flex;
+    display: inline-block;
     cursor: pointer;
     font: var(--ft-m);
     line-height: 1;
+    position: relative;
 
     background-color: var(--color-cherry-weak);
     padding: 15px 20px;
@@ -16,11 +17,38 @@
         color: var(--color-cherry-weak);
         background-color: transparent;
         border-color: var(--color-cherry-weak);
+
+        &::after {
+            transform: translate3d(1px, 1px, 0);
+            opacity: 0.25;
+        }
     }
 
     &:active {
         transform: scale(0.98);
     }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 100%;
+        height: 100%;
+        @include pattern-spotted("cherry-weak");
+        transition: all 100ms ease;
+        border-radius: 30px;
+    }
+}
+
+.ButtonBase_content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 /* MODIFIERS */
@@ -29,11 +57,27 @@
     font: var(--ft-s);
     line-height: 1;
     padding: 12px 15px;
+
+    &::after {
+        top: 4px;
+        left: 4px;
+    }
+}
+
+.ButtonBase--no-shadow {
+    
+    &::after {
+        display: none;
+    }
 }
 
 .ButtonBase--blueberry {
     background-color: var(--color-blueberry);
     border-color: var(--color-blueberry);
+
+    &::after {
+        @include pattern-spotted("blueberry");
+    }
 
     &:hover {
         color: var(--color-blueberry);
@@ -46,9 +90,19 @@
     color: var(--color-cherry-weak);
     background-color: transparent;
 
+    &::after {
+        opacity: 0.25;
+        transform: translate3d(1px, 1px, 0);
+    }
+
     &:hover {
         color: var(--color-white);
         background-color: var(--color-cherry-weak);
+
+        &::after {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
     }
 
     &.ButtonBase--blueberry {

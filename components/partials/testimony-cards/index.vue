@@ -20,15 +20,15 @@ export default {
     computed: {
         items () {
             return [
-                { id: 0, name: 'Mika', color: 'cherry', character: 'character-1' },
-                { id: 1, name: 'Alicia', color: 'pineapple', character: 'character-4' },
-                { id: 2, name: 'Tommy', color: 'cherry', character: 'character-2' },
+                { id: 0, name: 'Mika', color: 'cucumber', character: 'character-1' },
+                { id: 1, name: 'Alicia', color: 'cherry', character: 'character-4' },
+                { id: 2, name: 'Tommy', color: 'pineapple', character: 'character-2' },
                 { id: 3, name: 'Mika', color: 'cherry', character: 'character-1' },
                 { id: 4, name: 'Meghan', color: 'blue', character: 'character-5' },
-                { id: 5, name: 'Alicia', color: 'pineapple', character: 'character-3' },
-                { id: 6, name: 'Nathan', color: 'pineapple', character: 'character-2' },
-                { id: 7, name: 'Nathan', color: 'pineapple', character: 'character-2' },
-                { id: 7, name: 'Julie', color: 'blue', character: 'character-4' },
+                { id: 5, name: 'Alicia', color: 'plum', character: 'character-3' },
+                { id: 6, name: 'Nathan', color: 'plum', character: 'character-2' },
+                { id: 7, name: 'Nathan', color: 'grape', character: 'character-2' },
+                { id: 7, name: 'Julie', color: 'cucumber', character: 'character-4' },
             ]
         },
         rails () {
