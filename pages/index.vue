@@ -25,9 +25,8 @@
         
         <values-slider />
         
-        <section class="HomePage_images">
+        <images-slider />
 
-        </section>
         <section class="HomePage_events">
             <div class="Wrapper pv-60">
                 <slider-simple>
@@ -46,6 +45,12 @@
                 </slider-simple>
             </div>
         </section>
+
+        <section class="pv-20">
+        </section>
+
+        <faq-section />
+
         <section class="pv-150">
         </section>
     </div>
@@ -56,10 +61,12 @@
     import SliderSimple from '@/components/interactive/SliderSimple'
     import EventBlock from '@/components/events/EventBlock.vue'
     import ValuesSlider from '@/components/partials/values-slider'
+    import ImagesSlider from '@/components/partials/home/images-slider'
+    import FaqSection from '@/components/partials/home/faq-section'
 
     export default {
         name: 'Homepage',
-        components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider },
+        components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection },
         async fetch () {
             await this.$store.dispatch('events/fetch')
         },

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import ButtonBase from '@/components/base/ButtonBase'
+import LinkBase from '@/components/base/LinkBase'
 
 const BasePlugin = {
     
@@ -12,4 +13,5 @@ const BasePlugin = {
 }
 
 Vue.component('ButtonBase', ButtonBase)
+Vue.component('LinkBase', LinkBase)
 Vue.use(BasePlugin)

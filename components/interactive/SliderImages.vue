@@ -1,18 +1,9 @@
 <template>
     <div
-        class="SliderSimple"
+        class="SliderImages"
         :class="{ 'is-panning': state.panning, 'is-transition': state.transition, 'is-short-transition': state.shortTransition, ...$modifiers }"
         :style="{ '--gutter': gutter + 'px' }"
     >
-        <div class="SliderSimple_header" v-if="header">
-            <div>
-                <slot name="header"></slot>
-            </div>
-            <div>
-                <button-base @click="prev" :modifiers="['s', 'secondary', 'blueberry', 'round']" fa="chevron-left" :disabled="passedElements <= 0" />
-                <button-base @click="next" :modifiers="['s', 'secondary', 'blueberry', 'round']" fa="chevron-right" :disabled="passedElements >= (this.$data.itemsCount - itemsFit)" />
-            </div>
-        </div>
         <div class="SliderSimple_rail" :style="{ transform: `translate3d(${state.transition ? position : panPosition}px, 0, 0)` }" ref="rail">
             <slot></slot>
         </div>
@@ -26,9 +17,7 @@ export default {
     name: 'SliderSimple',
     mixins: [ modifiers ],
     props: {
-        gutter: { type: Number, default: 20 },
-        header: { type: Boolean, default: true },
-        snap: { type: Boolean, default: true }
+        gutter: { type: Number, default: 20 }
     },
     data: () => ({
         state: {
@@ -58,11 +47,9 @@ export default {
 
             if (this.$data.itemsCount <= 0) return
             
-            this.$data.containerWidth = this.$el.offsetWidth
             this.$data.elementWidth = this.$el.querySelector('.SliderSimple_rail > *').offsetWidth + this.$props.gutter
             this.$data.itemsFit = Math.floor(this.$refs.rail.offsetWidth / this.elementWidth)
             this.$data.itemsFit -= Math.max(0, this.$data.itemsFit - this.$data.itemsCount)
-            this.$data.sliderWidth = [...this.$el.querySelectorAll('.SliderSimple_rail > *')].reduce((acc, current) => acc += current.offsetWidth, 0)
 
             if (this.hammer) return
 
@@ -98,12 +85,8 @@ export default {
 
             if (passedElements > this.$data.itemsCount - this.$data.itemsFit) passedElements = this.$data.itemsCount - this.$data.itemsFit
 
-            if (this.$props.snap) {
-                endPosition = -passedElements * this.$data.elementWidth
-            } else {
-                endPosition = Math.max(endPosition, -(this.$data.sliderWidth - this.$data.containerWidth))
-            }
-            
+            endPosition = -passedElements * this.$data.elementWidth
+
             this.$data.state.transition = true
             this.$data.passedElements = passedElements
 
