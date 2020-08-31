@@ -14,8 +14,7 @@ import modifiers from '@/plugins/modifiers'
 export default {
     name: 'LinkBase',
     mixins: [ modifiers ],
-    props: { 
-        modifiers: { type: Array, default: () => [] },
+    props: {
         fa: { type: [ String, Boolean ], default: false },
         target: { type: String, defaut: '_self' },
         link: { type: [ String, Boolean ], default: false }

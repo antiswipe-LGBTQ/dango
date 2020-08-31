@@ -15,7 +15,6 @@ export default {
     name: 'ButtonBase',
     mixins: [ modifiers ],
     props: { 
-        modifiers: { type: Array, default: () => [] },
         fa: { type: [ String, Boolean ], default: false },
         target: { type: String, defaut: '_self' },
         link: { type: [ String, Boolean ], default: false }

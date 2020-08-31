@@ -1,5 +1,5 @@
 <template>
-    <section class="ValuesSlider pv-40" :class="current.color" @click="onClick">
+    <section class="ValuesSlider pv-60" :class="current.color" @click="onClick">
         <div class="Wrapper Wrapper--s">
             <div class="d-flex fx-align-center">
                 <div class="fx-no-shrink ValuesSlider_left">
