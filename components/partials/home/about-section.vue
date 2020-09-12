@@ -1,8 +1,8 @@
 <template>
     <div class="Homepage_about">
-        <div class="Wrapper pv-100">
-            <div class="row">
-                <div class="col-6">
+        <div class="row">
+            <div class="col-6">
+                <div class="Homepage_aboutContent">
                     <h1 class="ft-title-3xl color-cherry-weak mb-40">
                         <b>L'association</b>
                     </h1>
@@ -11,17 +11,19 @@
 
                     <button-base class="mt-40" :modifiers="['secondary']" link="#">Découvrir l'association</button-base>
                 </div>
-                <div class="col-6">
-
-                </div>
+            </div>
+            <div class="col-6 p-relative">
+                <team-section />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import TeamSection from '@/components/partials/home/team-section'
+
 export default {
     name: 'AboutSection',
-    components: {}
+    components: { TeamSection }
 }
 </script>

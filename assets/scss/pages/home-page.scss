@@ -50,3 +50,8 @@
 .Homepage_about {
     background-color: var(--color-white);
 }
+
+.Homepage_aboutContent {
+    min-height: calc(200vh - var(--header-full));
+    padding: 60px;
+}
