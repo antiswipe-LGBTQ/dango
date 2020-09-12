@@ -88,12 +88,27 @@
     }
 }
 
+.ButtonBase--pineapple {
+    background-color: var(--color-pineapple);
+    border-color: var(--color-pineapple);
+
+    &::after {
+        @include pattern-spotted("pineapple");
+    }
+
+    &:hover {
+        color: var(--color-pineapple);
+        background-color: transparent;
+        border-color: var(--color-pineapple);
+    }
+}
+
 .ButtonBase--secondary {
     color: var(--color-cherry-weak);
     background-color: transparent;
 
     &::after {
-        opacity: 0.2;
+        opacity: 0.15;
         transform: translate3d(1px, 1px, 0);
     }
 
@@ -113,6 +128,15 @@
         &:hover {
             color: var(--color-white);
             background-color: var(--color-blueberry);
+        }
+    }
+
+    &.ButtonBase--pineapple {
+        color: var(--color-pineapple);
+
+        &:hover {
+            color: var(--color-white);
+            background-color: var(--color-pineapple);
         }
     }
 }

@@ -42,19 +42,52 @@
     margin: 15px 15px 0 15px;
 
     &::before {
-        @include ratio(50);
+        @include ratio(55);
     }
 }
 
 .EventBlock_content {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
 }
 
 .EventBlock_actions {
     background-color: var(--color-blueberry-xweak);
-    padding: 10px;
+    padding: 10px 10px 10px 15px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin: 5px;
+    justify-content: space-between;
+}
+
+.EventBlock--past {
+
+    &::after {
+        @include pattern-spotted("blueberry-weak");
+    }
+    
+    .EventBlock_container {
+        border-color: var(--color-blueberry-weak);
+    }
+
+    .EventBlock_content,
+    .EventBlock_image,
+    .EventBlock_actions {
+        opacity: 0.5;
+    }
+
+    &:hover {
+
+        &::after {
+            @include pattern-spotted("blueberry");
+        }
+        
+        .EventBlock_container {
+            border-color: var(--color-blueberry);
+        }
+    
+        .EventBlock_content,
+        .EventBlock_image,
+        .EventBlock_actions {
+            opacity: 1;
+        }
+    }
 }

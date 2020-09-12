@@ -18,12 +18,12 @@
 
 .HomePage_testimonies {
     position: absolute;
-    top: 50%;
+    top: 80px;
     left: 0;
     width: 70vw;
     min-width: 700px;
     max-width: 1000px;
-    transform: translateY(-50%) rotate(4deg);
+    transform: translateY(0) rotate(4deg);
 }
 
 .HomePage_events {
@@ -40,9 +40,13 @@
 }
 
 .Homepage_faq {
-    background-color: var(--color-blueberry-xweak);
+    background-color: var(--color-pineapple-xweak);
 }
 
 .Homepage_follow {
+    background-color: var(--color-white);
+}
+
+.Homepage_about {
     background-color: var(--color-white);
 }

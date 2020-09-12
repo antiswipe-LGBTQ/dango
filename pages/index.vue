@@ -35,7 +35,7 @@
                             <b>Nos événements</b>
                         </h2>
 
-                        <p class="color-blueberry ft-s"><i class="fal fa-map-marker-alt"></i> Région parisienne</p>
+                        <p class="color-blueberry ft-s mt-3"><i class="fal fa-map-marker-alt"></i> Région parisienne</p>
                     </template>
 
                     <event-block
@@ -52,6 +52,8 @@
 
         <faq-section />
 
+        <about-section />
+
         <section class="pv-150">
         </section>
     </div>
@@ -65,10 +67,11 @@
     import ImagesSlider from '@/components/partials/home/images-slider'
     import FaqSection from '@/components/partials/home/faq-section'
     import FollowSection from '@/components/partials/home/follow-section'
+    import AboutSection from '@/components/partials/home/about-section'
 
     export default {
         name: 'Homepage',
-        components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection },
+        components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection },
         async fetch () {
             await this.$store.dispatch('events/fetch')
         },

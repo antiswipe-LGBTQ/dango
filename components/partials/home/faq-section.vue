@@ -3,17 +3,25 @@
         <div class="Wrapper Wrapper--s pt-100 pb-60">
             <div class="row">
                 <div class="col-6" v-for="(questions, i) in cols" :key="i">
-                    <h2 class="ft-title-3xl ft-bold color-blueberry mb-60" v-if="i == 0">Foire Aux Questions</h2>
+                    <h2 class="ft-title-3xl ft-bold color-pineapple mb-60" v-if="i == 0">
+                        Questions fréquentes
+                    </h2>
 
                     <div
                         v-for="question in questions"
                         class="mb-40"
                         :key="question.id"
                     >
-                        <p class="ft-title-l color-blueberry ft-bold mb-10">{{ question.title }}</p>
-                        <truncated-text :text="question.text"  :modifiers="['blueberry']" :max="150" />
+                        <p class="ft-title-l color-pineapple ft-bold mb-10">{{ question.title }}</p>
+                        <truncated-text :text="question.text"  :modifiers="['pineapple']" :max="150" />
                     </div>
                 </div>
+            </div>
+
+            <div class="text-center">
+                <button-base :modifiers="['pineapple', 'secondary']">
+                    Toutes vos questions
+                </button-base>
             </div>
         </div>
     </div>
