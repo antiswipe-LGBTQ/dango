@@ -1,9 +1,9 @@
 <template>
-    <section class="ValuesSlider pv-60" :class="current.color" @click="onClick">
+    <section class="ValuesSlider pv-60" :class="[ `color-${current.color}`, `bg-x${current.color}`  ]" @click="onClick">
         <div class="Wrapper Wrapper--s">
             <div class="d-flex fx-align-center">
                 <div class="fx-no-shrink ValuesSlider_left">
-                    <h2 class="ft-title-5xl d-inline-block underline-cherry"><b>{{ current.title }}</b></h2>
+                    <h2 :class="[ `underline-${current.color}` ]" class="ft-title-5xl d-inline-block"><b>{{ current.title }}</b></h2>
                     <p class="ft-title-xl"><b>{{ current.subtitle }}</b></p>
                 </div>
                 <div class="max-width-m m-auto" v-html="current.text"></div>
@@ -23,9 +23,9 @@ export default {
     computed: {
         items () {
             return [
-                { id: 0, title: `tangible`, subtitle: `ce qui est concret, sensible.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: [`bg-cherry-xweak`, `color-cherry-weak`] },
-                { id: 1, title: `bienveillant`, subtitle: `attentif au bonheur d'autrui.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: [`bg-blueberry-weak`, `color-blueberry`] },
-                { id: 2, title: `inattendu`, subtitle: `auquel on ne s'attendait pas.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: [`bg-pineapple-weak`, `color-pineapple`] }
+                { id: 0, title: `tangible`, subtitle: `ce qui est concret, sensible.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: 'cherry' },
+                { id: 1, title: `bienveillant`, subtitle: `attentif au bonheur d'autrui.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: 'blueberry' },
+                { id: 2, title: `inattendu`, subtitle: `auquel on ne s'attendait pas.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: 'pineapple' }
             ]
         },
         current () {

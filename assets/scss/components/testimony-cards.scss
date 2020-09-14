@@ -84,19 +84,19 @@
 /* MODIFIERS */
 
 .TestimonyCard--cherry {
-    border-color: var(--color-cherry-weak);
+    border-color: var(--color-cherry);
 
     &::after {
-        @include pattern-spotted("cherry-weak");
+        @include pattern-spotted("cherry");
     }
 
     .TestimonyCard_image {
-        background-color: var(--color-cherry-xweak);
-        fill: var(--color-cherry-weak);
+        background-color: var(--color-cherry-weak);
+        fill: var(--color-cherry);
     }
 
     .TestimonyCard_quote {
-        border-color: var(--color-cherry-weak);
+        border-color: var(--color-cherry);
     }
 }
 

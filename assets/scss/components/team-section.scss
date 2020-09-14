@@ -1,5 +1,25 @@
 .TeamSection {
     position: relative;
+    overflow: hidden;
+    background-color: var(--color-cherry-xweak);
+    transition: all 500ms ease-in-out;
+}
+
+.TeamSection--blueberry { background-color: var(--color-blueberry-xweak); }
+.TeamSection--pineapple { background-color: var(--color-pineapple-xweak); }
+.TeamSection--plum { background-color: var(--color-plum-xweak); }
+.TeamSection--cucumber { background-color: var(--color-cucumber-xweak); }
+.TeamSection--grape { background-color: var(--color-grape-xweak); }
+
+.TeamSection_slider {
+    display: flex;
+    align-items: flex-start;
+    transform: translateX(calc(-100% * var(--position)));
+    transition: all 500ms ease;
+
+    &.is-transition {
+        transition: all 500ms ease;
+    }
 }
 
 .TeamSection_slide {
@@ -8,6 +28,36 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 500ms ease-in-out;
+    transition-delay: 200ms;
+
+    &.is-active {
+        opacity: 1;
+        transform: translateY(0px);
+
+        .TeamSection_paragraph {
+            opacity: 1;
+            transform: translateY(0);
+
+            @for $i from 0 to 5 {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{(200 + (150 * ($i + 1)))}ms;
+                }
+            }
+        }
+    }
+}
+
+.TeamSection_paragraph {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 250ms ease-in-out;
 }
 
 .TeamSection_card {
@@ -18,12 +68,13 @@
 .TeamSection_left {
     position: absolute;
     top: 130px;
+    z-index: 2;
 }
 
 .TeamSection_right {
-    right: 0;
+    right: 60px;
 }
 
 .TeamSection_left {
-    left: 0;
+    left: 60px;
 }

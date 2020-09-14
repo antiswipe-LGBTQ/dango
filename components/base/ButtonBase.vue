@@ -1,5 +1,11 @@
 <template>
-    <component :is="link ? 'a' : 'div'" class="ButtonBase" :target="target" :href="link" :class="{ ...$modifiers }" @click="$emit('click')">
+    <component
+        :is="link ? 'a' : 'div'"
+        class="ButtonBase"
+        :target="target" :href="link"
+        :class="{ ...$modifiers }"
+        @click="onClick"
+    >
         <div class="ButtonBase_content">
             <slot></slot>
 
@@ -18,6 +24,11 @@ export default {
         fa: { type: [ String, Boolean ], default: false },
         target: { type: String, defaut: '_self' },
         link: { type: [ String, Boolean ], default: false }
+    },
+    methods: {
+        onClick () {
+            this.$emit('click')
+        }
     }
 }
 </script>

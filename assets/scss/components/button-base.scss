@@ -6,18 +6,18 @@
     line-height: 1;
     position: relative;
 
-    background-color: var(--color-cherry-weak);
+    background-color: var(--color-cherry);
     padding: 15px 20px;
     border-radius: 30px;
-    border: 1px solid var(--color-cherry-weak);
+    border: 1px solid var(--color-cherry);
 
     color: var(--color-white);
     transition: all 100ms ease;
 
     &:hover {
-        color: var(--color-cherry-weak);
+        color: var(--color-cherry);
         background-color: transparent;
-        border-color: var(--color-cherry-weak);
+        border-color: var(--color-cherry);
 
         &::after {
             transform: translate3d(1px, 1px, 0);
@@ -37,7 +37,7 @@
         left: 5px;
         width: 100%;
         height: 100%;
-        @include pattern-spotted("cherry-weak");
+        @include pattern-spotted("cherry");
         transition: all 100ms ease;
         border-radius: 30px;
     }
@@ -73,38 +73,25 @@
     }
 }
 
-.ButtonBase--blueberry {
-    background-color: var(--color-blueberry);
-    border-color: var(--color-blueberry);
+@each $color in $main-colors {
+    .ButtonBase--#{$color} {
+        background-color: var(--color-#{$color});
+        border-color: var(--color-#{$color});
 
-    &::after {
-        @include pattern-spotted("blueberry");
-    }
+        &::after {
+            @include pattern-spotted($color);
+        }
 
-    &:hover {
-        color: var(--color-blueberry);
-        background-color: transparent;
-        border-color: var(--color-blueberry);
-    }
-}
-
-.ButtonBase--pineapple {
-    background-color: var(--color-pineapple);
-    border-color: var(--color-pineapple);
-
-    &::after {
-        @include pattern-spotted("pineapple");
-    }
-
-    &:hover {
-        color: var(--color-pineapple);
-        background-color: transparent;
-        border-color: var(--color-pineapple);
+        &:hover {
+            color: var(--color-#{$color});
+            background-color: transparent;
+            border-color: var(--color-#{$color});
+        }
     }
 }
 
 .ButtonBase--secondary {
-    color: var(--color-cherry-weak);
+    color: var(--color-cherry);
     background-color: transparent;
 
     &::after {
@@ -114,7 +101,7 @@
 
     &:hover {
         color: var(--color-white);
-        background-color: var(--color-cherry-weak);
+        background-color: var(--color-cherry);
 
         &::after {
             opacity: 1;
@@ -122,21 +109,14 @@
         }
     }
 
-    &.ButtonBase--blueberry {
-        color: var(--color-blueberry);
-
-        &:hover {
-            color: var(--color-white);
-            background-color: var(--color-blueberry);
-        }
-    }
-
-    &.ButtonBase--pineapple {
-        color: var(--color-pineapple);
-
-        &:hover {
-            color: var(--color-white);
-            background-color: var(--color-pineapple);
+    @each $color in $main-colors {
+        &.ButtonBase--#{$color} {
+            color: var(--color-#{$color});
+    
+            &:hover {
+                color: var(--color-white);
+                background-color: var(--color-#{$color});
+            }
         }
     }
 }

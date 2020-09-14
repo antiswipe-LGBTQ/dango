@@ -3,7 +3,7 @@
         <div class="Wrapper pv-100">
             <div class="row">
                 <div class="col-6">
-                    <h2 class="ft-title-xl ft-bold color-cherry-weak mb-30">
+                    <h2 class="ft-title-xl ft-bold color-cherry mb-30">
                         De nouveaux événements<br>
                         <span class="ft-title-4xl ft-bold">toutes les semaines</span>
                     </h2>

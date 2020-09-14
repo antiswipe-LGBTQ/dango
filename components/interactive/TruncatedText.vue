@@ -34,6 +34,11 @@ export default {
 
             return str.substr(0, str.lastIndexOf(' ', this.$props.max)) + '...'
         }
+    },
+    methods: {
+        collapse () {
+            this.$data.state.full = false
+        }
     }
 }
 </script>

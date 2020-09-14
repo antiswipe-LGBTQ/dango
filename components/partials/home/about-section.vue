@@ -1,9 +1,9 @@
 <template>
     <div class="Homepage_about">
-        <div class="row">
+        <div class="row fx-align-start">
             <div class="col-6">
                 <div class="Homepage_aboutContent">
-                    <h1 class="ft-title-3xl color-cherry-weak mb-40">
+                    <h1 class="ft-title-3xl color-cherry mb-40">
                         <b>L'association</b>
                     </h1>
 

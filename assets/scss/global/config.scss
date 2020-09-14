@@ -42,13 +42,13 @@ $colors: (
 
     "white": #ffffff,
     
-    "cherry": #BF0361,
-    "cherry-weak": #FD4293,
-    "cherry-xweak": #FFE7F1,
+    "cherry": #FD4293,
+    "cherry-weak": #FFE7F1,
+    "cherry-xweak": #fff5f9,
 
     "blueberry": #5D13F3,
     "blueberry-weak": #C7BDF7,
-    "blueberry-xweak": #F4F0FF,
+    "blueberry-xweak": #faf8ff,
 
     "pineapple": #FF576E,
     "pineapple-weak": #F6FFA6,
@@ -56,15 +56,15 @@ $colors: (
 
     "plum": #168BED,
     "plum-weak": #C1FEFC,
-    "plum-xweak": #E3FFFF,
+    "plum-xweak": #ebffff,
 
     "cucumber": #2C6FBC,
     "cucumber-weak": #66FFCC,
-    "cucumber-xweak": #C7FFF4,
+    "cucumber-xweak": #f2fffc,
 
     "grape": #692EDC,
     "grape-weak": #D58CFF,
-    "grape-xweak": #F8F1FF,
+    "grape-xweak": #f9f3ff,
 
     "border": #E1E1E1,
     "border-weak": #F5F5F5,
@@ -73,6 +73,10 @@ $colors: (
     "disabled": #d3d4dc,
     "error": #FF2D42,
     "confirm": #10c773
+);
+
+$main-colors: (
+    "cherry", "blueberry", "pineapple", "plum", "cucumber", "grape"
 );
 
 $fonts: (
