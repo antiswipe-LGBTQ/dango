@@ -1,17 +1,29 @@
 .TeamSection {
-    height: calc(100vh - var(--header-full));
-    background-color: var(--color-cherry-xweak);
-    position: sticky;
-    top: var(--header-full);
+    position: relative;
 }
 
 .TeamSection_slide {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .TeamSection_card {
-    width: 90%;
-    max-width: 250px;
-    margin-top: 40px;
+    width: 250px;
+}
+
+.TeamSection_right,
+.TeamSection_left {
+    position: absolute;
+    top: 130px;
+}
+
+.TeamSection_right {
+    right: 0;
+}
+
+.TeamSection_left {
+    left: 0;
 }

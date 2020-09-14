@@ -51,7 +51,17 @@
     background-color: var(--color-white);
 }
 
+.Homepage_aboutContent,
+.Homepage_aboutTeam {
+    position: sticky;
+    top: var(--header-full);
+}
+
 .Homepage_aboutContent {
-    min-height: calc(200vh - var(--header-full));
+    padding: 120px 60px;
+}
+
+.Homepage_aboutTeam {
     padding: 60px;
+    background-color: var(--color-cherry-xweak);
 }

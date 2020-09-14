@@ -142,9 +142,14 @@
 }
 
 .ButtonBase--round {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     padding: 0;
     align-items: center;
     justify-content: center;
+}
+
+.ButtonBase--round.ButtonBase--s {
+    width: 40px;
+    height: 40px;
 }

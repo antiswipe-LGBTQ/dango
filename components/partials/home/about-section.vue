@@ -7,13 +7,21 @@
                         <b>L'association</b>
                     </h1>
 
-                    <p>Tu n'as pas trouvé ton bonheur ? Reste informé(e) : nous avons toujours des événements en préparation pour tous les goûts, et de belles surprises !</p>
+                    <p>Depuis sa création en juin 2019, antiswipe a organisé plus de <b>70 événements et a favorisé d’innombrables belles rencontres</b>. Nous sommes maintenant <b>7 organisateurs et organisatrices aux talents variés</b>, plus motivés que jamais !</p>
 
-                    <button-base class="mt-40" :modifiers="['secondary']" link="#">Découvrir l'association</button-base>
+                    <p class="mt-20">Nous sommes une association à but lucratif. Cependant, pour couvrir certains de nos frais, nous proposons une <b>adhésion à 15€ / an pour les personnes qui souhaitent nous soutenir ou s’impliquer un peu plus dans le projet</b>.</p>
+                    
+                    <p class="mt-20">Cette adhésion est entièrement facultative : elle n’est pas obligatoire pour venir à nos événements.</p>
+
+                    <button-base class="mt-40" :modifiers="['secondary']" link="#">
+                        Je soutiens le projet
+                    </button-base>
                 </div>
             </div>
             <div class="col-6 p-relative">
-                <team-section />
+                <div class="Homepage_aboutTeam">
+                    <team-section />
+                </div>
             </div>
         </div>
     </div>

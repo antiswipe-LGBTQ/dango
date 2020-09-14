@@ -25,8 +25,10 @@ export default {
         displayText () {
             let str = this.$props.text
 
+            if (!str) return ''
+
             if (str.length <= this.$props.max || this.$data.state.full) {
-                if (!this.$data.state.full) this.$data.state.short = true
+                if (str.length <= this.$props.max) this.$data.state.short = true
                 return str
             }
 
