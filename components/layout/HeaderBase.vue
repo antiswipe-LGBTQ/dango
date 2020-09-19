@@ -1,7 +1,7 @@
 <template>
     <header class="HeaderBase" :class="{ 'is-scroll': state.scrolled >= 60 }">
         <div>
-            antiswipe
+            <icon-base class="HeaderBase_logo" name="logos/antiswipe" />
         </div>
         <div class="d-flex fx-align-center">
             <link-base
@@ -13,7 +13,7 @@
                 {{ item.title }}
             </link-base>
 
-            <button-base>
+            <button-base :modifiers="['s']">
                 Nous rejoindre
             </button-base>
         </div>

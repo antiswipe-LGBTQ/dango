@@ -1,5 +1,6 @@
 :root {
     --header-full: 80px;
+    --header-scroll: 65px;
 }
 
 .HeaderBase {
@@ -14,8 +15,22 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-white);
+    border-bottom: 1px solid transparent;
+    transition: all 100ms ease;
     
     &.is-scroll {
-        border-bottom: 1px solid var(--color-border-weak);
+        height: var(--header-scroll);
+        border-color: var(--color-border-weak);
+        padding: 0 10px;
+
+        .HeaderBase_logo {
+            --width: 55px;
+        }
     }
+}
+
+.HeaderBase_logo {
+    fill: var(--color-cherry);
+    --width: 75px;
+    transition: all 100ms ease;
 }
