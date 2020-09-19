@@ -1,10 +1,21 @@
 .TestimonyCards {
     
+    &.is-active {
+
+        .TestimonyCards_card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }
 
 .TestimonyCards_card {
     margin: 40px 0;
     background-color: var(--color-white);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 750ms ease-out;
+    transition-delay: var(--delay);
 }
 
 .TestimonyCards_rail {
@@ -22,7 +33,7 @@
     position: relative;
 
     &::before {
-        @include ratio(125);
+        @include ratio(130);
     }
 
     &::after {
@@ -58,7 +69,7 @@
 }
 
 .TestimonyCard_character {
-    width: 60%;
+    width: 80%;
 }
 
 .TestimonyCard_name {
@@ -66,6 +77,11 @@
     text-align: center;
     font-weight: bold;
     padding: 6% 0;
+}
+
+.TestimonyCard_subtitle {
+    font: var(--ft-title-m);
+    color: var(--color-ft-weak);
 }
 
 .TestimonyCard_quote {

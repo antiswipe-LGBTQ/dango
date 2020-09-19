@@ -2,10 +2,12 @@
     <div class="TestimonyCard" :class="[ `TestimonyCard--${ color }` ]">
         <div class="TestimonyCard_content">
             <div class="TestimonyCard_image">
-                <icon-base class="TestimonyCard_character" :name="character" />
+                <icon-base class="TestimonyCard_character" :name="avatar" />
             </div>
             <div class="TestimonyCard_name">
                 {{ name }}
+
+                <p class="TestimonyCard_subtitle" v-if="subtitle">{{ subtitle }}</p>
             </div>
         </div>
 
@@ -24,7 +26,8 @@ export default {
     components: { IconBase },
     props: {
         name: { type: String, default: '' },
-        character: { type: String, default: 'character-1' },
+        subtitle: { type: String, default: '' },
+        avatar: { type: String, default: 'character-1' },
         color: { type: String, default: 'cherry' },
         quote: { type: String, default: '' }
     },

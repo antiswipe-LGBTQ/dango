@@ -60,6 +60,8 @@
 </template>
 
 <script>
+    import moment from 'moment'
+
     import TestimonyCards from '@/components/partials/testimony-cards'
     import SliderSimple from '@/components/interactive/SliderSimple'
     import EventBlock from '@/components/events/EventBlock.vue'
@@ -80,7 +82,9 @@
         }),
         computed: {
             events () {
-                return Object.values(this.$store.state.events.items)
+                return Object.values(this.$store.state.events.items).sort((a, b) => {
+                    return moment(b.date).diff(moment(a.date))
+                })
             }
         }
     }

@@ -29,7 +29,10 @@
 .EventBlock_container {
     font: var(--ft-m);
     border: 2px solid var(--color-blueberry);
-    // box-shadow: 5px 5px 0 0 var(--color-blueberry);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     z-index: 2;
     background-color: var(--color-white);

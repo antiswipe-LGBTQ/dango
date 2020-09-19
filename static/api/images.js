@@ -1,13 +1,17 @@
+import image1 from '@/assets/img/temp/pictures/image-1.jpg'
+import image2 from '@/assets/img/temp/pictures/image-2.jpg'
+import image3 from '@/assets/img/temp/pictures/image-3.jpg'
+import image4 from '@/assets/img/temp/pictures/image-4.jpg'
+import image5 from '@/assets/img/temp/pictures/image-5.jpg'
+import image6 from '@/assets/img/temp/pictures/image-6.jpg'
+
 export default {
     images: [
-        { id: 0, src: "https://images.pexels.com/photos/1694881/pexels-photo-1694881.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { id: 1, src: "https://images.pexels.com/photos/1340502/pexels-photo-1340502.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { id: 2, src: "https://images.pexels.com/photos/1587619/pexels-photo-1587619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { id: 3, src: "https://images.pexels.com/photos/1471141/pexels-photo-1471141.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { id: 4, src: "https://images.pexels.com/photos/1230349/pexels-photo-1230349.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { id: 5, src: "https://images.pexels.com/photos/1430627/pexels-photo-1430627.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { id: 6, src: "https://images.pexels.com/photos/1267244/pexels-photo-1267244.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { id: 7, src: "https://images.pexels.com/photos/1261408/pexels-photo-1261408.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { id: 8, src: "https://images.pexels.com/photos/840566/pexels-photo-840566.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" }
+        { id: 0, src: image5, width: 650, height: 1000 },
+        { id: 8, src: image3, width: 1200, height: 675 },
+        { id: 11, src: image1, width: 750, height: 1000 },
+        { id: 20, src: image4, width: 1778, height: 1000 },
+        { id: 30, src: image2, width: 1778, height: 1000 },
+        { id: 50, src: image6, width: 1778, height: 1000 },
     ]
 }

@@ -1,7 +1,10 @@
 import Vue from 'vue'
+import moment from 'moment'
 
 import ButtonBase from '@/components/base/ButtonBase'
 import LinkBase from '@/components/base/LinkBase'
+
+moment.locale('fr')
 
 const BasePlugin = {
     

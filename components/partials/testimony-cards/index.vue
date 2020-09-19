@@ -1,9 +1,10 @@
 <template>
-    <div class="TestimonyCards row">
+    <div class="TestimonyCards row" :class="{ 'is-active': state.active }">
         <div class="TestimonyCards_rail col-4" v-for="(rail, i) in rails" :key="i">
             <testimony-card
                 v-for="card in rail"
                 class="TestimonyCards_card"
+                :style="{ '--delay': card.delay + 'ms' }"
                 v-bind="card"
                 :key="card.id"
             />
@@ -17,15 +18,20 @@ import TestimonyCard from './TestimonyCard'
 export default {
     name: 'TestimonyCards',
     components: { TestimonyCard },
+    data: () => ({
+        state: {
+            active: false
+        }
+    }),
     computed: {
         items () {
             return [
-                { id: 0, name: 'Mika', color: 'cherry', character: 'character-1' },
-                { id: 1, name: 'Alicia', color: 'grape', character: 'character-4' },
-                { id: 2, name: 'Tommy', color: 'pineapple', character: 'character-2' },
-                { id: 3, name: 'Mika', color: 'blueberry', character: 'character-3' },
-                { id: 4, name: 'Meghan', color: 'plum', character: 'character-5' },
-                { id: 5, name: 'Alicia', color: 'cherry', character: 'character-3' },
+                { id: 0, delay: 0, name: 'Aurane', color: 'blueberry', avatar: 'team/aurane' },
+                { id: 1, delay: 400, name: 'Christopher', color: 'cucumber', avatar: 'team/christopher' },
+                { id: 2, delay: 200, name: 'Corentin', color: 'cherry', avatar: 'team/corentin' },
+                { id: 3, delay: 600, name: 'Élodie', color: 'plum', avatar: 'team/elodie' },
+                { id: 4, delay: 800, name: 'Théotime', color: 'pineapple', avatar: 'team/theotime' },
+                { id: 5, delay: 1000, name: 'Alexandre', color: 'cherry', avatar: 'team/alexandre' },
             ]
         },
         rails () {
@@ -43,6 +49,9 @@ export default {
             
             return chunks
         }
+    },
+    mounted () {
+        this.$data.state.active = true
     }
 }
 </script>

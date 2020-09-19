@@ -31,12 +31,19 @@
     overflow: hidden;
 }
 
-.HomePage_image {
-    height: 350px;
-}
-
 .HomePage_images {
     overflow: hidden;
+    background-color: var(--color-pineapple-xweak);
+    position: relative;
+}
+
+.HomePage_image {
+    height: 300px;
+
+    img {
+        width: auto;
+        max-height: 100%;
+    }
 }
 
 .Homepage_faq {

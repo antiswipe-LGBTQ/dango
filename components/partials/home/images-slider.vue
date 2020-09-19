@@ -1,12 +1,17 @@
 <template>
     <section class="HomePage_images">
         <slider-simple :header="false" :gutter="0" :snap="false">
-            <img
+            <div
                 class="HomePage_image"
                 v-for="image in images"
-                :src="image.src"
                 :key="image.id"
             >
+                <img
+                    :src="image.src"
+                    :width="image.width + 'px'"
+                    :height="image.height + 'px'"
+                >
+            </div>
         </slider-simple>
     </section>
 </template>

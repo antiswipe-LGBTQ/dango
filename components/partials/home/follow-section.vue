@@ -12,7 +12,7 @@
 
                     <div class="mt-30">
                         <button-base link="https://www.meetup.com/fr-FR/antiswipe-lgbt">Nous rejoindre</button-base>
-                        <button-base class="ml-5" :modifiers="['secondary', 's']" link="https://www.meetup.com/fr-FR/antiswipe-lgbt">Nous suivre sur Instagram</button-base>
+                        <button-base class="ml-5" :modifiers="['secondary', 's']" link="https://www.instagram.com/antiswipe.lgbt/">Nous suivre sur Instagram</button-base>
                     </div>
                 </div>
             </div>

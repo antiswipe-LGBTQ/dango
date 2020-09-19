@@ -11,7 +11,7 @@
                 :class="{ 'is-active': i == state.position }"
                 :key="member.id"
             >
-                <testimony-card class="TeamSection_card" :color="member.color" :name="member.name" />
+                <testimony-card class="TeamSection_card" v-bind="member" :subtitle="member.role" />
 
                 <div>
                     <div class="TeamSection_paragraph mt-60">
@@ -38,6 +38,8 @@
 import TestimonyCard from '@/components/partials/testimony-cards/TestimonyCard'
 import TruncatedText from '@/components/interactive/TruncatedText'
 
+import baseUtils from '@/utils/base-utils'
+
 export default {
     name: 'TeamSection',
     components: { TestimonyCard, TruncatedText },
@@ -54,8 +56,11 @@ export default {
     }),
     computed: {
         members () {
-            return Object.values(this.$store.state.team.items)
+            return baseUtils.randomizeArray(Object.values(this.$store.state.team.items))
         }
+    },
+    mounted () {
+        this.goTo(0)
     },
     methods: {
         prev () {

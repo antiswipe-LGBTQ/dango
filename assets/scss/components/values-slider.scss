@@ -1,8 +1,64 @@
 .ValuesSlider {
-    transition: all 350ms ease;
     user-select: none;
+    position: relative;
+    cursor: pointer;
 }
 
 .ValuesSlider_left {
     width: 40%;
+}
+
+.ValuesSlider_nav {
+    padding-right: 60px;
+}
+
+.ValuesSlider_separator {
+    height: 10px;
+    margin: 5px 0;
+    width: 2px;
+    border-radius: 1px;
+    opacity: 0.25;
+
+    &.is-active {
+        opacity: 1;
+    }
+}
+
+.ValuesSlider_link {
+    cursor: pointer;
+    opacity: 0.25;
+    
+    &.is-active {
+        opacity: 1;
+    }
+}
+
+.ValuesSlider_slide {
+    padding: 60px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: all 400ms ease-out;
+
+    &.is-active {
+        transform: translateY(0);
+    }
+}
+
+.ValuesSlider_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+@each $color in ("cherry", "blueberry", "pineapple") {
+    
+    .ValuesSlider_slide--#{$color} {
+        color: var(--color-#{$color});
+        background-color: var(--color-#{$color}-xweak);
+        
+        .ValuesSlider_separator {
+            background-color: var(--color-#{$color});
+        }
+    }
 }
