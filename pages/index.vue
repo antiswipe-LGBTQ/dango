@@ -5,7 +5,8 @@
                 <div class="row height-100">
                     <div class="col-6 d-flex fx-dir-column fx-justify-center">
                         <h1 class="HomePage_mainTitle ft-title-2xl">
-                            l'humain au coeur <br><span class="ft-title-3xl ft-bold">de la rencontre lgbtq+</span>
+                            l'humain au coeur
+                            <span class="ft-title-3xl ft-bold d-block n-mt-10">de la rencontre lgbtq+</span>
                         </h1>
 
                         <p class="mv-30 ft-l max-width-s">Des rencontres en réel, dans une ambiance conviviale et des lieux originaux.</p>

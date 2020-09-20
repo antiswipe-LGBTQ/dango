@@ -37,7 +37,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
     plugins: [
-        '~/plugins/base.js'
+        { src: '~/plugins/base.js' },
+        { src: '~/plugins/messenger.js', ssr: false }
     ],
   /*
   ** Auto import components

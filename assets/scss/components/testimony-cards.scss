@@ -21,7 +21,11 @@
 .TestimonyCards_rail {
     max-width: 280px;
     
-    &:nth-child(odd) {
+    &:nth-child(1) {
+        margin-top: 6%;
+    }
+
+    &:nth-child(3) {
         margin-top: 15%;
     }
 }

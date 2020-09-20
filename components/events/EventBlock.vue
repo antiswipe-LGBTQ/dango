@@ -47,7 +47,7 @@ export default {
         attending: { type: Number, default: 0 },
         maxAttending: { type: Number, default: 0 },
         link: { type: String, default: '#' },
-        date: { type: Date }
+        date: { type: [String, Date] }
     },
     computed: {
         isPast () {

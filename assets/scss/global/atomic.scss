@@ -136,6 +136,11 @@
         .mb-#{$spacing}#{$name} { margin-bottom: #{$spacing}px; }
         .ml-#{$spacing}#{$name} { margin-left: #{$spacing}px; }
         .mr-#{$spacing}#{$name} { margin-right: #{$spacing}px; }
+
+        .n-mt-#{$spacing}#{$name} { margin-top: -#{$spacing}px; }
+        .n-mb-#{$spacing}#{$name} { margin-bottom: -#{$spacing}px; }
+        .n-ml-#{$spacing}#{$name} { margin-left: -#{$spacing}px; }
+        .n-mr-#{$spacing}#{$name} { margin-right: -#{$spacing}px; }
     }
     
     /* LAYOUT */
