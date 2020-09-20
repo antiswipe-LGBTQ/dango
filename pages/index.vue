@@ -87,6 +87,16 @@
                     return moment(b.date).diff(moment(a.date))
                 })
             }
+        },
+        mounted () {
+            setTimeout(() => {
+
+                if (window.FB && window.FB.CustomerChat) {
+                    window.FB.CustomerChat.showDialog()
+                } else {
+                    console.warn('not found')
+                }
+            }, 5000)
         }
     }
 </script>
