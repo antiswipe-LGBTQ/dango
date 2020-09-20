@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
 
 Vue.use(VueFbCustomerChat, {
