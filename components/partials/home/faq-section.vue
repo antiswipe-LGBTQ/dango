@@ -18,9 +18,13 @@
                 </div>
             </div>
 
-            <div class="text-center">
-                <button-base :modifiers="['pineapple', 'secondary']">
-                    Toutes vos questions
+            <div class="text-center mt-10">
+                <h3 class="ft-title-2xl color-pineapple mb-20">
+                    <b>D'autres questions ?</b>
+                </h3>
+
+                <button-base :modifiers="['pineapple', 'secondary']" @click="openChat">
+                    On vous répond en direct !
                 </button-base>
             </div>
         </div>
@@ -46,5 +50,10 @@ export default {
             ]
         ]
     }),
+    methods: {
+        openChat () {
+            if (window.FB && window.FB.CustomerChat) window.FB.CustomerChat.showDialog()
+        }
+    }
 }
 </script>
