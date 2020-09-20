@@ -1,6 +1,7 @@
 .ValuesSlider {
     user-select: none;
     position: relative;
+    height: var(--height, auto);
     cursor: pointer;
 }
 
@@ -34,7 +35,6 @@
 }
 
 .ValuesSlider_slide {
-    padding: 60px 0;
     position: absolute;
     top: 0;
     width: 100%;
@@ -49,6 +49,8 @@
 .ValuesSlider_wrapper {
     display: flex;
     align-items: center;
+    min-height: var(--height, auto);
+    padding: 60px 0;
 }
 
 @each $color in ("cherry", "blueberry", "pineapple") {

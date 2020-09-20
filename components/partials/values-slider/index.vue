@@ -1,5 +1,5 @@
 <template>
-    <section class="ValuesSlider" :style="{ height: maxHeight + 'px' }" @click="onClick">
+    <section class="ValuesSlider" :style="{ '--height': maxHeight + 'px' }" @click="onClick">
         <div
             v-for="(slide, i) in items"
             class="ValuesSlider_slide"
@@ -37,9 +37,9 @@ export default {
     computed: {
         items () {
             return [
-                { id: 0, title: `tangible`, subtitle: `ce qui est concret, sensible.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: 'cherry' },
-                { id: 1, title: `bienveillant`, subtitle: `attentif au bonheur d'autrui.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: 'blueberry' },
-                { id: 2, title: `inattendu`, subtitle: `auquel on ne s'attendait pas.`, text: `<b>Si toi aussi tu en as un peu marre de devoir passer par les applis pour rencontrer du monde, tu es au bon endroit.</b><br><br> Nous organisons des événements originaux et variés dans la région parisienne. <b>Et toujours gratuits.</b>`, color: 'pineapple' }
+                { id: 0, title: `tangible`, subtitle: `ce qui est concret, sensible.`, text: `<b>Notre passion : créer des événements qui favorisent la rencontre.</b><br><br> Petit nombre de participants, lieux choisis avec soin et activités originales : <b>c’est notre formule magique pour un événement convivial qui rapproche.</b>`, color: 'cherry' },
+                { id: 1, title: `bienveillant`, subtitle: `attentif au bonheur d'autrui.`, text: `<b>Nous apportons une attention particulière à ce que chacun(e) puisse se sentir à l’aise rapidement.</b><br><br> Car il n’est pas forcément facile de sociabiliser en situation de groupe, nous avons imaginé plein de manières de te faciliter la tâche : <b>jeux icebreakers, activités conviviales, animateurs dédiés...</b>`, color: 'blueberry' },
+                { id: 2, title: `inattendu`, subtitle: `auquel on ne s'attendait pas.`, text: `<b>Chacun(e) vient pour ses propres raisons : il y a toujours de nouvelles personnes intéressantes à découvrir.</b><br><br> Nos rencontres sont diversifiées et mixtes : genre, sexualité, origine, situation amoureuse… C’est ce qui fait la beauté de la rencontre : <b>on ne sait jamais à qui s’attendre.</b>`, color: 'pineapple' }
             ]
         },
         current () {
