@@ -57,6 +57,9 @@
     .fx-no-shrink#{$name} { flex-shrink: 0; }
     .fx-1#{$name} { flex: 1; }
 
+    .col-grow#{$name} { flex-grow: 1; }
+    .col-no-shrink#{$name} { flex-shrink: 0; }
+
     /* FONTS */
     @each $fontName, $font in $fonts {
         .#{$fontName}{ font-family: #{map-get($font, name)}; }

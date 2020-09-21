@@ -59,6 +59,25 @@
     overflow: hidden;
 }
 
+.Homepage_aboutCounter {
+    height: 50px;
+    line-height: 1;
+}
+
+.Homepage_aboutNumber {
+    font: var(--ft-title-3xl);
+    font-weight: bold;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Homepage_aboutNumber--animated {
+    font: var(--ft-title-2xl);
+    font-weight: bold;
+}
+
 .Homepage_aboutContent,
 .Homepage_aboutTeam {
     position: sticky;
@@ -67,4 +86,24 @@
 
 .Homepage_aboutContent {
     padding: 120px 60px;
+}
+
+
+.HomePage_thanks {
+    background: var(--color-cherry-weak);
+}
+
+.HomePage_thanksContainer {
+    display: flex;
+    align-items: center;
+    color: var(--color-cherry);
+}
+
+.HomePage_scroller {
+    height: 250px;
+    margin: 0 40px;
+    font: var(--ft-title-2xl);
+    line-height: 1.3;
+    font-weight: bold;
+    flex-shrink: 0;
 }

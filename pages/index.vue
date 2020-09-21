@@ -55,8 +55,7 @@
 
         <about-section />
 
-        <section class="pv-150">
-        </section>
+        <thanks-section />
     </div>
 </template>
 
@@ -71,10 +70,11 @@
     import FaqSection from '@/components/partials/home/faq-section'
     import FollowSection from '@/components/partials/home/follow-section'
     import AboutSection from '@/components/partials/home/about-section'
+    import ThanksSection from '@/components/partials/home/thanks-section'
 
     export default {
         name: 'Homepage',
-        components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection },
+        components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection, ThanksSection },
         async fetch () {
             await this.$store.dispatch('events/fetch')
         },

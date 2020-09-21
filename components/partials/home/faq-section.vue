@@ -52,6 +52,7 @@ export default {
     }),
     methods: {
         openChat () {
+            console.log('open chat')
             if (window.FB && window.FB.CustomerChat) window.FB.CustomerChat.showDialog()
         }
     }
