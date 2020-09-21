@@ -65,3 +65,32 @@
         }
     }
 }
+
+@include breakpoint-s {
+
+    .ValuesSlider {
+        height: auto;
+    }
+
+    .ValuesSlider_wrapper {
+        height: auto;
+        min-height: 0;
+        padding: 40px 0;
+        display: block;
+    }
+
+    .ValuesSlider_slide {
+        position: relative;
+        width: auto;
+        transform: none;
+    }
+
+    .ValuesSlider_nav {
+        display: none;
+    }
+
+    .ValuesSlider_left {
+        width: auto;
+        margin-bottom: 40px;
+    }
+}

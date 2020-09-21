@@ -1,10 +1,10 @@
 <template>
     <div class="Homepage_faq">
-        <div class="Wrapper Wrapper--s pt-100 pb-60">
-            <div class="row">
-                <div class="col-6" v-for="(questions, i) in cols" :key="i">
-                    <h2 class="ft-title-3xl ft-bold color-pineapple mb-60" v-if="i == 0">
-                        Questions fréquentes
+        <div class="Wrapper Wrapper--s pt-100 pb-60 pv-40@xs">
+            <div class="row d-block@xs">
+                <div class="col-6 col-12@xs" v-for="(questions, i) in cols" :key="i">
+                    <h2 class="ft-title-3xl color-pineapple mb-60 ft-title-2xl@s text-center@s mb-40@s" v-if="i == 0">
+                        <b>Questions fréquentes</b>
                     </h2>
 
                     <div

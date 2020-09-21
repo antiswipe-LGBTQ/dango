@@ -1,14 +1,14 @@
 <template>
     <div
         class="SliderSimple"
-        :class="{ 'is-panning': state.panning, 'is-transition': state.transition, 'is-short-transition': state.shortTransition, ...$modifiers }"
+        :class="{ 'SliderSimple--no-gutters': gutter == 0, 'is-panning': state.panning, 'is-transition': state.transition, 'is-short-transition': state.shortTransition, ...$modifiers }"
         :style="{ '--gutter': gutter + 'px' }"
     >
         <div class="SliderSimple_header" v-if="header">
             <div>
                 <slot name="header"></slot>
             </div>
-            <div>
+            <div v-if="!state.scrollMode">
                 <button-base @click="prev" :modifiers="['s', 'secondary', 'blueberry', 'round']" fa="chevron-left" :disabled="passedElements <= 0" />
                 <button-base @click="next" :modifiers="['s', 'secondary', 'blueberry', 'round']" fa="chevron-right" :disabled="passedElements >= (this.$data.itemsCount - itemsFit)" />
             </div>
@@ -35,7 +35,8 @@ export default {
             started: false,
             panning: false,
             transition: false,
-            shortTransition: false
+            shortTransition: false,
+            scrollMode: false
         },
         hammer: null,
         position: 0,
@@ -47,10 +48,18 @@ export default {
         passedElements: 0
     }),
     ready () {
-        this.init()
+        if (window.innerWidth > 900) {
+            this.init()
+        } else {
+            this.$data.state.scrollMode = true
+        }
     },
     mounted () {
-        this.init()
+        if (window.innerWidth > 900) {
+            this.init()
+        } else {
+            this.$data.state.scrollMode = true
+        }
     },
     methods: {
         init () {

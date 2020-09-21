@@ -39,3 +39,14 @@
 .underline-pineapple::after {
     @include pattern-spotted("pineapple");
 }
+
+@include breakpoint-s {
+
+    .outflow\@s {
+        margin: 0 -5%;
+    }
+
+    .reflow\@s {
+        margin: 0 5%;
+    }
+}

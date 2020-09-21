@@ -4,8 +4,10 @@
             <div>
                 <div class="EventBlock_image" :style="{ backgroundImage: `url(${images[0]})` }"></div>
                 <div class="EventBlock_content">
-                    <h3 class="ft-title-l ft-bold">{{ title }}</h3>
-                    <p class="ft-s color-ft-weak mt-3"><i class="fal fa-map-marker-alt"></i> {{ location }}</p>
+                    <h3 class="ft-title-l ft-title-m@s">
+                        <b>{{ title }}</b>
+                    </h3>
+                    <p class="ft-s color-ft-weak mt-3 d-none@s"><i class="fal fa-map-marker-alt"></i> {{ location }}</p>
 
                     <p class="mt-30 mb-20">
                         <b>{{ fullDate }}</b>

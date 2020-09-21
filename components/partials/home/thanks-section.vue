@@ -2,7 +2,7 @@
     <section class="HomePage_thanks">
         <div class="Wrapper Wrapper--s">
             <div class="HomePage_thanksContainer">
-                <p class="ft-title-2xl fx-no-shrink"><b>Un grand merci à</b></p>
+                <p class="ft-title-2xl fx-no-shrink ft-title-xl@s"><b>Un grand merci à</b></p>
 
                 <scroller-text class="HomePage_scroller" :modifiers="['gradient']" :items="subscribers.map(s => s.name)" />
 

@@ -77,3 +77,22 @@
         margin-bottom: 10px;
     }
 }
+
+ @include breakpoint-s {
+    
+    .SliderSimple_rail {
+        overflow: auto;
+        padding: 10px 5%;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .SliderSimple--no-gutters {
+
+        .SliderSimple_rail {
+            padding: 0;
+        }
+    }
+ }

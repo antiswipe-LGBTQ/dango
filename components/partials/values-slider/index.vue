@@ -16,8 +16,8 @@
                     <div class="ValuesSlider_link" :class="{ 'is-active': i >= 2 }">inattendu</div>
                 </div>
                 <div class="fx-no-shrink ValuesSlider_left">
-                    <h2 class="ValuesSlider_title ft-title-5xl d-inline-block" :class="[ `underline-${slide.color}` ]"><b>{{ slide.title }}</b></h2>
-                    <p class="ValuesSlider_subtitle ft-title-xl"><b>{{ slide.subtitle }}</b></p>
+                    <h2 class="ValuesSlider_title ft-title-5xl d-inline-block ft-title-2xl@s" :class="[ `underline-${slide.color}` ]"><b>{{ slide.title }}</b></h2>
+                    <p class="ValuesSlider_subtitle ft-title-xl ft-title-l@s"><b>{{ slide.subtitle }}</b></p>
                 </div>
                 <div class="max-width-m m-auto" v-html="slide.text"></div>
             </div>

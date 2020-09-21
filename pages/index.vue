@@ -3,13 +3,15 @@
         <section class="HomePage_heading">
             <div class="Wrapper">
                 <div class="row height-100">
-                    <div class="col-6 d-flex fx-dir-column fx-justify-center">
-                        <h1 class="HomePage_mainTitle ft-title-2xl">
+                    <div class="HomePage_titles col-6 d-flex fx-dir-column fx-justify-center col-12@xs">
+                        <h1 class="HomePage_mainTitle ft-title-2xl ft-title-l@s">
                             l'humain au coeur
-                            <span class="ft-title-3xl ft-bold d-block n-mt-10">de la rencontre lgbtq+</span>
+                            <span class="ft-title-3xl d-block n-mt-10 ft-title-2xl@s mt-3@s">
+                                <b>de la rencontre lgbtq+</b>
+                            </span>
                         </h1>
 
-                        <p class="mv-30 ft-l max-width-s">Des rencontres en réel, dans une ambiance conviviale et des lieux originaux.</p>
+                        <p class="mv-30 ft-l max-width-s ft-m@s">Des rencontres en réel, dans une ambiance conviviale et des lieux originaux.</p>
 
                         <div>
                             <button-base>
@@ -17,7 +19,7 @@
                             </button-base>
                         </div>
                     </div>
-                    <div class="col-6 p-relative">
+                    <div class="col-6 p-relative d-none@xs">
                         <testimony-cards class="HomePage_testimonies" />
                     </div>
                 </div>
@@ -30,17 +32,19 @@
 
         <section class="HomePage_events">
             <div class="Wrapper pv-60">
-                <slider-simple>
+                <slider-simple class="outflow@s">
                     <template slot="header">
-                        <h2 class="ft-title-2xl color-blueberry">
-                            <b>Nos événements</b>
-                        </h2>
+                        <div class="width-100@s reflow@s">
+                            <h2 class="ft-title-2xl color-blueberry">
+                                <b>Nos événements</b>
+                            </h2>
 
-                        <p class="color-blueberry ft-s mt-3"><i class="fal fa-map-marker-alt"></i> Région parisienne</p>
+                            <p class="color-blueberry ft-s mt-3"><i class="fal fa-map-marker-alt"></i> Région parisienne</p>
+                        </div>
                     </template>
 
                     <event-block
-                        class="width-event"
+                        class="HomePage_event"
                         v-for="event in events"
                         :key="event.id"
                         v-bind="event"
