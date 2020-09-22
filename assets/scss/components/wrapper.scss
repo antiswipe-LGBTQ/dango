@@ -18,3 +18,10 @@
     width: 90%;
     max-width: 600px;
 }
+
+@include breakpoint-xs {
+
+    .Wrapper {
+        width: calc(100% - 60px);
+    }
+}

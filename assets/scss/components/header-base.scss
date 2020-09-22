@@ -34,3 +34,15 @@
     --width: 75px;
     transition: all 100ms ease;
 }
+
+.HeaderBase_nav {
+    display: flex;
+    align-items: center;
+}
+
+@include breakpoint-s {
+
+    .HeaderBase_nav {
+        display: none;
+    }
+}

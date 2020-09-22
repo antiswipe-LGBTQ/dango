@@ -3,7 +3,7 @@
         <div class="Wrapper Wrapper--s pt-100 pb-60 pv-40@xs">
             <div class="row d-block@xs">
                 <div class="col-6 col-12@xs" v-for="(questions, i) in cols" :key="i">
-                    <h2 class="ft-title-3xl color-pineapple mb-60 ft-title-2xl@s text-center@s mb-40@s" v-if="i == 0">
+                    <h2 class="ft-title-3xl color-pineapple mb-60 ft-title-2xl@s text-center@s mb-40@s ft-title-2xl@xs" v-if="i == 0">
                         <b>Questions fréquentes</b>
                     </h2>
 
@@ -19,7 +19,7 @@
             </div>
 
             <div class="text-center mt-10">
-                <h3 class="ft-title-2xl color-pineapple mb-20">
+                <h3 class="ft-title-2xl color-pineapple mb-20 ft-title-xl@xs">
                     <b>D'autres questions ?</b>
                 </h3>
 

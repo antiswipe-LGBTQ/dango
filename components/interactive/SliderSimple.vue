@@ -8,7 +8,7 @@
             <div>
                 <slot name="header"></slot>
             </div>
-            <div v-if="!state.scrollMode">
+            <div class="SliderSimple_nav" v-if="!state.scrollMode">
                 <button-base @click="prev" :modifiers="['s', 'secondary', 'blueberry', 'round']" fa="chevron-left" :disabled="passedElements <= 0" />
                 <button-base @click="next" :modifiers="['s', 'secondary', 'blueberry', 'round']" fa="chevron-right" :disabled="passedElements >= (this.$data.itemsCount - itemsFit)" />
             </div>

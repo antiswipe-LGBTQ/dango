@@ -6,7 +6,7 @@
                     <div class="HomePage_titles col-6 d-flex fx-dir-column fx-justify-center col-12@xs">
                         <h1 class="HomePage_mainTitle ft-title-2xl ft-title-l@s">
                             l'humain au coeur
-                            <span class="ft-title-3xl d-block n-mt-10 ft-title-2xl@s mt-3@s">
+                            <span class="HomePage_mainTitleBold ft-title-3xl d-block n-mt-10 ft-title-2xl@s mt-3@s">
                                 <b>de la rencontre lgbtq+</b>
                             </span>
                         </h1>

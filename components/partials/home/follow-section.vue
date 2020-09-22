@@ -3,9 +3,9 @@
         <div class="Wrapper pv-100 pv-40@s text-center@s">
             <div class="row d-block@s">
                 <div class="col-6 col-12@s">
-                    <h2 class="ft-title-xl ft-bold color-cherry mb-30">
+                    <h2 class="ft-title-xl ft-bold color-cherry mb-30 ft-title-m@xs">
                         De nouveaux événements<br>
-                        <span class="ft-title-4xl ft-bold ft-title-xl@s">toutes les semaines</span>
+                        <span class="ft-title-4xl ft-bold ft-title-2xl@s"><b>toutes les semaines</b></span>
                     </h2>
 
                     <p><b>Tu n'as pas trouvé ton bonheur ?</b> Reste informé(e) : nous avons toujours des événements en préparation pour tous les goûts, et de belles surprises !</p>

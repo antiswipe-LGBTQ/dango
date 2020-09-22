@@ -3,7 +3,8 @@
         <div>
             <icon-base class="HeaderBase_logo" name="logos/antiswipe" />
         </div>
-        <div class="d-flex fx-align-center">
+
+        <nav class="HeaderBase_nav">
             <link-base
                 v-for="item in navigation"
                 class="HeaderBase_link mr-30"
@@ -16,7 +17,7 @@
             <button-base :modifiers="['s']">
                 Nous rejoindre
             </button-base>
-        </div>
+        </nav>
     </header>
 </template>
 
