@@ -24,6 +24,7 @@ export default {
         { id: 21, name: 'Samir' },
         { id: 22, name: 'Ladislas' },
         { id: 23, name: 'Alexandre' },
-        { id: 24, name: 'Johann' }
+        { id: 24, name: 'Johann' },
+        { id: 25, name: 'Jérôme' }
     ]
 }

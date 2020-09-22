@@ -8,7 +8,7 @@
                         <span class="ft-title-4xl ft-bold ft-title-2xl@s"><b>toutes les semaines</b></span>
                     </h2>
 
-                    <p><b>Tu n'as pas trouvé ton bonheur ?</b> Reste informé(e) : nous avons toujours des événements en préparation pour tous les goûts, et de belles surprises !</p>
+                    <p><b>Tu n'as pas trouvé ton bonheur ?</b> Reste informé·e : nous avons toujours des événements en préparation pour tous les goûts, et de belles surprises !</p>
 
                     <div class="mt-30">
                         <button-base class="d-block@xs" link="https://www.meetup.com/fr-FR/antiswipe-lgbt">Nous rejoindre</button-base>

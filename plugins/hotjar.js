@@ -1,5 +1,5 @@
 export default ({ app }) => {
-    if (process.env.NODE_ENV !== 'production') return
+    if (process.env.NODE_ENV !== 'production' || process.server) return
 
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};

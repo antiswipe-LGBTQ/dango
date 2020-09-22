@@ -41,10 +41,10 @@ export default {
         cols: [
             [
                 { id: 0, title: "💎 C’est vraiment 100% gratuit ?", text: "<b>Oui !</b> Tu peux participer à autant d’événements que tu veux sans jamais rien payer. Nous sommes une association à but non-lucratif : si tu veux nous soutenir, tu auras la possibilité d’adhérer pour 15€ / an."},
-                { id: 1, title: "🥶 Je suis timide, comment me lancer ?", text: "Les 30 premières minutes de chaque événement sont réservées à l’accueil des nouveaux. Nous organisons souvent des jeux pour apprendre à se connaître en douceur et briser la glace ! N’hésite pas à venir accompagné."},
-                { id: 2, title: "🍆 C'est un groupe réservé aux célibataires ?", text: "<b>Pas du tout !</b> Chaque personne vient pour ses propres raisons, que tu sois célibataire, en couple (tu peux même venir avec ton amoureux(se) !) ou juste pour te faire des ami(e)s."}
+                { id: 2, title: "💕 C'est un groupe réservé aux célibataires ?", text: "<b>Pas du tout !</b> Chaque personne vient pour ses propres raisons, que tu sois célibataire, en couple (tu peux même venir avec ton amoureux·se !) ou juste pour te faire des ami·e·s."},
+                { id: 1, title: "🥶 Je suis timide, comment me lancer ?", text: "Les 30 premières minutes de chaque événement sont réservées à l’accueil des nouveaux. Nous organisons souvent des jeux pour apprendre à se connaître en douceur et briser la glace ! N’hésite pas à venir accompagné·e."}
             ], [
-                { id: 0, title: "👋 Puis-je venir accompagné(e) ?", text: "<b>Bien sûr !</b> Et on t’encourage à le faire ! Quand tu t’inscris à un événement, tu as la possibilité de choisir le nombre de personnes qui viendront."},
+                { id: 0, title: "👋 Puis-je venir accompagné·e ?", text: "<b>Bien sûr !</b> Et on t’encourage à le faire ! Quand tu t’inscris à un événement, tu as la possibilité de choisir le nombre de personnes qui viendront."},
                 { id: 1, title: "👀 Combien de personnes sont là en général ?", text: "<b>Ça dépend vraiment des événements.</b> Nous tournons entre 15 et 30 personnes en général et nous essayons de ne pas dépasser cette limite pour conserver un esprit le plus convivial possible."},
                 { id: 2, title: "👯‍♂️ Vos événements sont-ils mixtes ?", text: "<b>Toujours !</b> On ne fait pas de distinction de sexe, genres ou orientation. En général, la représentation est plutôt équilibrée."}
             ]
