@@ -26,7 +26,7 @@ export default ({ app }) => {
     $messenger.setAttribute('theme_color', '#5D13F3')
     $messenger.setAttribute('logged_in_greeting', `Salut ! N'hésite pas à nous poser tes questions ici.`)
     $messenger.setAttribute('logged_out_greeting', `Salut ! N'hésite pas à nous poser tes questions ici.`)
-    $messenger.setAttribute('greeting_dialog_display', `fade`)
+    $messenger.setAttribute('greeting_dialog_display', `hide`)
     $messenger.setAttribute('greeting_dialog_delay', `5`)
     document.body.appendChild($messenger)
 }

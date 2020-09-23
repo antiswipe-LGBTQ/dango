@@ -61,7 +61,7 @@
 
         .HeaderBase_nav {
             transform: translateX(0);
-            box-shadow: 0 0 9999px 0 rgba(0, 0, 0, 0.85);
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
             pointer-events: all;
         }
     }
@@ -73,13 +73,13 @@
         right: 0;
         width: 90%;
         height: 100%;
-        max-width: 500px;
+        max-width: 350px;
         background-color: var(--color-white);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transform: translateX(100%);
-        box-shadow: 0 0 9999px 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0);
         pointer-events: none;
         transition: all 200ms ease;
     }
