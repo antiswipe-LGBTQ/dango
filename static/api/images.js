@@ -7,11 +7,11 @@ import image6 from '@/assets/img/temp/pictures/image-6.jpg'
 
 export default {
     images: [
-        { id: 0, src: image5, width: 650, height: 1000 },
-        { id: 8, src: image3, width: 1200, height: 675 },
+        { id: 2, src: image6, width: 1778, height: 1000 },
+        { id: 5, src: image5, width: 650, height: 1000 },
         { id: 11, src: image1, width: 750, height: 1000 },
+        { id: 15, src: image3, width: 1200, height: 675 },
         { id: 20, src: image4, width: 1778, height: 1000 },
         { id: 30, src: image2, width: 1778, height: 1000 },
-        { id: 50, src: image6, width: 1778, height: 1000 },
     ]
 }

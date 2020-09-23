@@ -28,6 +28,11 @@
     }
 }
 
+.anchor {
+    position: absolute;
+    top: calc(-1 * var(--header-scroll));
+}
+
 .underline-cherry::after {
     @include pattern-spotted("cherry");
 }

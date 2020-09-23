@@ -1,5 +1,7 @@
 <template>
-    <div class="Homepage_about">
+    <div class="Homepage_about p-relative">
+        <div id="about" class="anchor"></div>
+
         <div class="row row-no-gutters fx-align-start d-block@s">
             <div class="col-6 col-12@s">
                 <div class="Homepage_aboutContent">
@@ -15,7 +17,7 @@
 
                         <div class="col-4 text-center col-12@xs mt-20@xs">
                             <p class="Homepage_aboutNumber color-cherry">7</p>
-                            <p class="ft-s ph-5 m-auto width-2xs@xs">organisatrices & organisateurs plus motivé(e)s que jamais</p>
+                            <p class="ft-s ph-5 m-auto width-2xs@xs">organisateurs·trices super motivé·e·s</p>
                         </div>
 
                         <div class="col-4 text-center col-12@xs mt-20@xs">
@@ -25,7 +27,7 @@
                                 <scroller-text class="Homepage_aboutCounter" :speed="340" :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" />
                                 <scroller-text class="Homepage_aboutCounter" :speed="300" :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" />
                             </div>
-                            <p class="ft-s ph-5 m-auto width-2xs@xs">un nombre incalculable de très belles rencontres</p>
+                            <p class="ft-s ph-5 m-auto width-2xs@xs">un nombre incalculable de belles rencontres</p>
                         </div>
                     </div>
 
@@ -34,7 +36,7 @@
                     <p class="mt-20">Cette adhésion est entièrement facultative : elle n’est pas obligatoire pour venir à nos événements.</p>
 
                     <div class="text-center@s">
-                        <button-base class="mt-40" :modifiers="['secondary']" link="#">
+                        <button-base class="mt-40" link="https://www.helloasso.com/associations/antiswipe/adhesions/devenir-adherent-d-antiswipe" target="_blank" :modifiers="[]">
                             Je soutiens le projet
                         </button-base>
                     </div>

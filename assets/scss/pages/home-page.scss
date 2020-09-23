@@ -106,8 +106,8 @@
 .HomePage_scroller {
     height: 250px;
     margin: 0 40px;
-    font: var(--ft-title-2xl);
-    line-height: 1.3;
+    font: var(--ft-title-xl);
+    line-height: 1.5;
     font-weight: bold;
     flex-shrink: 0;
 }
@@ -123,7 +123,7 @@
     .HomePage_scroller {
         font: var(--ft-title-xl);
         font-weight: bold;
-        height: 100px;
+        height: 150px;
         margin: 0;
     }
 
