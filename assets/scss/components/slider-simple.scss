@@ -82,7 +82,7 @@
     
     .SliderSimple_rail {
         overflow: auto;
-        padding: 10px 5%;
+        padding: 10px 30px;
 
         &::before {
             display: none;
@@ -95,4 +95,9 @@
             padding: 0;
         }
     }
+
+    .SliderSimple_nav {
+        display: none;
+    }
+    
  }

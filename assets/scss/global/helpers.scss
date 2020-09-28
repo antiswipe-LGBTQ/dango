@@ -28,6 +28,11 @@
     }
 }
 
+.anchor {
+    position: absolute;
+    top: calc(-1 * var(--header-scroll));
+}
+
 .underline-cherry::after {
     @include pattern-spotted("cherry");
 }
@@ -43,10 +48,10 @@
 @include breakpoint-s {
 
     .outflow\@s {
-        margin: 0 -5%;
+        margin: 0 -30px;
     }
 
     .reflow\@s {
-        margin: 0 5%;
+        margin: 0 30px;
     }
 }

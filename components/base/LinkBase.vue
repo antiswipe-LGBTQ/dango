@@ -1,5 +1,12 @@
 <template>
-    <component :is="link ? 'a' : 'div'" class="LinkBase" :target="target" :href="link" :class="{ ...$modifiers }" @click="$emit('click')">
+    <component
+        :is="link ? 'a' : 'div'"
+        class="LinkBase"
+        :target="target"
+        :href="link"
+        :class="{ ...$modifiers }"
+        @click="$emit('click')"
+    >
         <div class="LinkBase_content">
             <slot></slot>
 

@@ -5,16 +5,16 @@
                 <div class="row height-100">
                     <div class="HomePage_titles col-6 d-flex fx-dir-column fx-justify-center col-12@xs">
                         <h1 class="HomePage_mainTitle ft-title-2xl ft-title-l@s">
-                            l'humain au coeur
-                            <span class="ft-title-3xl d-block n-mt-10 ft-title-2xl@s mt-3@s">
+                            l'humain au cœur
+                            <span class="HomePage_mainTitleBold ft-title-3xl d-block n-mt-10 ft-title-2xl@s mt-3@s">
                                 <b>de la rencontre lgbtq+</b>
                             </span>
                         </h1>
 
-                        <p class="mv-30 ft-l max-width-s ft-m@s">Des rencontres en réel, dans une ambiance conviviale et des lieux originaux.</p>
+                        <p class="mv-30 ft-l max-width-s ft-m@s">Des rencontres en réel, dans une ambiance conviviale et des lieux originaux. <b>Pas d'appli, pas de filtres, pas de swipe.</b></p>
 
                         <div>
-                            <button-base>
+                            <button-base link="#events">
                                 Découvrir nos événements
                             </button-base>
                         </div>
@@ -30,7 +30,9 @@
         
         <images-slider />
 
-        <section class="HomePage_events">
+        <section class="HomePage_events p-relative">
+            <div id="events" class="anchor"></div>
+
             <div class="Wrapper pv-60">
                 <slider-simple class="outflow@s">
                     <template slot="header">
