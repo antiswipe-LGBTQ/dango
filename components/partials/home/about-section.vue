@@ -29,7 +29,7 @@
                         </div>
                     </div>
 
-                    <p class="mt-40">Nous sommes une association à but lucratif. Cependant, pour couvrir certains de nos frais, nous proposons une <b>adhésion à 15€ / an pour les personnes qui souhaitent nous soutenir ou s’impliquer un peu plus dans le projet</b>.</p>
+                    <p class="mt-40">Nous sommes une association à but non-lucratif. Cependant, pour couvrir certains de nos frais, nous proposons une <b>adhésion à 15€ / an pour les personnes qui souhaitent nous soutenir ou s’impliquer un peu plus dans le projet</b>.</p>
                     
                     <p class="mt-20">Cette adhésion est entièrement facultative : elle n’est pas obligatoire pour venir à nos événements.</p>
 
