@@ -1,4 +1,5 @@
 
+import live1 from '@/assets/img/temp/events/live1.jpg'
 import reset from '@/assets/img/temp/events/reset.jpg'
 import viaduc from '@/assets/img/temp/events/viadu.jpg'
 import bap from '@/assets/img/temp/events/bap.jpg'
@@ -6,6 +7,16 @@ import branche from '@/assets/img/temp/events/branche.jpg'
 
 export default {
     events: [
+        {
+            id: 273596291,
+            title: `📺 L'antiswipe live #1 : nos projets, vos questions`,
+            location: `Événement en ligne`,
+            attending: null,
+            maxAttending: null,
+            date: `2020-10-04T16:00:00+0000`,
+            images: [live1],
+            link: `https://www.meetup.com/fr-FR/antiswipe-lgbt/events/273596291/`
+        },
         {
             id: 273028597,
             title: `🕹️ L'afterwork QueerGeek #1 : jeux-vidéos & animés japonais`,
