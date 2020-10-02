@@ -17,18 +17,20 @@
             </div>
             <div class="EventBlock_actions">
                 <p>
-                    <span class="ft-s color-blueberry" v-if="!isPast && (maxAttending - attending) > 10">
-                        {{ attending }} inscrit(e)s
-                    </span>
-                    <span class="ft-s color-blueberry ft-medium" v-else-if="!isPast && (maxAttending - attending) <= 10 && (maxAttending - attending) > 0">
-                        {{ (maxAttending - attending) }} place(s) restantes
-                    </span>
-                    <span class="ft-s color-blueberry-weak" v-else-if="!isPast && (maxAttending - attending) <= 0">
-                        Sur liste d'attente
-                    </span>
-                    <span class="ft-s color-blueberry" v-else-if="isPast">
-                        {{ attending }} personnes ont participé
-                    </span>
+                    <template v-if="maxAttending !== false && attending !== false">
+                        <span class="ft-s color-blueberry" v-if="!isPast && (maxAttending - attending) > 10">
+                            {{ attending }} inscrit(e)s
+                        </span>
+                        <span class="ft-s color-blueberry ft-medium" v-else-if="!isPast && (maxAttending - attending) <= 10 && (maxAttending - attending) > 0">
+                            {{ (maxAttending - attending) }} place(s) restantes
+                        </span>
+                        <span class="ft-s color-blueberry-weak" v-else-if="!isPast && (maxAttending - attending) <= 0">
+                            Sur liste d'attente
+                        </span>
+                        <span class="ft-s color-blueberry" v-else-if="isPast">
+                            {{ attending }} personnes ont participé
+                        </span>
+                    </template>
                 </p>
 
                 <button-base :modifiers="date ? ['blueberry', 's', 'no-shadow'] : ['blueberry', 'secondary', 's', 'no-shadow']" :link="link" target="_blank">Plus de détails</button-base>
@@ -46,8 +48,8 @@ export default {
         title: { type: String, default: 'Welcome Party #3' },
         images: { type: Array, default: () => [] },
         location: { type: String, default: 'Paris (75010)' },
-        attending: { type: Number, default: 0 },
-        maxAttending: { type: Number, default: 0 },
+        attending: { type: [Number, Boolean], default: 0 },
+        maxAttending: { type: [Number, Boolean], default: 0 },
         link: { type: String, default: '#' },
         date: { type: [String, Date] }
     },

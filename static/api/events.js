@@ -11,8 +11,8 @@ export default {
             id: 273596291,
             title: `📺 L'antiswipe live #1 : nos projets, vos questions`,
             location: `Événement en ligne`,
-            attending: null,
-            maxAttending: null,
+            attending: false,
+            maxAttending: false,
             date: `2020-10-04T16:00:00+0000`,
             images: [live1],
             link: `https://www.meetup.com/fr-FR/antiswipe-lgbt/events/273596291/`
