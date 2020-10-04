@@ -16,7 +16,7 @@ export default {
         { id: 13, name: 'Téné' },
         { id: 14, name: 'Tim' },
         { id: 15, name: 'Apolline' },
-        { id: 16, name: 'Shilpa' },
+        { id: 16, name: 'Nym' },
         { id: 17, name: 'David' },
         { id: 18, name: 'Samantha' },
         { id: 19, name: 'Fernando' },
