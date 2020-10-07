@@ -28,6 +28,8 @@ export default {
         { id: 25, name: 'Jérôme' },
         { id: 26, name: 'Leila' },
         { id: 27, name: 'Danyéla' },
-        { id: 28, name: 'André' }
+        { id: 28, name: 'André' },
+        { id: 29, name: 'Cédric' },
+        { id: 30, name: 'Kévin' }
     ]
 }
