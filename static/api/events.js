@@ -1,4 +1,6 @@
 
+import amongus from '@/assets/img/temp/events/among-us.jpg'
+import her from '@/assets/img/temp/events/her.jpg'
 import live1 from '@/assets/img/temp/events/live1.jpg'
 import reset from '@/assets/img/temp/events/reset.jpg'
 import viaduc from '@/assets/img/temp/events/viadu.jpg'
@@ -7,6 +9,26 @@ import branche from '@/assets/img/temp/events/branche.jpg'
 
 export default {
     events: [
+        {
+            id: 273932913,
+            title: `🤖 Après-midi débats #1 : Technologie & relations`,
+            location: `Événement en ligne`,
+            attending: false,
+            maxAttending: false,
+            date: `2020-10-25T15:00:00+0000`,
+            images: [her],
+            link: `https://www.meetup.com/fr-FR/antiswipe-lgbt/events/273932913/`
+        },
+        {
+            id: 273948070,
+            title: `🎮 Gaming Night #1 : Among Us, le loup-garou spatial`,
+            location: `Événement en ligne`,
+            attending: false,
+            maxAttending: false,
+            date: `2020-10-21T19:30:00+0000`,
+            images: [amongus],
+            link: `https://www.meetup.com/fr-FR/antiswipe-lgbt/events/273948070/`
+        },
         {
             id: 273596291,
             title: `📺 L'antiswipe live #1 : nos projets, vos questions`,
