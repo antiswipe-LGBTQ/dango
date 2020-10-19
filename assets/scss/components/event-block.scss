@@ -42,7 +42,7 @@
 .EventBlock_image {
     background-size: cover;
     background-position: center;
-    margin: 15px 15px 0 15px;
+    margin: 10px 10px 0 10px;
 
     &::before {
         @include ratio(55);

@@ -9,9 +9,9 @@
                     </h3>
                     <p class="ft-s color-ft-weak mt-3 d-none@s"><i class="fal fa-map-marker-alt"></i> {{ location }}</p>
 
-                    <p class="mt-30 mb-20">
+                    <p class="mt-20 mb-10">
                         <b>{{ fullDate }}</b>
-                        <span class="ft-s color-ft-weak">({{ offsetDate }})</span>
+                        <span class="ft-xs color-ft-weak">({{ offsetDate }})</span>
                     </p>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <p>
                     <template v-if="maxAttending !== false && attending !== false">
                         <span class="ft-s color-blueberry" v-if="!isPast && (maxAttending - attending) > 10">
-                            {{ attending }} inscrit(e)s
+                            {{ attending }} inscrit·e·s
                         </span>
                         <span class="ft-s color-blueberry ft-medium" v-else-if="!isPast && (maxAttending - attending) <= 10 && (maxAttending - attending) > 0">
                             {{ (maxAttending - attending) }} place(s) restantes
@@ -28,7 +28,7 @@
                             Sur liste d'attente
                         </span>
                         <span class="ft-s color-blueberry" v-else-if="isPast">
-                            {{ attending }} personnes ont participé
+                            {{ attending }} participant·e·s
                         </span>
                     </template>
                 </p>
@@ -58,7 +58,7 @@ export default {
             return moment(this.$props.date).isBefore(moment())
         },
         fullDate () {
-            return moment(this.$props.date).format('dddd Do MMMM')
+            return moment(this.$props.date).format('dddd Do MMM')
         },
         offsetDate () {
             return moment(this.$props.date).fromNow()
