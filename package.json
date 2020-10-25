@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.13.0",
+    "@instant-coffee/core": "^1.0.0",
     "@nuxtjs/axios": "^5.11.0",
     "hammerjs": "^2.0.8",
     "js-cookie": "^2.2.1",

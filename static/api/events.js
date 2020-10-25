@@ -6,9 +6,20 @@ import reset from '@/assets/img/temp/events/reset.jpg'
 import viaduc from '@/assets/img/temp/events/viadu.jpg'
 import bap from '@/assets/img/temp/events/bap.jpg'
 import branche from '@/assets/img/temp/events/branche.jpg'
+import quizz from '@/assets/img/temp/events/quizz.jpg'
 
 export default {
     events: [
+        {
+            id: 274159754,
+            title: `💡 Le Quizz du Jeudi : culture générale, blind-tests & more !`,
+            location: `Événement en ligne`,
+            attending: false,
+            maxAttending: false,
+            date: `2020-10-29T20:30:00+0000`,
+            images: [quizz],
+            link: `https://www.meetup.com/fr-FR/antiswipe-lgbt/events/274159754/`
+        },
         {
             id: 273932913,
             title: `🤖 Après-midi débats #1 : Technologie & relations`,
