@@ -7,9 +7,32 @@ import viaduc from '@/assets/img/temp/events/viadu.jpg'
 import bap from '@/assets/img/temp/events/bap.jpg'
 import branche from '@/assets/img/temp/events/branche.jpg'
 import quizz from '@/assets/img/temp/events/quizz.jpg'
+import stcp from '@/assets/img/temp/events/stcp.jpg'
+import deceit from '@/assets/img/temp/events/deceit.jpg'
+
 
 export default {
     events: [
+        {
+            id: 274315148,
+            title: `🎮 Gaming Night #2 : DECEIT, jeu d'identités cachées`,
+            location: `Événement en ligne`,
+            attending: false,
+            maxAttending: false,
+            date: `2020-11-04T20:00:00+0000`,
+            images: [deceit],
+            link: `https://www.meetup.com/fr-FR/antiswipe-lgbt/events/274315148/`
+        },
+        {
+            id: 274338769,
+            title: `💥 Super Team Clash Party : viens relever les défis !`,
+            location: `Événement en ligne`,
+            attending: false,
+            maxAttending: false,
+            date: `2020-11-05T19:30:00+0000`,
+            images: [stcp],
+            link: `https://www.meetup.com/fr-FR/antiswipe-lgbt/events/274338769/`
+        },
         {
             id: 274159754,
             title: `💡 Le Quizz du Jeudi : culture générale, blind-tests & more !`,
