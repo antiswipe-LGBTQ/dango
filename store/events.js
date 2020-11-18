@@ -1,5 +1,5 @@
 import storeUtils from '@/utils/store-utils'
-import EVENTS from '@/static/api/events'
+import moment from 'moment'
 
 export default {
     namespaced: true,
@@ -16,11 +16,46 @@ export default {
     },
     actions: {
         async fetch ({ commit }, params) {
-            // const response = await this.$axios.$get(storeUtils.getQuery('/articles', params))
-            const response = EVENTS
-            if (!params || params.refresh !== false) commit('refresh', response.events)
+            try {
+                const response = await this.$axios.$get(storeUtils.getQuery('/entities', {
+                    ...params.query,
+                    type: 'event'
+                }))
 
-            return response.events
+                if (params.refresh !== false) commit('refresh', response.data)
+
+                return response.data
+            } catch (e) {
+                console.error(e)
+                return null
+            }
+        }
+    },
+    getters: {
+        items: (state) => {
+            return Object.values(state.items).map(item => {
+                let thumbnail = ''
+                let cover = ''
+            
+                if (item.image) {
+                    if (item.image.medias.find(m => m.size == 's')) thumbnail = item.image.medias.find(m => m.size == 's').src
+                    if (item.image.medias.find(m => m.size == 'm')) cover = item.image.medias.find(m => m.size == 'm').src
+                }
+
+                return {
+                    ...item,
+                    startDate: item.startDate ? moment(item.startDate) : '',
+                    thumbnail, cover, link: item.meetupLink
+                }
+            })
+        },
+        find: (state, getters) => (search, raw = false) => {
+            let items = raw ? Object.values(state.items) : getters.items
+            return items
+        },
+        findOne: (state, getters) => (search, raw = false) => {
+            let items = raw ? Object.values(state.items) : getters.items
+            return items.find(item => item[Object.keys(search)[0]] == Object.values(search)[0])
         }
     }
 }

@@ -1,5 +1,5 @@
 require('dotenv').config()
-
+console.log(process.env.NUXT_ENV_API_URL)
 export default {
   /*
   ** Nuxt rendering mode
@@ -65,7 +65,9 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+ axios: {
+    baseURL: process.env.NUXT_ENV_API_URL
+},
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

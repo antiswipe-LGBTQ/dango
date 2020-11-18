@@ -38,7 +38,7 @@
 import TestimonyCard from '@/components/partials/testimony-cards/TestimonyCard'
 import TruncatedText from '@/components/interactive/TruncatedText'
 
-import baseUtils from '@/utils/base-utils'
+import { randomizeArray } from '@/utils/base-utils'
 
 export default {
     name: 'TeamSection',
@@ -56,7 +56,7 @@ export default {
     }),
     computed: {
         members () {
-            return baseUtils.randomizeArray(Object.values(this.$store.state.team.items))
+            return randomizeArray(Object.values(this.$store.state.team.items))
         }
     },
     mounted () {

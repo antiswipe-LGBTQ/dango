@@ -2,7 +2,7 @@
     <div class="EventBlock" :class="{ 'EventBlock--past': isPast }">
         <div class="EventBlock_container">
             <div>
-                <div class="EventBlock_image" :style="{ backgroundImage: `url(${images[0]})` }"></div>
+                <div class="EventBlock_image" :style="{ backgroundImage: `url(${thumbnail})` }"></div>
                 <div class="EventBlock_content">
                     <h3 class="ft-title-l ft-title-m@s">
                         <b>{{ title }}</b>
@@ -33,7 +33,7 @@
                     </template>
                 </p>
 
-                <button-base :modifiers="date ? ['blueberry', 's', 'no-shadow'] : ['blueberry', 'secondary', 's', 'no-shadow']" :link="link" target="_blank">Plus de détails</button-base>
+                <button-base :modifiers="startDate ? ['blueberry', 's', 'no-shadow'] : ['blueberry', 'secondary', 's', 'no-shadow']" :link="link" target="_blank">Plus de détails</button-base>
             </div>
         </div>
     </div>
@@ -45,23 +45,23 @@ import moment from 'moment'
 export default {
     name: 'EventBlock',
     props: {
-        title: { type: String, default: 'Welcome Party #3' },
-        images: { type: Array, default: () => [] },
+        title: { type: String, default: '' },
+        thumbnail: { type: String, default: '' },
         location: { type: String, default: 'Paris (75010)' },
-        attending: { type: [Number, Boolean], default: 0 },
-        maxAttending: { type: [Number, Boolean], default: 0 },
+        attending: { type: [Number, Boolean], default: false },
+        maxAttending: { type: [Number, Boolean], default: false },
         link: { type: String, default: '#' },
-        date: { type: [String, Date] }
+        startDate: { type: Object }
     },
     computed: {
         isPast () {
-            return moment(this.$props.date).isBefore(moment())
+            return this.$props.startDate.isBefore(moment())
         },
         fullDate () {
-            return moment(this.$props.date).format('dddd Do MMM')
+            return this.$props.startDate.format('dddd Do MMM')
         },
         offsetDate () {
-            return moment(this.$props.date).fromNow()
+            return this.$props.startDate.fromNow()
         }
     }
 }

@@ -18,7 +18,7 @@
 <script>
 import ScrollerText from '@/components/interactive/ScrollerText'
 
-import baseUtils from '@/utils/base-utils'
+import { randomizeArray } from '@/utils/base-utils'
 
 export default {
     name: 'ThanksSection',
@@ -28,7 +28,7 @@ export default {
     },
     computed: {
         subscribers () {
-            return baseUtils.randomizeArray(Object.values(this.$store.state.subscribers.items))
+            return randomizeArray(Object.values(this.$store.state.subscribers.items))
         }
     }
 }
