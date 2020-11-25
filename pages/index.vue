@@ -1,5 +1,5 @@
 <template>
-    <div class="HomePage" @click="$store.dispatch('events/fetch', {})">
+    <div class="HomePage">
         <section class="HomePage_heading">
             <div class="Wrapper">
                 <div class="row height-100">
@@ -83,7 +83,9 @@
         name: 'Homepage',
         components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection, ThanksSection },
         async fetch () {
-            await this.$store.dispatch('events/fetch', {})
+            await this.$store.dispatch('events/fetch', {
+                query: { status: 'published' }
+            })
         },
         data: () => ({
 
