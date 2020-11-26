@@ -17,7 +17,7 @@ export default {
         { _id: 14, name: 'Tim' },
         { _id: 15, name: 'Apolline' },
         { _id: 16, name: 'Nym' },
-        { _id: 17, name: 'Dav_id' },
+        { _id: 17, name: 'David' },
         { _id: 18, name: 'Samantha' },
         { _id: 19, name: 'Fernando' },
         { _id: 20, name: 'Aurore' },
