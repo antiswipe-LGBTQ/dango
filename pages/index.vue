@@ -65,8 +65,7 @@
     </div>
 </template>
 
-<script>
-    import moment from 'moment'
+    <script>
 
     import TestimonyCards from '@/components/partials/testimony-cards'
     import SliderSimple from '@/components/interactive/SliderSimple'
@@ -78,20 +77,22 @@
     import AboutSection from '@/components/partials/home/about-section'
     import ThanksSection from '@/components/partials/home/thanks-section'
 
+    import { sortPastFuture } from '@/utils/base-utils'
+
     export default {
         name: 'Homepage',
         components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection, ThanksSection },
         async fetch () {
-            await this.$store.dispatch('events/fetch')
+            await this.$store.dispatch('events/fetch', {
+                query: { status: 'published' }
+            })
         },
         data: () => ({
 
         }),
         computed: {
             events () {
-                return Object.values(this.$store.state.events.items).sort((a, b) => {
-                    return moment(b.date).diff(moment(a.date))
-                })
+                return sortPastFuture(this.$store.getters['events/find'](), 'startDate')
             }
         }
     }
