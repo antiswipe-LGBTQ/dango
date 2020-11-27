@@ -29,8 +29,8 @@ export default {
                 { id: 0, delay: 0, name: 'Aurane', color: 'blueberry', avatar: 'team/aurane' },
                 { id: 1, delay: 400, name: 'Théotime', color: 'pineapple', avatar: 'team/theotime' },
                 { id: 2, delay: 200, name: 'Corentin', color: 'cherry', avatar: 'team/corentin' },
-                { id: 3, delay: 600, name: 'Élodie', color: 'plum', avatar: 'team/elodie' },
-                { id: 4, delay: 800, name: 'Christopher', color: 'cucumber', avatar: 'team/christopher' },
+                { id: 3, delay: 600, name: 'Christopher', color: 'grape', avatar: 'team/christopher' },
+                { id: 4, delay: 800, name: 'Élodie', color: 'plum', avatar: 'team/elodie' },
                 { id: 5, delay: 1000, name: 'Alexandre', color: 'cherry', avatar: 'team/alexandre' },
             ]
         },
