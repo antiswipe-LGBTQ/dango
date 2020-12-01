@@ -11,8 +11,8 @@
                     <p class="max-width-m m-auto"><b>Tu n'as pas trouvé ton bonheur ?</b> Reste informé·e : nous avons toujours des événements en préparation pour tous les goûts, et de belles surprises !</p>
 
                     <div class="mt-30">
-                        <button-base class="d-block@xs" link="https://www.meetup.com/fr-FR/antiswipe-lgbt" target="_blank">Nous rejoindre</button-base>
-                        <button-base class="ml-5 d-block@xs mt-10@xs ml-0@xs" target="_blank" :modifiers="['secondary', 's']" link="https://www.instagram.com/antiswipe.lgbt/">Nous suivre sur Instagram</button-base>
+                        <button-base class="d-block@xs" tag="a" link="https://www.meetup.com/fr-FR/antiswipe-lgbt" target="_blank">Nous rejoindre</button-base>
+                        <button-base class="ml-5 d-block@xs mt-10@xs ml-0@xs" tag="a" target="_blank" :modifiers="['secondary', 's']" link="https://www.instagram.com/antiswipe.lgbt/">Nous suivre sur Instagram</button-base>
                     </div>
                 </div>
             </div>

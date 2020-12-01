@@ -1,13 +1,13 @@
 <template>
     <header class="HeaderBase" :class="{ 'is-scroll': state.scrolled >= 60, 'is-open': state.open }">
-        <div>
+        <nuxt-link to="/">
             <icon-base class="HeaderBase_logo" name="logos/antiswipe" />
-        </div>
+        </nuxt-link>
 
-        <button-base class="HeaderBase_burger" :modifiers="['round', 's', 'secondary']" fa="bars" @click="state.open = true"/>
+        <button-base class="HeaderBase_burger" :modifiers="['round', 's', 'secondary']" icon-before="bars" @click="state.open = true"/>
 
         <nav class="HeaderBase_nav">
-            <button-base class="HeaderBase_close" :modifiers="['round', 's', 'secondary']" fa="times" @click="state.open = false"/>
+            <button-base class="HeaderBase_close" :modifiers="['round', 's', 'secondary']" icon-before="times" @click="state.open = false"/>
 
             <link-base
                 v-for="item in navigation"
@@ -19,7 +19,7 @@
                 {{ item.title }}
             </link-base>
 
-            <button-base class="HeaderBase_cta" link="https://www.meetup.com/fr-FR/antiswipe-lgbt" target="_blank" :modifiers="['s']" @click="state.open = false">
+            <button-base class="HeaderBase_cta" tag="a" link="https://www.meetup.com/fr-FR/antiswipe-lgbt" target="_blank" :modifiers="['s']" @click="state.open = false">
                 Nous rejoindre
             </button-base>
         </nav>

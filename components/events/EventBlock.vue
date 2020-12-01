@@ -1,19 +1,19 @@
 <template>
     <div class="EventBlock" :class="{ 'EventBlock--past': isPast }">
         <div class="EventBlock_container">
-            <div>
-                <div class="EventBlock_image" :style="{ backgroundImage: `url(${thumbnail})` }"></div>
-                <div class="EventBlock_content">
+            <div class="EventBlock_image" :style="{ backgroundImage: `url(${thumbnail})` }"></div>
+            <div class="EventBlock_content">
+                <div>
                     <h3 class="ft-title-l ft-title-m@s">
                         <b>{{ title }}</b>
                     </h3>
                     <p class="ft-s color-ft-weak mt-3 d-none@s"><i class="fal fa-map-marker-alt"></i> {{ location }}</p>
-
-                    <p class="mt-20 mb-10">
-                        <b>{{ fullDate }}</b>
-                        <span class="ft-xs color-ft-weak">({{ offsetDate }})</span>
-                    </p>
                 </div>
+
+                <p class="mt-10 mb-10">
+                    <b>{{ fullDate }}</b>
+                    <span class="ft-xs color-ft-weak">({{ offsetDate }})</span>
+                </p>
             </div>
             <div class="EventBlock_actions">
                 <p>
@@ -33,7 +33,7 @@
                     </template>
                 </p>
 
-                <button-base :modifiers="startDate ? ['blueberry', 's', 'no-shadow'] : ['blueberry', 'secondary', 's', 'no-shadow']" :link="link" target="_blank">Plus de détails</button-base>
+                <button-base tag="a" :modifiers="isPast ? ['blueberry', 'secondary', 's', 'no-shadow'] : ['blueberry', 's', 'no-shadow']" :link="link" target="_blank">Plus de détails</button-base>
             </div>
         </div>
     </div>
