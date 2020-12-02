@@ -36,7 +36,6 @@ export default {
         },
         navigation: [
             { id: 0, title: `Nos événements`, link: '#events' },
-            { id: 1, title: 'Questions fréquentes', link: '#questions' },
             { id: 2, title: `À propos de nous`, link: '#about' }
         ]
     }),

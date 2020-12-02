@@ -1,10 +1,12 @@
 <template>
-    <div v-if="page">
-        <div class="Wrapper mt-100">
-            {{ page.title }}
+    <div class="Page" v-if="page">
+        <div class="LayoutDefault_banner">
+            <div class="Wrapper Wrapper--s">
+                <h1 class="ft-title-2xl-bold color-cherry">{{ page.title }}</h1>
+            </div>
         </div>
 
-        <div class="Wrapper Wrapper--s">
+        <div class="Wrapper Wrapper--xs TextBody mv-60">
             <div v-html="page.content"></div>
         </div>
     </div>

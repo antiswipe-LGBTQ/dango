@@ -1,0 +1,30 @@
+.FooterBase {
+    background-color: var(--color-cherry-weak);
+    padding: 40px 0;
+}
+
+.FooterBase_logoContainer {
+    width: 200px;
+}
+
+.FooterBase_logo {
+    fill: var(--color-cherry);
+    --width: 100px;
+}
+
+.FooterBase_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.FooterBase_item {
+    margin: 3px 0;
+}
+
+.FooterBase_section {
+    margin-top: 30px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}

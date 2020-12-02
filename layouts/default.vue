@@ -3,14 +3,13 @@
     <header-base />
 
     <Nuxt />
+
+    <footer-base />
   </div>
 </template>
 
 <script>
-import HeaderBase from '@/components/layout/HeaderBase'
-
 export default {
-  name: 'LayoutDefault',
-  components: { HeaderBase }
+    name: 'LayoutDefault'
 }
 </script>

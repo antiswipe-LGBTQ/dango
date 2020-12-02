@@ -1,10 +1,11 @@
 <template>
     <component
-        :is="link ? 'a' : 'div'"
+        :is="tag ? tag : (link ? 'a' : 'div')"
         class="LinkBase"
         :target="target"
         :href="link"
         :class="{ ...$modifiers }"
+        v-bind="attrs"
         @click="$emit('click')"
     >
         <div class="LinkBase_content">
@@ -22,9 +23,11 @@ export default {
     name: 'LinkBase',
     mixins: [ modifiers ],
     props: {
+        tag: { type: [String, Boolean], default: false },
         fa: { type: [ String, Boolean ], default: false },
         target: { type: String, defaut: '_self' },
-        link: { type: [ String, Boolean ], default: false }
+        link: { type: [ String, Boolean ], default: false },
+        attrs: { type: Object, default: () => {} },
     }
 }
 </script>

@@ -88,6 +88,11 @@ $main-colors: (
 $fonts: (
     "ft": (
         "name": "'Fira Sans', sans-serif",
+        "weights": (
+            "regular": 400,
+            "medium": 500,
+            "bold": 600,
+        ),
         "sizes": (
             "xs": "12px/1.4",
             "s": "14px/1.5",
@@ -101,9 +106,13 @@ $fonts: (
     ),
     "ft-title": (
         "name": "'Domine', serif",
+        "weights": (
+            "regular": 400,
+            "bold": 700,
+        ),
         "sizes": (
             "xs": "10px/1.2",
-            "s": "12px/1.2",
+            "s": "14px/1.2",
             "m": "15px/1.2",
             "l": "17px/1.5",
             "xl": "22px/1.5",
