@@ -28,3 +28,14 @@
         margin-top: 0;
     }
 }
+
+@include breakpoint-xs {
+
+    .FooterBase_wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .FooterBase_logoContainer {
+    }
+}

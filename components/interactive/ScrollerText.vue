@@ -12,7 +12,7 @@
             <div 
                 v-for="(item, i) in items"
                 class="ScrollerText_item"
-                :key="i"
+                :key="'j' + i"
             >
                 {{ item }}
             </div>

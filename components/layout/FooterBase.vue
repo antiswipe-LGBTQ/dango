@@ -2,16 +2,16 @@
     <footer class="FooterBase">
         <div class="FooterBase_wrapper Wrapper">
             
-            <div class="FooterBase_logoContainer mr-60">
+            <div class="FooterBase_logoContainer mr-60 mr-0@xs mt-40@xs">
                 <nuxt-link :to="localePath('/')">
                     <icon-base class="FooterBase_logo" name="logos/antiswipe" />
                 </nuxt-link>
 
-                <p class="ft-s-medium mt-30 color-cherry">Créé avec 💖 par la Team antiswipe. </p>
+                <p class="ft-s-medium mt-20 color-cherry">Créé avec 💖 par la Team antiswipe. </p>
             </div>
 
             <div class="row-xs fx-grow">
-                <div class="col-4" v-for="(col, i) in navigation" :key="i">
+                <div class="col-4 col-6@s col-12@xs mb-20@xs" v-for="(col, i) in navigation" :key="i">
                     <div class="FooterBase_section" v-for="(section, j) in col" :key="j">
                         <p class="ft-title-s-bold mb-10" v-if="section.title">{{ section.title }}</p>
 

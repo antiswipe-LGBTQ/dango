@@ -9,3 +9,10 @@
     align-items: center;
     background-color: var(--color-cherry-weak);
 }
+
+@include breakpoint-xs {
+    
+    .LayoutDefault_banner {
+        padding: 100px 0 40px;
+    }
+}

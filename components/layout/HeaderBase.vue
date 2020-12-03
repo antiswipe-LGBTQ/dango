@@ -12,7 +12,8 @@
             <link-base
                 v-for="item in navigation"
                 class="HeaderBase_link"
-                :link="item.link"
+                tag="nuxt-link"
+                :attrs="{ to: localePath(item.to) }"
                 :key="item.id"
                 @click="state.open = false"
             >
@@ -35,8 +36,8 @@ export default {
             open: false
         },
         navigation: [
-            { id: 0, title: `Nos événements`, link: '#events' },
-            { id: 2, title: `À propos de nous`, link: '#about' }
+            { id: 0, title: `Nos événements`, to: { path: '/', hash: '#events' } },
+            { id: 2, title: `À propos de nous`, to: { path: '/', hash: '#about' } }
         ]
     }),
     mounted () {
