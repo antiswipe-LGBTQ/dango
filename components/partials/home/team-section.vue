@@ -1,8 +1,8 @@
 <template>
     <div class="TeamSection" :class="[ `TeamSection--${state.member ? state.member.color : ''}` ]">
 
-        <button-base class="TeamSection_left" @click="prev" :modifiers="[ (state.member ? state.member.color : ''), 'secondary', 'round']" fa="chevron-left" />
-        <button-base class="TeamSection_right" @click="next" :modifiers="[ (state.member ? state.member.color : ''), 'secondary', 'round']" fa="chevron-right" />
+        <button-base class="TeamSection_left" @click="prev" :modifiers="[ (state.member ? state.member.color : ''), 'secondary', 'round']" icon-before="chevron-left" />
+        <button-base class="TeamSection_right" @click="next" :modifiers="[ (state.member ? state.member.color : ''), 'secondary', 'round']" icon-before="chevron-right" />
         
         <div class="TeamSection_slider" :style="{ '--position': state.position }">
             <div

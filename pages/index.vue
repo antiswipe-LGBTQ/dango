@@ -14,7 +14,7 @@
                         <p class="mv-30 ft-l max-width-s ft-m@s">Des rencontres en réel, dans une ambiance conviviale et des lieux originaux. <b>Pas d'appli, pas de filtres, pas de swipe.</b></p>
 
                         <div>
-                            <button-base link="#events">
+                            <button-base tag="a" link="#events">
                                 Découvrir nos événements
                             </button-base>
                         </div>

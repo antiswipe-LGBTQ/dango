@@ -1,16 +1,18 @@
 <template>
-  <div class="LayoutDefault">
+  <div class="LayoutDefault" :class="[ ...pageClasses ]">
     <header-base />
 
     <Nuxt />
+
+    <footer-base />
   </div>
 </template>
 
 <script>
-import HeaderBase from '@/components/layout/HeaderBase'
-
 export default {
-  name: 'LayoutDefault',
-  components: { HeaderBase }
+    name: 'LayoutDefault',
+    computed: {
+        pageClasses () { return this.$store.state.page.body.classes }
+    }
 }
 </script>

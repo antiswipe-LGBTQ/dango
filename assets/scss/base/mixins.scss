@@ -1,0 +1,25 @@
+@mixin pattern-spotted($color: "blueberry") {
+    background-image: radial-gradient(var(--color-#{$color}) 25%, transparent 25%), radial-gradient(var(--color-#{$color}) 25%, transparent 25%);
+    background-position: 0 0, 3px 3px;
+    background-size: 5px 5px;
+}
+
+@mixin box-shadow-s {
+    box-shadow: 0 4px 4px 0 ;
+}
+
+@mixin box-shadow($color: "cyan") {
+    box-shadow: 0 3px 6px 0 rgba(var(--color-#{$color}-shadow), 0.4);
+}
+
+@mixin box-shadow-s {
+    box-shadow: 0 2px 2px 0 rgba(30, 102, 255, 0.3);
+}
+
+@mixin box-shadow-l {
+    box-shadow: 0 4px 8px 0 rgba(30, 102, 255, 0.4);
+}
+
+@mixin box-shadow-xl {
+    box-shadow: 0 10px 10px 0 rgba(30, 102, 255, 0.2);
+}
