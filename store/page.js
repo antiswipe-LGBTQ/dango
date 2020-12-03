@@ -1,11 +1,13 @@
 export default {
     namespaced: true,
     state: () => ({
-        meta: {
-            title: ''
-        }    
+        body: {
+            classes: []
+        }
     }),
     mutations: {
-        
+        addClasses (state, classes) {
+            state.body.classes = [ ...state.body.classes, ...classes]
+        },
     }
 }

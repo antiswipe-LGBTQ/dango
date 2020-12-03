@@ -1,5 +1,5 @@
 <template>
-  <div class="LayoutDefault">
+  <div class="LayoutDefault" :class="[ ...pageClasses ]">
     <header-base />
 
     <Nuxt />
@@ -10,6 +10,9 @@
 
 <script>
 export default {
-    name: 'LayoutDefault'
+    name: 'LayoutDefault',
+    computed: {
+        pageClasses () { return this.$store.state.page.body.classes }
+    }
 }
 </script>
