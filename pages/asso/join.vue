@@ -208,16 +208,30 @@ export default {
         await this.$store.dispatch('reactions/fetch', {
             query: { target: 'asso' }
         })
+
+        this.$data.hearts = this.heartsCount
+        this.$data.savedHearts = this.$data.hearts
     },
     data: () => ({
         hearts: 0,
         savedHearts: 0,
         debounce: () => ({})
     }),
+    computed: {
+        heartsCount () {
+            return this.$store.getters['reactions/getCount']('asso')
+        }
+    },
+    watch: {
+        heartsCount: {
+            immediate: true,
+            handler (v) {
+                this.$data.hearts = v
+                this.$data.savedHearts = this.$data.hearts
+            }
+        }
+    },
     mounted () {
-        this.$data.hearts = this.$store.getters['reactions/getCount']('asso')
-        this.$data.savedHearts = this.$data.hearts
-
         this.$data.debounce = debounce(1500, false, () => {
             if (this.$data.hearts != this.$data.savedHearts) {
                 this.$store.dispatch('reactions/create', {
