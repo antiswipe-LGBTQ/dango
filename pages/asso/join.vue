@@ -1,15 +1,51 @@
 <template>
     <div class="JoinPage Page">
         <div class="LayoutDefault_banner">
-            <div class="Wrapper Wrapper--s text-center">
-                <h1 class="ft-title-2xl-bold color-cherry ft-title-xl-bold@xs">Pourquoi adhérer ?</h1>
-                <p class="ft-m-medium mt-20 max-width-m m-auto">
-                    Pour 15€ / an, tu peux devenir adhérent·e d'antiswipe. On t'explique tout.
-                </p>
+            <div class="Wrapper Wrapper--xs text-center">
+                <h1 class="ft-title-2xl-bold color-cherry mb-20 ft-title-xl-bold@xs">L'association antiswipe, c'est...</h1>
+
+                <div class="row row--l d-block@xs">
+                    <div class="col-4 text-center col-12@xs">
+                        <p class="Homepage_aboutNumber ft-bold color-cherry">+70</p>
+                        <p class="ft-s ph-5 m-auto width-2xs@xs">événements réussis depuis juin 2019</p>
+                    </div>
+
+                    <div class="col-4 text-center col-12@xs mt-20@xs">
+                        <p class="Homepage_aboutNumber color-cherry">9</p>
+                        <p class="ft-s ph-5 m-auto width-2xs@xs">organisateurs·trices super motivé·e·s</p>
+                    </div>
+
+                    <div class="col-4 text-center col-12@xs mt-20@xs">
+                        <div class="Homepage_aboutNumber Homepage_aboutNumber--animated color-cherry">
+                            <scroller-text class="Homepage_aboutCounter" :speed="400" :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" />
+                            <scroller-text class="Homepage_aboutCounter" :speed="380" :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" />
+                            <scroller-text class="Homepage_aboutCounter" :speed="340" :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" />
+                            <scroller-text class="Homepage_aboutCounter" :speed="300" :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" />
+                        </div>
+                        <p class="ft-s ph-5 m-auto width-2xs@xs">un nombre incalculable de belles rencontres</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="Wrapper Wrapper--xs n-mt-20 mb-60">
+        <div class="Wrapper Wrapper--xs mb-60">
+            <p class="ft-title-2xl-bold mt-60 mb-20 ft-title-xl-bold@xs">
+                Adhérer à antiswipe
+            </p>
+
+            <p>Le 21 avril 2020, antiswipe est officiellement devenu une association à but non-lucratif. Cela nous permet notamment d'accepter des dons et des adhésions, en toute transparence.</p>
+
+            <p class="mt-20">Le prix d'une adhésion est fixé à <span class="ft-title-xl-bold color-blueberry">15€ / an</span> :</p>
+
+            <ul class="mt-10 pl-40">
+                <li><b>Elle est optionnelle</b>, tu peux continuer à venir à nos événements sans jamais payer.</li>
+                <li><b>Ce n'est pas un abonnement</b>, ce sera à toi de la renouveller l'année prochaine, si tu en as envie.</li>
+            </ul>
+
+            <p class="ft-title-xl-bold text-center mv-60">
+                Mais alors, pourquoi devrais-je adhérer ?
+            </p>
+
             <div class="Block max-width-m">
                 <div class="Block_container p-30 p-20@xs">
                     <p class="ft-title-xl-bold color-cherry ft-title-l-bold@xs">
@@ -17,7 +53,7 @@
                     </p>
                     
                     <p class="mt-20">
-                        Nous faisons le choix de laisser nos événements gratuits pour accueillir tout le monde, peu importe la taile de son porte-monnaie. En contrepartie, nous avons besoin de vos dons car, même si nous sommes bénévoles, nous avons des frais de fonctionnement.
+                        Nous faisons le choix de laisser nos événements gratuits pour accueillir tout le monde, peu importe la taille de son porte-monnaie. En contrepartie, nous avons besoin de vos dons car, même si nous sommes bénévoles, nous avons des frais de fonctionnement.
                     </p>
                 </div>
             </div>
@@ -29,7 +65,7 @@
                     </p>
                     
                     <p class="mt-20">
-                        antiswipe a démarré comme un organisateur d'événements. Mais c'est devenu l'ambition de changer de perspective sur la rencontre et d'aider les personnes qui se sentent isolées au milieu d'un océan de profils. Vos dons nous permettent de voir toujours plus loin.
+                        antiswipe a démarré comme un organisateur d'événements. Mais c'est devenu l'ambition de changer la perspective sur la rencontre et d'aider les personnes qui se sentent isolées au milieu d'un océan de profils. Vos dons nous permettent de voir toujours plus loin.
                     </p>
                 </div>
             </div>
@@ -55,7 +91,7 @@
                     <div class="JoinPage_category JoinPage_category--1">
 
                         <p class="ft-title-3xl-bold line-1 mb-20 mb-5@xs">60%</p>
-                        pour investir dans nos projets & le matériel nécessaire. Le tout dans un seul but : faciliter la rencontre pour tout le monde.
+                        pour investir dans nos projets & le matériel dont on a besoin (jeux de société, pin's, impression de flyers...). Le tout dans un seul but : <b>faciliter la rencontre pour tout le monde</b>.
                     </div>
                     <div class="JoinPage_category JoinPage_category--2">
 

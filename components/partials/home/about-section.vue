@@ -16,7 +16,7 @@
                         </div>
 
                         <div class="col-4 text-center col-12@xs mt-20@xs">
-                            <p class="Homepage_aboutNumber color-cherry">7</p>
+                            <p class="Homepage_aboutNumber color-cherry">9</p>
                             <p class="ft-s ph-5 m-auto width-2xs@xs">organisateurs·trices super motivé·e·s</p>
                         </div>
 
