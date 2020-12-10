@@ -1,0 +1,40 @@
+.Block {
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        @include pattern-spotted("cherry");
+        
+        transition: all 100ms ease;
+    }
+}
+
+.Block_container {
+    position: relative;
+    z-index: 2;
+    border: 2px solid var(--color-cherry);
+    border-radius: 5px;
+    background-color: var(--color-white);
+}
+
+@each $color in $main-colors {
+
+    .Block--#{$color} {
+
+        &::after {
+            @include pattern-spotted(#{$color});
+        }
+
+        .Block_container {
+            border-color: var(--color-#{$color});
+        }
+    }
+
+}

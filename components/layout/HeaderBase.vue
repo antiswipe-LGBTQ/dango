@@ -35,13 +35,16 @@ export default {
             scrolled: 0,
             open: false
         },
-        navigation: [
-            { id: 0, title: `Nos événements`, to: { path: '/', hash: '#events' } },
-            { id: 2, title: `À propos de nous`, to: { path: '/', hash: '#about' } }
-        ]
+        navigation: []
     }),
     mounted () {
+        this.$data.navigation = [
+            { id: 0, title: `Nos événements`, to: this.localePath({ path: '/', hash: '#events' }) },
+            { id: 3, title: `L'association`, to: this.localePath({ name: 'asso-join' }) }
+        ]
+
         this.onScroll()
+
         window.addEventListener('scroll', this.onScroll, { passive: true })
     },
     methods: {

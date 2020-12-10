@@ -41,8 +41,8 @@
                         <button-base tag="a" link="https://www.helloasso.com/associations/antiswipe/adhesions/devenir-adherent-d-antiswipe" target="_blank" :modifiers="[]">
                             Je deviens adhérent·e
                         </button-base>
-                        <button-base class="ml-3 ml-0@s mt-5@s" tag="a" link="https://bit.ly/antiswipe-donation" target="_blank" :modifiers="['secondary', 's']">
-                            Je préfère faire un don
+                        <button-base class="ml-3 ml-0@s mt-5@s" tag="a" :link="localePath({ name: 'asso-join' })" :modifiers="['secondary', 's']">
+                            En savoir plus
                         </button-base>
                     </div>
                 </div>

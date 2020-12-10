@@ -1,0 +1,79 @@
+.JoinPage {
+    
+}
+
+.JoinPage_chart {
+    display: flex;
+}
+
+.JoinPage_category {
+    min-width: 200px;
+    padding-right: 40px;
+    position: relative;
+    padding-top: 25px;
+
+    &::before {
+        content: "";
+        display: block;
+        height: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.JoinPage_category--1 {
+    flex-grow: 1;
+    width: 40%;
+
+    &::before { background-color: var(--color-cherry); }
+}
+
+.JoinPage_category--2 {
+    width: 30%;
+
+    &::before { background-color: var(--color-blueberry); }
+}
+
+.JoinPage_category--3 {
+    width: 20%;
+
+    &::before { background-color: var(--color-pineapple); }
+}
+
+.JoinPage_category--4 {
+    width: 10%;
+    min-width: 150px;
+
+    &::before { background-color: var(--color-ft-weak); }
+}
+
+@include breakpoint-s {
+
+    .JoinPage_category {
+        min-width: 0;
+    }
+}
+
+@include breakpoint-xs {
+
+    .JoinPage_chart {
+        display: block;
+    }
+
+    .JoinPage_category {
+        min-width: 0;
+        width: auto;
+        padding: 20px 0 20px 30px;
+
+        &::before {
+            width: 4px;
+            height: 100%;
+        }
+    }
+}
