@@ -1,0 +1,38 @@
+.ParticlesEmitter {
+    position: relative;
+    display: inline-block;
+}
+
+.ParticlesEmitter_particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: var(--transform-init);
+    pointer-events: none;
+
+    &.is-active {
+        animation: disappear var(--duration);
+        transform: var(--transform);
+        transition: all 1000ms ease;
+        transition-duration: var(--duration);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
