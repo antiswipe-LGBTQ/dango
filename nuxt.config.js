@@ -1,5 +1,5 @@
 require('dotenv').config()
-console.log(process.env.NUXT_ENV_API_URL)
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -32,6 +32,11 @@ export default {
     css: [
         '@/assets/scss/global.scss'
     ],
+    
+    env: {
+      baseUrl: process.env.BASE_URL,
+    },
+
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
@@ -52,7 +57,8 @@ export default {
   buildModules: [
     ['@nuxtjs/google-analytics', {
         id: 'UA-156956427-2'
-    }]
+    }],
+    
   ],
   /*
   ** Nuxt.js modules
@@ -60,7 +66,10 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    ['nuxt-stripe-module', {
+        publishableKey: process.env.STRIPE_PUBLIC,
+    }],
   ],
 
   i18n: {
@@ -91,6 +100,19 @@ export default {
             loader: 'raw-loader'
           }
         )
+    },
+    babel: {
+      presets(env, [preset, options]) {
+          return [["@babel/preset-env", {}]];
+      },
+      plugins: [
+          [
+          "@babel/plugin-transform-runtime",
+            {
+                regenerator: true
+            }
+          ]
+      ]
     }
   }
 }
