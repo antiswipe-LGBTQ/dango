@@ -9,10 +9,11 @@ export default {
 
     },
     actions: {
-        async checkout ({ state }) {
+        async checkout ({ state }, params) {
             try {
                 const response = await this.$axios.$post('/subscribe', {
-                    id: Math.random()
+                    id: Math.random(),
+                    amount: params.amount
                 })
                 
                 if (response.status == 0) throw Error(response.errors[0])

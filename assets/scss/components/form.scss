@@ -126,3 +126,28 @@ textarea {
     }
   }
 }
+
+
+
+.Toggle_container {
+  background-color: var(--color-border-strong);
+}
+
+.Toggle_checkbox:checked + .Toggle_container {
+  background-color: var(--color-current, var(--color-blueberry));
+}
+
+.Toggle--shade {
+
+  .Toggle_container {
+    background-color: var(--color-current, var(--color-blueberry));
+  }
+
+  .Toggle_checkbox:checked + .Toggle_container {
+    background-color: var(--color-current-strong, var(--color-blueberry-strong));
+  }
+}
+
+.Toggle_container::after {
+  background-color: var(--color-white);
+}

@@ -7,6 +7,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 10;
     opacity: 0;
     transform: var(--transform-init);
     pointer-events: none;
@@ -34,5 +35,12 @@
 
     100% {
         opacity: 0;
+    }
+}
+
+.ParticlesEmitter--left {
+
+    .ParticlesEmitter_particle {
+        left: 0%;
     }
 }
