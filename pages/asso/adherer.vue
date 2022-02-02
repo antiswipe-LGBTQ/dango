@@ -90,8 +90,8 @@
                 </div>
 
                 <div class="mt-20 text-right">
-                    <button-base type="button" v-if="!isReady" @click="isReady = true">Passer au paiement</button-base>
-                    <button-base v-else>J'adhère !!</button-base>
+                    <button-base v-if="!isReady">Passer au paiement</button-base>
+                    <button-base :class="{ 'is-loading': isLoading }" v-else>J'adhère !!</button-base>
                 </div>
             </form>
         </div>
@@ -100,6 +100,7 @@
 
 <script>
 import { InputBase, ToggleBase } from 'instant-coffee-core'
+import Cookies from 'js-cookie'
 
 export default {
     name: 'SubscribePage',
@@ -107,6 +108,7 @@ export default {
     data: () => ({
         elements: null,
         extraCustom: '20',
+        isLoading: false,
         isReady: false,
         error: '',
         extras: [
@@ -120,12 +122,13 @@ export default {
             lastname: '',
             email: '',
             agreement: false,
+            subscription: 15,
             extra: 0
         }
     }),
     computed: {
         total () {
-            return 15 + parseInt(this.formData.extra)
+            return this.formData.subscription + parseInt(this.formData.extra)
         }
     },
     watch: {
@@ -143,11 +146,14 @@ export default {
     methods: {
         async initPayment () {
             this.error = ''
+            this.isLoading = true
 
             try {
                 let response = await this.$store.dispatch('subscribe/checkout', { 
-                    amount: this.total
+                    data: { ...this.formData, extra: parseInt(this.formData.extra) }
                 })
+            
+                Cookies.set('user-id', response.user._id)
         
                 if (this.$stripe) {
                     this.elements = this.$stripe.elements({ clientSecret: response.token })
@@ -156,24 +162,34 @@ export default {
                 }
             } catch (e) {
                 console.error(e)
-            }
-        },
-        async onSubmit () {
-            this.error = ''
-
-            try {
-                const response = await this.$stripe.confirmPayment({
-                    elements: this.elements,
-                    confirmParams: {
-                        return_url: process.env.baseUrl + this.localePath({ name: 'asso-confirmation' })
-                    }
-                })
-
-                if (response.error) this.error = response.error.message
-            } catch (e) {
-                console.error(e)
                 this.error = 'Une erreur est survenue, merci de réessayer !'
             }
+            
+            this.isLoading = false
+        },
+        async onSubmit () {
+            if (!this.isReady) {
+                this.isReady = true
+            } else {
+                this.error = ''
+                this.isLoading = true
+
+                try {
+                    const response = await this.$stripe.confirmPayment({
+                        elements: this.elements,
+                        confirmParams: {
+                            return_url: process.env.baseUrl + this.localePath({ name: 'asso-confirmation' })
+                        }
+                    })
+
+                    if (response.error) this.error = response.error.message
+                } catch (e) {
+                    console.error(e)
+                    this.error = 'Une erreur est survenue, merci de réessayer !'
+                }
+
+                this.isLoading = false
+            } 
         },
     }
 }
