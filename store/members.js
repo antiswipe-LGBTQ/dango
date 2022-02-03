@@ -15,6 +15,20 @@ export default {
         }
     },
     actions: {
+        async fetch ({ commit }) {
+            try {
+                const response = await this.$axios.$get(storeUtils.getQuery('/entities', {
+                    type: 'user'
+                }))
+
+                commit('refresh', response.data)
+
+                return response.data
+            } catch (e) {
+                console.error(e)
+                return null
+            }
+        },
         async get ({ commit }, params) {
             try {
                 const response = await this.$axios.$get(storeUtils.getQuery('/entities', {

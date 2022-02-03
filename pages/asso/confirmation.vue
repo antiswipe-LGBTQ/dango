@@ -23,8 +23,6 @@ export default {
     async mounted () {
         let id = Cookies.get('user-id')
         let intentId = this.$route.query.payment_intent
-
-        console.log(intentId)
         
         await this.$store.dispatch('subscribe/confirm', intentId)
         this.user = await this.$store.dispatch('members/get', { query: { _id: id }})
