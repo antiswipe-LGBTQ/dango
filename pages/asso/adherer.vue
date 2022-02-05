@@ -1,30 +1,34 @@
 <template>
-    <div class="Page pv-150">
+    <div class="Page pv-150 pv-100@s">
         <div class="Wrapper Wrapper--2xs">
             <form class="br-8 o-hidden" @submit.prevent="onSubmit">
-                <div class="bg-cherry-xweak p-40">
+                <div class="bg-cherry-xweak p-40 p-20@s">
                     <p class="ft-m-medium color-cherry mb-20">Tes informations</p>
 
                     <div class="row-xs mv-10">
-                        <div class="col-6">
+                        <div class="col-6 col-12@s">
                             <input-base label="Ton prénom" v-model="formData.name" :attrs="{ required: true }" />
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 col-12@s mt-10@s">
                             <input-base label="Ton nom" v-model="formData.lastname" :attrs="{ required: true }" />
                         </div>
                     </div>
                         
                     <input-base class="mv-10" label="Ton adresse e-mail" v-model="formData.email" type="email" />
 
-                    <label class="fx-center mv-15 c-pointer ft-s">
+                    <label class="fx-center mv-10 c-pointer ft-s">
                         <toggle-base class="mr-10" v-model="formData.agreement" :attrs="{ required: true }" />
-
-                        J'adhère à la Charte de conduite et au règlement intérieur d'antiswipe. Je comprends que l'association est destinée aux personnes de moins 35 ans s'identifiant comme LGBTQ.
+                        <p class="fx-grow">J'adhère à la Charte de conduite et au règlement intérieur d'antiswipe.</p>
+                    </label>
+                    
+                    <label class="fx-center mv-10 c-pointer ft-s">
+                        <toggle-base class="mr-10" v-model="formData.age" :attrs="{ required: true }" />
+                        <p class="fx-grow">Je comprends que l'asso est destinée aux personnes LGBTQ de -35 ans.</p>
                     </label>
                 </div>
 
-                <div class="bg-blueberry-xweak p-40">
-                    <div class="d-flex">
+                <div class="bg-blueberry-xweak p-40 p-20@s">
+                    <div class="d-flex d-block@s">
                         <div class="">
                             <p class="ft-m-medium color-cherry mb-20">Adhésion 2022</p>
 
@@ -35,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="fx-grow ml-40">
+                        <div class="fx-grow ml-40 ml-0@s mt-40@s">
                             <p class="ft-m-medium color-blueberry mb-20">Faire un don en plus</p>
 
                             <div class="Extras" :class="{ 'is-active': formData.extra != 0 }">
@@ -48,12 +52,16 @@
                                             <i class="fal fa-check"></i>
                                         </div>
 
-                                        <p class="ft-m-medium mr-20 ml-5 fx-grow">{{ extra.title }}</p>
+                                        <div class="mr-20 ml-5 fx-grow">
+                                            <p class="ft-xs">L'équivalent...</p>
+                                            <p class="ft-m-medium">{{ extra.title }}</p>
+                                        </div>
+
                                         <p class="ft-xl-bold">+{{ extra.amount }}€</p>
                                     </div>
                                 </particles-emitter>
 
-                                <particles-emitter :modifiers="['left']"  class="Extras_item Block Block--blueberry mv-10 d-block color-blueberry" :class="{ 'is-active': extraCustom == formData.extra }" :distance="0.5" @click.native="formData.extra == extraCustom ? formData.extra = 0 : formData.extra = extraCustom">
+                                <particles-emitter :modifiers="['left']"  class="Extras_item Block Block--blueberry mv-10 d-block color-blueberry" :class="{ 'is-active': extraCustom == formData.extra }" :distance="0.5" :icons="['fas fa-heart']" @click.native="formData.extra == extraCustom ? formData.extra = 0 : formData.extra = extraCustom">
                                     <div class="Block_container fx-center p-10">
                                         <div class="round-s bg-blueberry color-white fx-no-shrink mr-5" v-if="extraCustom == formData.extra">
                                             <i class="fal fa-check"></i>
@@ -112,16 +120,16 @@ export default {
         isReady: false,
         error: '',
         extras: [
-            { amount: '2', title: `Un petit café`, icons: ['fas fa-coffee-bean', 'fas fa-coffee-beans', 'fas fa-cup-togo'] },
-            { amount: '5', title: `Un bouquet de fleurs`, icons: ['fas fa-coffee-bean', 'fas fa-coffee-beans', 'fas fa-cup-togo'] },
-            { amount: '10', title: `Une place de cinéma`, icons: ['fas fa-coffee-bean', 'fas fa-coffee-beans', 'fas fa-cup-togo'] },
-            { amount: '15', title: `Un bouquet de fleurs`, icons: ['fas fa-coffee-bean', 'fas fa-coffee-beans', 'fas fa-cup-togo'] },
+            { amount: '5', title: `d'un café glacé`, icons: ['fas fa-coffee-bean', 'fas fa-coffee-beans', 'fas fa-cup-togo'] },
+            { amount: '10', title: `d'une place de ciné`, icons: ['fas fa-popcorn', 'fas fa-clapperboard'] },
+            { amount: '15', title: `d'un joli bouquet`, icons: ['fas fa-flower'] },
         ],
         formData: {
             name: '',
             lastname: '',
             email: '',
             agreement: false,
+            age: false,
             subscription: 15,
             extra: 0
         }

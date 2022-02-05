@@ -21,7 +21,7 @@
             </link-base>
 
             <button-base class="HeaderBase_cta" tag="a" link="https://www.meetup.com/fr-FR/antiswipe-lgbt" target="_blank" :modifiers="['s']" @click="state.open = false">
-                Nous rejoindre
+                Groupe Meetup
             </button-base>
         </nav>
     </header>
