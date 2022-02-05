@@ -50,7 +50,17 @@ export default {
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
   */
-  components: true,
+  components: {
+    dirs: [
+        '~/components',
+        '~/components/events',
+        '~/components/base',
+        '~/components/forms',
+        '~/components/layout',
+        '~/components/interactive',
+        '~/components/partials'
+    ]
+  },
   /*
   ** Nuxt.js dev-modules
   */
@@ -77,7 +87,7 @@ export default {
         { code: 'fr', iso: 'fr-FR', file: 'fr.js' },
         { code: 'en', iso: 'en-EN', file: 'en.js' }
     ],
-    langDir: '/translations/',
+    langDir: '@/translations/',
     defaultLocale: 'fr',
     lazy: true
   },
