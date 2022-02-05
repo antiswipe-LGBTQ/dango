@@ -45,6 +45,9 @@
     @include pattern-spotted("pineapple");
 }
 
+.br-8 { border-radius: 8px; }
+.br-12 { border-radius: 12px; }
+
 @include breakpoint-s {
 
     .outflow\@s {
@@ -54,4 +57,31 @@
     .reflow\@s {
         margin: 0 30px;
     }
+}
+
+
+.round,
+.round-s,
+.round-xs {
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    font: var(--ft-s-bold);
+    line-height: 1;
+}
+
+.round-s {
+    font-size: 13px;
+    width: 25px;
+    height: 25px;
+}
+
+.round-xs {
+    width: 20px;
+    height: 20px;
+    font: var(--ft-xs-bold);
+    line-height: 1;
 }

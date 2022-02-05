@@ -1,5 +1,5 @@
 <template>
-    <div class="ParticlesEmitter" @click="emit">
+    <div class="ParticlesEmitter" @click="emit" @mouseenter="() => hover ? this.emit() : null" :class="{ ...$modifiers }">
         <slot></slot>
 
         <i
@@ -17,10 +17,15 @@
 </template>
 
 <script>
+import modifiers from '@/plugins/modifiers'
+
 export default {
     name: 'ParticlesEmitter',
+    mixins: [ modifiers ],
     props: {
+        hover: { type: Boolean, default: false },
         max: { type: Number, default: 30 },
+        distance: { type: Number, default: 1 },
         minEmit: { type: Number, default: 5 },
         maxEmit: { type: Number, default: 10 },
         icons: { type: Array, default: () => [] }
@@ -48,7 +53,7 @@ export default {
 
             return {
                 init: [direction[0] * this.randomBetween(0, 5), direction[1] * this.randomBetween(0, 5)],
-                target: [direction[0] * this.randomBetween(10, 80), direction[1] * this.randomBetween(10, 80)],
+                target: [direction[0] * this.randomBetween(10, 80 * this.distance), direction[1] * this.randomBetween(10, 80 * this.distance)],
                 scale: scale,
                 duration: this.randomBetween(800, 1000)
             }

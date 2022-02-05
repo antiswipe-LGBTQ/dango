@@ -15,14 +15,28 @@ export default {
         }
     },
     actions: {
+        async fetch ({ commit }) {
+            try {
+                const response = await this.$axios.$get(storeUtils.getQuery('/entities', {
+                    type: 'user'
+                }))
+
+                commit('refresh', response.data)
+
+                return response.data
+            } catch (e) {
+                console.error(e)
+                return null
+            }
+        },
         async get ({ commit }, params) {
             try {
                 const response = await this.$axios.$get(storeUtils.getQuery('/entities', {
                     ...params.query,
-                    type: 'page'
+                    type: 'user'
                 }))
 
-                commit('updateOne', response.data[0])
+                commit('updateOne', response.data)
 
                 return response.data
             } catch (e) {
@@ -34,17 +48,8 @@ export default {
     getters: {
         items: (state) => {
             return Object.values(state.items).map(item => {
-                let thumbnail = ''
-                let cover = ''
-            
-                if (item.image) {
-                    if (item.image.medias.find(m => m.size == 's')) thumbnail = item.image.medias.find(m => m.size == 's').src
-                    if (item.image.medias.find(m => m.size == 'm')) cover = item.image.medias.find(m => m.size == 'm').src
-                }
-
                 return {
-                    ...item,
-                    thumbnail, cover
+                    ...item
                 }
             })
         },

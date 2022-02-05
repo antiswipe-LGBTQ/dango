@@ -25,6 +25,11 @@
                         <p class="ft-s ph-5 m-auto width-2xs@xs">un nombre incalculable de belles rencontres</p>
                     </div>
                 </div>
+
+                
+                <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }" class="mt-30">
+                    Je deviens adhérent·e
+                </button-base>
             </div>
         </div>
 
@@ -122,7 +127,7 @@
                     Alors, si toi aussi tu sais que la beauté d'une personne ne peut pas se résumer en 3 photos et 250 caractères, rejoins-nous !
                 </p>
 
-                <button-base tag="a" link="https://www.helloasso.com/associations/antiswipe/adhesions/devenir-adherent-d-antiswipe" target="_blank" :modifiers="[]">
+                <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }">
                     Je soutiens antiswipe
                 </button-base>
             </div>
@@ -159,7 +164,7 @@
             </div>
 
             <div class="row fx-align-start mt-30">
-                <div class="col-6 col-12@xs">
+                <!-- <div class="col-6 col-12@xs">
                     <div class="Block Block--blueberry">
                         <div class="Block_container p-30">
                             <p class="ft-title-l-bold color-blueberry ft-title-l-bold@xs">
@@ -170,12 +175,9 @@
                                 Tu es déjà adhérent·e et tu souhaites en faire plus ? Tu ne fais pas partie du public qu'on vise mais tu souhaites quand même nous soutenir ?
                             </p>
 
-                            <button-base class="mt-20" :modifiers="['s', 'blueberry']" tag="a" target="_blank" link="https://www.helloasso.com/associations/antiswipe/formulaires/1">
-                                Je fais un don
-                            </button-base>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 <div class="col-6 col-12@xs mt-30@xs">
                     <div class="Block Block--pineapple">

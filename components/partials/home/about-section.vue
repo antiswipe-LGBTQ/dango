@@ -38,7 +38,7 @@
                     <p class="mt-20 ft-s color-ft-weak">Cette adhésion est entièrement facultative : elle n’est pas obligatoire pour venir à nos événements.</p>
 
                     <div class="text-center@s mt-40">
-                        <button-base tag="a" link="https://www.helloasso.com/associations/antiswipe/adhesions/devenir-adherent-d-antiswipe" target="_blank" :modifiers="[]">
+                        <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }">
                             Je deviens adhérent·e
                         </button-base>
                         <button-base class="ml-3 ml-0@s mt-5@s" tag="a" :link="localePath({ name: 'asso-join' })" :modifiers="['secondary', 's']">

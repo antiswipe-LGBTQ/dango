@@ -1,0 +1,42 @@
+
+.Tile {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    color: var(--color-blueberry);
+    display: inline-flex;
+}
+
+.Tile_content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--color-white);
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    border: 2px solid var(--color-blueberry);
+}
+
+.Tile--s {
+    width: 150px;
+    height: 150px;
+}
+
+@each $color in $main-colors {
+
+    .Tile--#{$color} {
+        color: var(--color-#{$color});
+
+        &::after {
+            @include pattern-spotted(#{$color});
+        }
+
+        .Tile_content {
+            border-color: var(--color-#{$color});
+        }
+    }
+
+}
