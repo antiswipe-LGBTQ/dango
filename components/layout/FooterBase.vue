@@ -55,7 +55,7 @@ export default {
                 {
                     title: 'Nous soutenir',
                     items: [
-                        { label: `Adhérer à l'association`, link: 'https://bit.ly/antiswipe-adhesion', target: '_blank' },
+                        { label: `Adhérer à l'association`, tag: 'nuxt-link', attrs: { to: this.localePath({ name: 'asso-adherer' }) } },
                         { label: `Faire un don`, link: 'https://bit.ly/antiswipe-donation', target: '_blank' }
                     ]
                 }

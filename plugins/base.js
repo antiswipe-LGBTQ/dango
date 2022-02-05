@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import moment from 'moment'
-import { ButtonBase, PopinBase, HelpersMixin } from '@instant-coffee/core'
+import { ButtonBase, PopinBase, HelpersMixin } from 'instant-coffee-core'
 
 import LinkBase from '@/components/base/LinkBase'
 
