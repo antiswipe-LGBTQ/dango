@@ -90,7 +90,11 @@
                 </div>
 
                 <div class="p-40 b mt-20" v-if="isReady">
-                    <div id="card-element"></div>
+                    <div id="card-element">
+                        <div class="p-20 bg-blueberry-xweak color-blueberry br-8">
+                            Chargement du formulaire de paiement...
+                        </div>
+                    </div>
 
                     <div class="bg-cherry-xweak color-cherry mt-20 p-20 ft-s-medium br-8" v-if="error">
                         {{ error }}
@@ -164,7 +168,7 @@ export default {
                 Cookies.set('user-id', response.user._id)
         
                 if (this.$stripe) {
-                    this.elements = this.$stripe.elements({ clientSecret: response.token })
+                    this.elements = this.$stripe.elements({ locale: 'fr', clientSecret: response.token })
                     const card = this.elements.create('payment')
                     card.mount('#card-element')
                 }
