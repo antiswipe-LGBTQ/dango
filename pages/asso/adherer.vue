@@ -14,7 +14,9 @@
                         </div>
                     </div>
                         
-                    <input-base class="mv-10" label="Ton adresse e-mail" v-model="formData.email" type="email" />
+                    <input-base class="mv-10" label="Ton adresse e-mail" v-model="formData.email" type="email" :attrs="{ required: true }" />
+
+                    <input-base class="mv-10" label="Ton Discord (optionnel)" :attrs="{ placeholder: 'Pseudo#1010' }" v-model="formData.discord" type="text" />
 
                     <label class="fx-center mv-10 c-pointer ft-s">
                         <toggle-base class="mr-10" v-model="formData.agreement" :attrs="{ required: true }" />
@@ -131,6 +133,7 @@ export default {
         formData: {
             name: '',
             lastname: '',
+            discord: '',
             email: '',
             agreement: false,
             age: false,
