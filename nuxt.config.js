@@ -74,13 +74,36 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'nuxt-i18n',
+    '@nuxtjs/auth',
+    [ '@nuxtjs/recaptcha', {
+        hideBadge: true,
+        version: 3,
+        siteKey: process.env.RECAPTCHA
+    } ],
     ['nuxt-stripe-module', {
         publishableKey: process.env.STRIPE_PUBLIC,
     }],
   ],
+
+  auth: {
+    redirect: {
+        logout: '/',
+        login: '/compte/login',
+        home: false,
+        callback: false
+    },
+    strategies: {
+        local: {
+            endpoints: {
+                login: { url: process.env.NUXT_ENV_API_URL + '/user', method: 'post', propertyName: 'token' },
+                logout: { url: process.env.NUXT_ENV_API_URL + '/user/logout', method: 'post' },
+                user: { url: process.env.NUXT_ENV_API_URL + '/user', method: 'get', propertyName: 'user' }
+            }
+        }
+    }
+},
 
   i18n: {
     locales: [

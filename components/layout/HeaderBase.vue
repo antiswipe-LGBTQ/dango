@@ -20,9 +20,9 @@
                 {{ item.title }}
             </link-base>
 
-            <button-base class="HeaderBase_cta" tag="a" link="https://www.meetup.com/fr-FR/antiswipe-lgbt" target="_blank" :modifiers="['s']" @click="state.open = false">
-                Groupe Meetup
-            </button-base>
+            <!-- <button-base class="HeaderBase_cta" tag="nuxt-link" :attrs="{ to: localePath({ name: 'compte' }) }" :modifiers="['s']" @click="state.open = false">
+                Mon espace membre
+            </button-base> -->
         </nav>
     </header>
 </template>
@@ -39,8 +39,8 @@ export default {
     }),
     mounted () {
         this.$data.navigation = [
-            { id: 0, title: `Nos événements`, to: this.localePath({ path: '/', hash: '#events' }) },
-            { id: 3, title: `L'association`, to: this.localePath({ name: 'asso-join' }) }
+            { id: 0, title: `Nos événements`, to: { path: '/', hash: '#events' } },
+            { id: 3, title: `L'association`, to: { name: 'asso-join' } }
         ]
 
         this.onScroll()

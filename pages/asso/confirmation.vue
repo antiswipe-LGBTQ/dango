@@ -22,14 +22,15 @@ import Cookies from 'js-cookie'
 export default {
     name: 'ConfirmationPage',
     data: () => ({
-        user: null
+
     }),
+    computed: {  
+        user () { return this.$store.$auth.user }
+    },
     async mounted () {
-        let id = Cookies.get('user-id')
         let intentId = this.$route.query.payment_intent
         
         await this.$store.dispatch('subscribe/confirm', intentId)
-        this.user = await this.$store.dispatch('members/get', { query: { _id: id }})
     }
 }
 </script>

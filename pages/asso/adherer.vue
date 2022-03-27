@@ -1,125 +1,126 @@
 <template>
     <div class="Page pv-150 pv-100@s">
         <div class="Wrapper Wrapper--2xs">
-            <form class="br-8 o-hidden" @submit.prevent="onSubmit">
-                <div class="bg-cherry-xweak p-40 p-20@s">
-                    <p class="ft-m-medium color-cherry mb-20">Tes informations</p>
-
-                    <div class="row-xs mv-10">
-                        <div class="col-6 col-12@s">
-                            <input-base label="Ton prénom" v-model="formData.name" :attrs="{ required: true }" />
-                        </div>
-                        <div class="col-6 col-12@s mt-10@s">
-                            <input-base label="Ton nom" v-model="formData.lastname" :attrs="{ required: true }" />
-                        </div>
-                    </div>
-                        
-                    <input-base class="mv-10" label="Ton adresse e-mail" v-model="formData.email" type="email" :attrs="{ required: true }" />
-
-                    <input-base class="mv-10" label="Ton Discord (optionnel)" :attrs="{ placeholder: 'Pseudo#1010' }" v-model="formData.discord" type="text" />
-
-                    <label class="fx-center mv-10 c-pointer ft-s">
-                        <toggle-base class="mr-10" v-model="formData.agreement" :attrs="{ required: true }" />
-                        <p class="fx-grow">J'adhère à la Charte de conduite et au règlement intérieur d'antiswipe.</p>
-                    </label>
-                    
-                    <label class="fx-center mv-10 c-pointer ft-s">
-                        <toggle-base class="mr-10" v-model="formData.age" :attrs="{ required: true }" />
-                        <p class="fx-grow">Je comprends que l'asso est destinée aux personnes LGBTQ de -35 ans.</p>
-                    </label>
+            
+            <p class="ft-2xl-medium color-cherry mb-20">Adhérer à antiswipe</p>
+            
+            <div v-if="alreadySubbed">
+                Wow, on apprécie mais il semblerait que tu sois déjà adhérent·e pour l'année {{ SEASON }}. On ne voudrait pas abuser... Reviens l'année prochaine !
+            </div>
+            <div class="br-8 o-hidden" v-else>
+                <div class="bg-cherry-xweak p-40 p-20@s" v-if="!user">
+                    <p class="ft-l-medium color-cherry mb-20">Ton espace membre</p>
+                    <register-form />
                 </div>
+                <div class="fx-center bg-cherry-xweak p-20" v-else>
+                    <div>Connecté·e en tant que <b>{{ user.email }}</b></div>
 
-                <div class="bg-blueberry-xweak p-40 p-20@s">
-                    <div class="d-flex d-block@s">
-                        <div class="">
-                            <p class="ft-m-medium color-cherry mb-20">Adhésion 2022</p>
+                    <link-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'compte-logout' }) }">Se déconnecter</link-base>
+                </div>
+                
+                <form @submit.prevent="onSubmit" v-if="user">
+                    <div class="bg-blueberry-xweak p-40 p-20@s" >
+                        <div class="d-flex d-block@s">
+                            <div class="">
+                                <p class="ft-m-medium color-cherry mb-20">Adhésion {{ SEASON }}</p>
 
-                            <div class="Tile Block Block--cherry Tile--cherry">
-                                <div class="Tile_content Block_container">
-                                    <p class="ft-m-medium">Adhésion pour la saison 2022</p>
-                                    <p class="ft-4xl-bold">15€</p>
+                                <div class="Tile Block Block--cherry Tile--cherry">
+                                    <div class="Tile_content Block_container">
+                                        <p class="ft-m-medium">Adhésion pour la saison {{ SEASON }}</p>
+                                        <p class="ft-4xl-bold">15€</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fx-grow ml-40 ml-0@s mt-40@s">
+                                <p class="ft-m-medium color-blueberry mb-20">Faire un don en plus</p>
+
+                                <div class="Extras" :class="{ 'is-active': formData.extra != 0 }">
+                                    <particles-emitter :modifiers="['left']"  class="Extras_item Block Block--blueberry mv-10 d-block color-blueberry" :class="{ 'is-active': extra.amount == formData.extra && extra.amount != extraCustom }" :distance="0.5" v-for="(extra, i) in extras" :icons="extra.icons" :key="i" @click.native="extra.amount == formData.extra ? formData.extra = 0 : formData.extra = extra.amount">
+                                        <div class="Block_container fx-center p-10">
+                                            <div class="round-s bg-blueberry color-white mr-5" v-if="extra.amount == formData.extra && extra.amount != extraCustom">
+                                                <i class="fal fa-check"></i>
+                                            </div>
+                                            <div class="round-s bg-blueberry-xweak mr-5" v-else>
+                                                <i class="fal fa-check"></i>
+                                            </div>
+
+                                            <div class="mr-20 ml-5 fx-grow">
+                                                <p class="ft-xs">L'équivalent...</p>
+                                                <p class="ft-m-medium">{{ extra.title }}</p>
+                                            </div>
+
+                                            <p class="ft-xl-bold">+{{ extra.amount }}€</p>
+                                        </div>
+                                    </particles-emitter>
+
+                                    <particles-emitter :modifiers="['left']"  class="Extras_item Block Block--blueberry mv-10 d-block color-blueberry" :class="{ 'is-active': extraCustom == formData.extra }" :distance="0.5" :icons="['fas fa-heart']" @click.native="formData.extra == extraCustom ? formData.extra = 0 : formData.extra = extraCustom">
+                                        <div class="Block_container fx-center p-10">
+                                            <div class="round-s bg-blueberry color-white fx-no-shrink mr-5" v-if="extraCustom == formData.extra">
+                                                <i class="fal fa-check"></i>
+                                            </div>
+                                            <div class="round-s bg-blueberry-xweak mr-5" v-else>
+                                                <i class="fal fa-check"></i>
+                                            </div>
+
+                                            <p class="ft-m-medium mr-20 ml-5 fx-grow">Don libre</p>
+                                            <input-base type="number" class="width-3xs text-right"  suffix="€" v-model="extraCustom" @input="formData.extra = extraCustom" />
+                                        </div>
+                                    </particles-emitter>
                                 </div>
                             </div>
                         </div>
-                        <div class="fx-grow ml-40 ml-0@s mt-40@s">
-                            <p class="ft-m-medium color-blueberry mb-20">Faire un don en plus</p>
 
-                            <div class="Extras" :class="{ 'is-active': formData.extra != 0 }">
-                                <particles-emitter :modifiers="['left']"  class="Extras_item Block Block--blueberry mv-10 d-block color-blueberry" :class="{ 'is-active': extra.amount == formData.extra && extra.amount != extraCustom }" :distance="0.5" v-for="(extra, i) in extras" :icons="extra.icons" :key="i" @click.native="extra.amount == formData.extra ? formData.extra = 0 : formData.extra = extra.amount">
-                                    <div class="Block_container fx-center p-10">
-                                        <div class="round-s bg-blueberry color-white mr-5" v-if="extra.amount == formData.extra && extra.amount != extraCustom">
-                                            <i class="fal fa-check"></i>
-                                        </div>
-                                        <div class="round-s bg-blueberry-xweak mr-5" v-else>
-                                            <i class="fal fa-check"></i>
-                                        </div>
+                        <label class="fx-center mv-10 c-pointer ft-s">
+                            <toggle-base class="mr-10" v-model="formData.agreement" :attrs="{ required: true }" />
+                            <p class="fx-grow">J'adhère à la Charte de conduite et au règlement intérieur d'antiswipe.</p>
+                        </label>
+                        
+                        <label class="fx-center mv-10 c-pointer ft-s">
+                            <toggle-base class="mr-10" v-model="formData.age" :attrs="{ required: true }" />
+                            <p class="fx-grow">Je comprends que l'asso est destinée aux personnes LGBTQ de -35 ans.</p>
+                        </label>
+                    </div>
 
-                                        <div class="mr-20 ml-5 fx-grow">
-                                            <p class="ft-xs">L'équivalent...</p>
-                                            <p class="ft-m-medium">{{ extra.title }}</p>
-                                        </div>
-
-                                        <p class="ft-xl-bold">+{{ extra.amount }}€</p>
-                                    </div>
-                                </particles-emitter>
-
-                                <particles-emitter :modifiers="['left']"  class="Extras_item Block Block--blueberry mv-10 d-block color-blueberry" :class="{ 'is-active': extraCustom == formData.extra }" :distance="0.5" :icons="['fas fa-heart']" @click.native="formData.extra == extraCustom ? formData.extra = 0 : formData.extra = extraCustom">
-                                    <div class="Block_container fx-center p-10">
-                                        <div class="round-s bg-blueberry color-white fx-no-shrink mr-5" v-if="extraCustom == formData.extra">
-                                            <i class="fal fa-check"></i>
-                                        </div>
-                                        <div class="round-s bg-blueberry-xweak mr-5" v-else>
-                                            <i class="fal fa-check"></i>
-                                        </div>
-
-                                        <p class="ft-m-medium mr-20 ml-5 fx-grow">Don libre</p>
-                                        <input-base type="number" class="width-3xs text-right"  suffix="€" v-model="extraCustom" @input="formData.extra = extraCustom" />
-                                    </div>
-                                </particles-emitter>
+                    <div class="p-40 b mt-20" v-if="isReady">
+                        <div id="card-element">
+                            <div class="p-20 bg-blueberry-xweak color-blueberry br-8">
+                                Chargement du formulaire de paiement...
                             </div>
                         </div>
                     </div>
-
-                    
-                </div>
-
-                <div class="bg-blueberry-xweak p-20 br-8 color-blueberry mt-20 fx-center">
-                    <div>
-                        <p class="ft-m-medium">Au total</p>
-                        <p class="ft-s">Prélèvement unique, ce n'est pas un abonnement !</p>
-                    </div>
-                    <p class="ft-2xl-bold">{{ total }}€</p>
-                </div>
-
-                <div class="p-40 b mt-20" v-if="isReady">
-                    <div id="card-element">
-                        <div class="p-20 bg-blueberry-xweak color-blueberry br-8">
-                            Chargement du formulaire de paiement...
+                
+                    <div class="bg-blueberry-xweak p-20 br-8 color-blueberry mt-20 fx-center">
+                        <div>
+                            <p class="ft-m-medium">Au total</p>
+                            <p class="ft-s">Prélèvement unique, ce n'est pas un abonnement !</p>
                         </div>
+                        <p class="ft-2xl-bold">{{ total }}€</p>
                     </div>
 
                     <div class="bg-cherry-xweak color-cherry mt-20 p-20 ft-s-medium br-8" v-if="error">
                         {{ error }}
                     </div>
-                </div>
 
-                <div class="mt-20 text-right">
-                    <button-base v-if="!isReady">Passer au paiement</button-base>
-                    <button-base :class="{ 'is-loading': isLoading }" v-else>J'adhère !!</button-base>
-                </div>
-            </form>
+                    <div class="mt-20 text-right">
+                        <button-base v-if="user && !isReady">Passer au paiement</button-base>
+                        <button-base :class="{ 'is-loading': isLoading }" v-else-if="user">J'adhère !!</button-base>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import { InputBase, ToggleBase } from 'instant-coffee-core'
-import Cookies from 'js-cookie'
+
+const SEASON = '2022'
 
 export default {
     name: 'SubscribePage',
     components: { InputBase, ToggleBase },
     data: () => ({
+        SEASON,
         elements: null,
         extraCustom: '20',
         isLoading: false,
@@ -131,10 +132,6 @@ export default {
             { amount: '15', title: `d'un joli bouquet`, icons: ['fas fa-flower'] },
         ],
         formData: {
-            name: '',
-            lastname: '',
-            discord: '',
-            email: '',
             agreement: false,
             age: false,
             subscription: 15,
@@ -142,8 +139,10 @@ export default {
         }
     }),
     computed: {
-        total () {
-            return this.formData.subscription + parseInt(this.formData.extra)
+        total () { return this.formData.subscription + parseInt(this.formData.extra) },
+        user () { return this.$store.$auth.user },
+        alreadySubbed () {
+            return this.user && this.user.subscriptions.find(s => s.id == SEASON && s.succeeded)
         }
     },
     watch: {
@@ -164,12 +163,11 @@ export default {
             this.isLoading = true
 
             try {
-                let response = await this.$store.dispatch('subscribe/checkout', { 
-                    data: { ...this.formData, extra: parseInt(this.formData.extra) }
+                let response = await this.$store.dispatch('subscribe/checkout', {
+                    season: SEASON,
+                    extra: parseInt(this.formData.extra)
                 })
-            
-                Cookies.set('user-id', response.user._id)
-        
+
                 if (this.$stripe) {
                     this.elements = this.$stripe.elements({ locale: 'fr', clientSecret: response.token })
                     const card = this.elements.create('payment')
