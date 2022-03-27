@@ -1,29 +1,33 @@
-import Cookies from 'js-cookie'
-import Faker from 'faker'
-import shortid from 'shortid'
-
 export default {
     namespaced: true,
-    state: () => ({
-        info: {
-            id: ''
-        }
-    }),
-    mutations: {
-        setIdentity (state) {
-            let id = Cookies.get('identity-id')
-
-            if (!id) {
-                id = Faker.random.word().toLowerCase() + '-' + shortid.generate()
-                Cookies.set('identity-id', id)
-            }
-                
-            state.info = {
-                ...state.info,
-                id: id
-            }
-        }
-    },
     actions: {
+        async requestPassword ({ commit }, email) {
+            try {
+                const response = await this.$axios.$post('/user/reset', {
+                    email
+                })
+
+                if (response.errors.length > 0) throw Error(response.errors[0])
+
+                return response
+            } catch (e) {
+                console.error(e)
+                return false
+            }
+        },
+        async resetPassword ({ commit }, data) {
+            try {
+                const response = await this.$axios.$post('/user/reset/confirm', {
+                    ...data
+                })
+
+                if (response.errors.length > 0) throw Error(response.errors[0])
+
+                return response
+            } catch (e) {
+                console.error(e)
+                return false
+            }
+        },
     }
 }

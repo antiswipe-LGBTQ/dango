@@ -16,8 +16,16 @@ export default {
     computed: {
         pageClasses () { return this.$store.state.page.body.classes }
     },
-    mounted () {
-        this.$store.commit('user/setIdentity')
+    async mounted () {
+      try {
+          await this.$recaptcha.init()
+      } catch (e) {
+          console.error(e)
+      }
+    },
+    
+    beforeDestroy() {
+       this.$recaptcha.destroy()
     }
 }
 </script>

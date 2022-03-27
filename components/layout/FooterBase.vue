@@ -28,6 +28,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="ft-s col-4 col-6@s col-12@xs mb-20@xs" v-if="user">
+                    Connecté·e en tant que <b>{{ user.email }}</b>
+
+                    <link-base class="d-block mt-15" tag="nuxt-link" :attrs="{ to: localePath({ name: 'compte-logout' }) }">Se déconnecter</link-base>
+                </div>
             </div>
         </div>
     </footer>
@@ -39,6 +44,9 @@ export default {
     data: () => ({
         navigation: []
     }),
+    computed: {
+        user () { return this.$store.$auth.user }
+    },
     mounted () {
         this.$data.navigation = [
             [
@@ -47,7 +55,11 @@ export default {
                     items: [
                         { label: `Page d'accueil`, tag: 'nuxt-link', attrs: {
                             to: this.localePath('/')
-                        } }
+                        } },
+                        { label: `Charte de conduite`, tag: 'nuxt-link', attrs: {
+                            to: this.localePath({ name: 'pages-slug', params: { slug: 'charte' } })
+                        } },
+                        { label: `Groupe Meetup`, link: 'https://www.meetup.com/fr-FR/antiswipe-lgbt', target: '_blank' }
                     ]
                 },
             ],
@@ -57,17 +69,6 @@ export default {
                     items: [
                         { label: `Adhérer à l'association`, tag: 'nuxt-link', attrs: { to: this.localePath({ name: 'asso-adherer' }) } },
                         { label: `Faire un don`, link: 'https://bit.ly/antiswipe-donation', target: '_blank' }
-                    ]
-                }
-            ],
-            [
-                {
-                    title: 'Liens utiles',
-                    items: [
-                        { label: `Charte de conduite`, tag: 'nuxt-link', attrs: {
-                            to: this.localePath({ name: 'pages-slug', params: { slug: 'charte' } })
-                        } },
-                        { label: `Groupe Meetup`, link: 'https://www.meetup.com/fr-FR/antiswipe-lgbt', target: '_blank' }
                     ]
                 }
             ]
