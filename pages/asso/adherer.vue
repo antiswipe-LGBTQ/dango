@@ -8,18 +8,18 @@
                 Wow, on apprécie mais il semblerait que tu sois déjà adhérent·e pour l'année {{ SEASON }}. On ne voudrait pas abuser... Reviens l'année prochaine !
             </div>
             <div class="br-8 o-hidden" v-else>
-                <div class="bg-cherry-xweak p-40 p-20@s" v-if="!user">
+                <div class="bg-cherry-2xweak p-40 p-20@s" v-if="!user">
                     <p class="ft-l-medium color-cherry mb-20">Créer ton espace membre</p>
                     <register-form />
                 </div>
-                <div class="fx-center bg-cherry-xweak p-20" v-else>
+                <div class="fx-center bg-cherry-2xweak p-20" v-else>
                     <div>Connecté·e en tant que <b>{{ user.email }}</b></div>
 
                     <link-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'compte-logout' }) }">Se déconnecter</link-base>
                 </div>
                 
                 <form @submit.prevent="onSubmit" v-if="user">
-                    <div class="bg-blueberry-xweak p-40 p-20@s" >
+                    <div class="bg-blueberry-2xweak p-40 p-20@s" >
                         <div class="d-flex d-block@s">
                             <div class="">
                                 <p class="ft-m-medium color-cherry mb-20">Adhésion {{ SEASON }}</p>
@@ -40,7 +40,7 @@
                                             <div class="round-s bg-blueberry color-white mr-5" v-if="extra.amount == formData.extra && extra.amount != extraCustom">
                                                 <i class="fal fa-check"></i>
                                             </div>
-                                            <div class="round-s bg-blueberry-xweak mr-5" v-else>
+                                            <div class="round-s bg-blueberry-2xweak mr-5" v-else>
                                                 <i class="fal fa-check"></i>
                                             </div>
 
@@ -58,7 +58,7 @@
                                             <div class="round-s bg-blueberry color-white fx-no-shrink mr-5" v-if="extraCustom == formData.extra">
                                                 <i class="fal fa-check"></i>
                                             </div>
-                                            <div class="round-s bg-blueberry-xweak mr-5" v-else>
+                                            <div class="round-s bg-blueberry-2xweak mr-5" v-else>
                                                 <i class="fal fa-check"></i>
                                             </div>
 
@@ -83,13 +83,13 @@
 
                     <div class="p-40 b mt-20" v-if="isReady">
                         <div id="card-element">
-                            <div class="p-20 bg-blueberry-xweak color-blueberry br-8">
+                            <div class="p-20 bg-blueberry-2xweak color-blueberry br-8">
                                 Chargement du formulaire de paiement...
                             </div>
                         </div>
                     </div>
                 
-                    <div class="bg-blueberry-xweak p-20 br-8 color-blueberry mt-20 fx-center">
+                    <div class="bg-blueberry-2xweak p-20 br-8 color-blueberry mt-20 fx-center">
                         <div>
                             <p class="ft-m-medium">Au total</p>
                             <p class="ft-s">Prélèvement unique, ce n'est pas un abonnement !</p>
@@ -97,7 +97,7 @@
                         <p class="ft-2xl-bold">{{ total }}€</p>
                     </div>
 
-                    <div class="bg-cherry-xweak color-cherry mt-20 p-20 ft-s-medium br-8" v-if="error">
+                    <div class="bg-cherry-2xweak color-cherry mt-20 p-20 ft-s-medium br-8" v-if="error">
                         {{ error }}
                     </div>
 

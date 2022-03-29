@@ -27,7 +27,7 @@ export default {
         items () {
             return [
                 { id: 0, delay: 0, name: 'Aurane', color: 'blueberry', avatar: 'team/aurane' },
-                { id: 1, delay: 400, name: 'Théotime', color: 'pineapple', avatar: 'team/theotime' },
+                { id: 1, delay: 400, name: 'Théotime', color: 'banana', avatar: 'team/theotime' },
                 { id: 2, delay: 200, name: 'Corentin', color: 'cherry', avatar: 'team/corentin' },
                 { id: 3, delay: 600, name: 'Christopher', color: 'grape', avatar: 'team/christopher' },
                 { id: 4, delay: 800, name: 'Élodie', color: 'plum', avatar: 'team/elodie' },

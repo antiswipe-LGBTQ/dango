@@ -57,28 +57,39 @@ $colors: (
     "white": #ffffff,
     
     "cherry": #EE4CA0,
-    "cherry-weak": #ffecf4,
-    "cherry-xweak": #fff5f9,
+    "cherry-weak": #F683A5,
+    "cherry-xweak": #FFCED8,
+    "cherry-2xweak": #fff5f9,
 
-    "blueberry": #5D13F3,
-    "blueberry-weak": #dfd0ff,
-    "blueberry-xweak": #faf8ff,
+    "blueberry": #3513ef,
+    "blueberry-weak": #896CEB,
+    "blueberry-xweak": #CEC1FC,
+    "blueberry-2xweak": #f9f7ff,
 
-    "pineapple": #FF576E,
-    "pineapple-weak": #fffdf7,
-    "pineapple-xweak": #fffdf7,
+    "avocado": #038641,
+    "avocado-weak": #39B98C,
+    "avocado-xweak": #CCE6E1,
+    "avocado-2xweak": #eefcfb,
 
-    "plum": #168BED,
-    "plum-weak": #ebffff,
-    "plum-xweak": #ebffff,
+    "grape": #791BD6,
+    "grape-weak": #DE7AE9,
+    "grape-xweak": #F2C1F2,
+    "grape-2xweak": #fff3ff,
 
-    "cucumber": #1ce7bd,
-    "cucumber-weak": #eefcfb,
-    "cucumber-xweak": #eefcfb,
+    "banana": #f9b800,
+    "banana-weak": #F9D49D,
+    "banana-xweak": #FEEEDF,
+    "banana-2xweak": #fffcf9,
 
-    "grape": #972edc,
-    "grape-weak": #fff3ff,
-    "grape-xweak": #fff3ff,
+    "pineapple": #FE480E,
+    "pineapple-weak": #FB8D4D,
+    "pineapple-xweak": #FFD8BB,
+    "pineapple-2xweak": #fff8f2,
+
+    "plum": #31C7EE,
+    "plum-weak": #78DFE6,
+    "plum-xweak": #B4ECEE,
+    "plum-2xweak": #effeff,
 
     "border": #E1E1E1,
     "border-weak": #F5F5F5,
@@ -94,7 +105,7 @@ $colors: (
 );
 
 $main-colors: (
-    "cherry", "blueberry", "pineapple", "plum", "cucumber", "grape"
+    "cherry", "blueberry", "pineapple", "plum", "avocado", "grape", "banana"
 );
 
 $fonts: (

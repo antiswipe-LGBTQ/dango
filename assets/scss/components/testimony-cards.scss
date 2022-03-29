@@ -33,7 +33,7 @@
 /* TESTIMONY CARD */
 
 .TestimonyCard {
-    border: 2px solid var(--color-blueberry);
+    border: 2px solid var(--color-current);
     position: relative;
 
     &::before {
@@ -48,7 +48,7 @@
         left: 5px;
         width: calc(100% + 5px);
         height: calc(100% + 5px);
-        @include pattern-spotted("blueberry");
+        @include pattern-spotted("current");
         
         transition: all 100ms ease;
     }
@@ -65,11 +65,11 @@
 .TestimonyCard_image {
     flex-grow: 1;
     margin: 6% 6% 0;
-    background-color: var(--color-blueberry-xweak);
+    background-color: var(--color-current-2xweak);
     display: flex;
     align-items: center;
     justify-content: center;
-    fill: var(--color-blueberry);
+    fill: var(--color-current);
 }
 
 .TestimonyCard_character {
@@ -97,93 +97,6 @@
     left: 75%;
     width: 200%;
     background-color: var(--color-white);
-    border: 2px solid var(--color-blueberry);
+    border: 2px solid var(--color-current);
     padding: 15px 20px;
-}
-
-/* MODIFIERS */
-
-.TestimonyCard--cherry {
-    border-color: var(--color-cherry);
-
-    &::after {
-        @include pattern-spotted("cherry");
-    }
-
-    .TestimonyCard_image {
-        background-color: var(--color-cherry-weak);
-        fill: var(--color-cherry);
-    }
-
-    .TestimonyCard_quote {
-        border-color: var(--color-cherry);
-    }
-}
-
-.TestimonyCard--pineapple {
-    border-color: var(--color-pineapple);
-
-    &::after {
-        @include pattern-spotted("pineapple");
-    }
-
-    .TestimonyCard_image {
-        background-color: var(--color-pineapple-weak);
-        fill: var(--color-pineapple);
-    }
-
-    .TestimonyCard_quote {
-        border-color: var(--color-pineapple);
-    }
-}
-
-.TestimonyCard--plum {
-    border-color: var(--color-plum);
-
-    &::after {
-        @include pattern-spotted("plum");
-    }
-
-    .TestimonyCard_image {
-        background-color: var(--color-plum-weak);
-        fill: var(--color-plum);
-    }
-
-    .TestimonyCard_quote {
-        border-color: var(--color-plum);
-    }
-}
-
-.TestimonyCard--cucumber {
-    border-color: var(--color-cucumber);
-
-    &::after {
-        @include pattern-spotted("cucumber");
-    }
-
-    .TestimonyCard_image {
-        background-color: var(--color-cucumber-weak);
-        fill: var(--color-cucumber);
-    }
-
-    .TestimonyCard_quote {
-        border-color: var(--color-cucumber);
-    }
-}
-
-.TestimonyCard--grape {
-    border-color: var(--color-grape);
-
-    &::after {
-        @include pattern-spotted("grape");
-    }
-
-    .TestimonyCard_image {
-        background-color: var(--color-grape-weak);
-        fill: var(--color-grape);
-    }
-
-    .TestimonyCard_quote {
-        border-color: var(--color-grape);
-    }
 }

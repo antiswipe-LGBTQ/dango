@@ -75,9 +75,9 @@
                 </div>
             </div>
 
-            <div class="Block Block--pineapple max-width-m mt-40">
+            <div class="Block Block--banana max-width-m mt-40">
                 <div class="Block_container p-30 p-20@xs">
-                    <p class="ft-title-xl-bold color-pineapple ft-title-l-bold@xs">
+                    <p class="ft-title-xl-bold color-banana ft-title-l-bold@xs">
                         #3. Je peux m'impliquer davantage dans la vie de l'association
                     </p>
                     
@@ -88,7 +88,7 @@
             </div>
         </div>
 
-        <div class="bg-blueberry-xweak">
+        <div class="bg-blueberry-2xweak">
             <div class="Wrapper Wrapper--s pv-60">
                 <p class="ft-title-xl-bold color-blueberry max-width-s">Comment sont investis mes 15€ / an d'adhésion ?</p>
 
@@ -121,7 +121,7 @@
             </div>
         </div>
 
-        <div class="bg-cherry-weak pv-100">
+        <div class="bg-cherry-2xweak pv-100">
             <div class="Wrapper Wrapper--xs text-center">
                 <p class="ft-title-xl-bold color-cherry mb-40 ft-title-l-bold@xs">
                     Alors, si toi aussi tu sais que la beauté d'une personne ne peut pas se résumer en 3 photos et 250 caractères, rejoins-nous !
@@ -180,9 +180,9 @@
                 </div> -->
                 
                 <div class="col-6 col-12@xs mt-30@xs">
-                    <div class="Block Block--pineapple">
+                    <div class="Block Block--banana">
                         <div class="Block_container p-30">
-                            <p class="ft-title-l-bold color-pineapple ft-title-l-bold@xs">
+                            <p class="ft-title-l-bold color-banana ft-title-l-bold@xs">
                                 Continuer à venir !
                             </p>
                             
@@ -190,7 +190,7 @@
                                 Ce qui fait antiswipe, c'est avant tout sa communauté. On espère que tu continueras à en faire partie, tant que ça te plaira.
                             </p>
 
-                            <button-base class="mt-20" :modifiers="['s', 'pineapple']" tag="a" target="_blank" link="https://www.meetup.com/fr-FR/antiswipe-lgbt">
+                            <button-base class="mt-20" :modifiers="['s', 'banana']" tag="a" target="_blank" link="https://www.meetup.com/fr-FR/antiswipe-lgbt">
                                 Nos événements
                             </button-base>
                         </div>

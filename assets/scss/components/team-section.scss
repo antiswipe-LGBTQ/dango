@@ -1,15 +1,9 @@
 .TeamSection {
     position: relative;
     overflow: hidden;
-    background-color: var(--color-cherry-xweak);
+    background-color: var(--color-current-2xweak);
     transition: all 500ms ease-in-out;
 }
-
-.TeamSection--blueberry { background-color: var(--color-blueberry-xweak); }
-.TeamSection--pineapple { background-color: var(--color-pineapple-xweak); }
-.TeamSection--plum { background-color: var(--color-plum-xweak); }
-.TeamSection--cucumber { background-color: var(--color-cucumber-xweak); }
-.TeamSection--grape { background-color: var(--color-grape-xweak); }
 
 .TeamSection_slider {
     display: flex;

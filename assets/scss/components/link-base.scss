@@ -3,7 +3,7 @@
     line-height: 1;
     display: inline-block;
     position: relative;
-    color: var(--color-cherry);
+    color: var(--color-current, var(--color-cherry));
     font-weight: 500;
     cursor: pointer;
 
@@ -16,7 +16,7 @@
         width: 100%;
         height: 50%;
         border-radius: 20px;
-        @include pattern-spotted("cherry");
+        @include pattern-spotted("current");
         opacity: 0.25;
 
         transition: all 100ms ease;

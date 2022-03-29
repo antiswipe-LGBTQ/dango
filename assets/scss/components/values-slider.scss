@@ -14,7 +14,7 @@
 
 }
 
-@each $color in ("cherry", "blueberry", "pineapple") {
+@each $color in ("cherry", "blueberry", "banana") {
     
     .ValuesSlider_slide--#{$color} {
         color: var(--color-#{$color});

@@ -8,7 +8,7 @@
 
                 <p class="mt-20">On fera bon usage de ton don, c'est promis. Tu devrais recevoir un e-mail de confirmation sous peu.</p>
 
-                <p class="p-20 bg-cherry-xweak br-8 mt-20">
+                <p class="p-20 bg-cherry-2xweak br-8 mt-20">
                     On se voit très bientôt lors du prochain événement, où tu recevras un livret d'accueil dans l'association, ainsi que quelques autres surprises !
                 </p>
             </div>

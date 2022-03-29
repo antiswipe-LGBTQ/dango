@@ -5,7 +5,7 @@
         <div class="Wrapper Wrapper--s pt-100 pb-60 pv-40@xs">
             <div class="row d-block@xs">
                 <div class="col-6 col-12@xs" v-for="(questions, i) in cols" :key="i">
-                    <h2 class="ft-title-3xl color-pineapple mb-60 ft-title-2xl@s text-center@s mb-40@s ft-title-2xl@xs" v-if="i == 0">
+                    <h2 class="ft-title-3xl color-banana mb-60 ft-title-2xl@s text-center@s mb-40@s ft-title-2xl@xs" v-if="i == 0">
                         <b>Questions fréquentes</b>
                     </h2>
 
@@ -14,18 +14,18 @@
                         class="mb-40"
                         :key="question.id"
                     >
-                        <p class="ft-title-l color-pineapple ft-bold mb-10">{{ question.title }}</p>
-                        <truncated-text :text="question.text"  :modifiers="['pineapple']" :max="150" />
+                        <p class="ft-title-l color-banana ft-bold mb-10">{{ question.title }}</p>
+                        <truncated-text :text="question.text"  :modifiers="['banana']" :max="150" />
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-10">
-                <h3 class="ft-title-2xl color-pineapple mb-20 ft-title-xl@xs">
+                <h3 class="ft-title-2xl color-banana mb-20 ft-title-xl@xs">
                     <b>D'autres questions ?</b>
                 </h3>
 
-                <button-base :modifiers="['pineapple', 'secondary']" @click="openChat">
+                <button-base :modifiers="['banana', 'secondary']" @click="openChat">
                     On vous répond en direct !
                 </button-base>
             </div>

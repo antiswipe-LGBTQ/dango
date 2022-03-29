@@ -10,7 +10,7 @@ export default {
             what: { text: `Je suis responsable de communication. Je gère tout ce qui est image de la marque antiswipe, c’est-à-dire le design, la promotion du groupe via les réseaux sociaux ou autres...` },
             custom: { title: `Comment résumerais-tu internet en quelques mots ?`, text: `Welcome to hell, bitch.` }
         } },
-        { _id: 2, name: `Alexandre`, role: `Secrétaire général`, color: `cucumber`, avatar: 'team/alexandre', questions: {
+        { _id: 2, name: `Alexandre`, role: `Secrétaire général`, color: `avocado`, avatar: 'team/alexandre', questions: {
             why: { text: `Pour l’ambiance conviviale, les amis que je me suis fait et que je me ferai, et le lien avec la communauté LGBTQ+ qui n’est pas toujours facile à établir quand on est un peu réservé, ou que l’on ne connait pas grand monde.` },
             what: { text: `Je suis secrétaire général. En gros je rédige les documents officiels, et gère les papiers de l’asso, mais je mets aussi la main à la pâte dans de nombreux projets.` },
             custom: { title: `Quels sont les indispensables de ton frigo ?`, text: `Un pot de cornichons, pour les fringales imprévues. De la moutarde, pour les sauces salades. Les photos de mes amis et de ma famille affichées sur la porte.` }

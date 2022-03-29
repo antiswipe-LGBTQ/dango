@@ -1,5 +1,5 @@
 .FooterBase {
-    background-color: var(--color-cherry-weak);
+    background-color: var(--color-cherry-2xweak);
     padding: 40px 0;
 }
 
@@ -34,8 +34,5 @@
     .FooterBase_wrapper {
         flex-direction: column-reverse;
         align-items: flex-start;
-    }
-
-    .FooterBase_logoContainer {
     }
 }

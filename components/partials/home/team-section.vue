@@ -1,5 +1,5 @@
 <template>
-    <div class="TeamSection" :class="[ `TeamSection--${state.member ? state.member.color : ''}` ]">
+    <div class="TeamSection" :class="[ `is-${state.member ? state.member.color : ''}` ]">
 
         <button-base class="TeamSection_left" @click="prev" :modifiers="[ (state.member ? state.member.color : ''), 'secondary', 'round']" icon-before="chevron-left" />
         <button-base class="TeamSection_right" @click="next" :modifiers="[ (state.member ? state.member.color : ''), 'secondary', 'round']" icon-before="chevron-right" />

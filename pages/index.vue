@@ -145,7 +145,7 @@
                 return this.events.filter(e => this.$moment(e.startDate).isAfter(this.$moment()))
             },
             nextEvent () {
-                return this.events[0] ? this.events[0] : null
+                return this.futureEvents[0] ? this.futureEvents[0] : null
             },
             placeholders () {
                 let number = 0

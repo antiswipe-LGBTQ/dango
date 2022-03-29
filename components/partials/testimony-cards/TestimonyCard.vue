@@ -1,5 +1,5 @@
 <template>
-    <div class="TestimonyCard" :class="[ `TestimonyCard--${ color }` ]">
+    <div class="TestimonyCard" :class="[ `is-${ color }` ]">
         <div class="TestimonyCard_content">
             <div class="TestimonyCard_image">
                 <icon-base class="TestimonyCard_character" :name="avatar" />
