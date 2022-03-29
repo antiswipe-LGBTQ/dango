@@ -6,7 +6,7 @@
 
                 <div class="row row--l d-block@xs">
                     <div class="col-4 text-center col-12@xs">
-                        <p class="Homepage_aboutNumber ft-bold color-cherry">+70</p>
+                        <p class="Homepage_aboutNumber ft-bold color-cherry">+130</p>
                         <p class="ft-s ph-5 m-auto width-2xs@xs">événements réussis depuis juin 2019</p>
                     </div>
 
@@ -40,7 +40,7 @@
 
             <p>Le 21 avril 2020, antiswipe est officiellement devenu une association à but non-lucratif. Cela nous permet notamment d'accepter des dons et des adhésions, en toute transparence.</p>
 
-            <p class="mt-20">Le prix d'une adhésion est fixé à <span class="ft-title-xl-bold color-blueberry">15€ / an</span> :</p>
+            <p class="mt-20">Le prix d'une adhésion est fixé à <span class="ft-title-xl-bold color-blueberry">15€</span> pour la saison 2022 :</p>
 
             <ul class="mt-10 pl-40">
                 <li><b>Elle est optionnelle</b>, tu peux continuer à venir à nos événements sans jamais payer.</li>
@@ -58,7 +58,7 @@
                     </p>
                     
                     <p class="mt-20">
-                        Nous faisons le choix de laisser nos événements gratuits pour accueillir tout le monde, peu importe la taille de son porte-monnaie. En contrepartie, nous avons besoin de vos dons car, même si nous sommes bénévoles, nous avons des frais de fonctionnement.
+                        Nous faisons le choix de laisser nos événements gratuits pour accueillir tout le monde, peu importe la taille de son porte-monnaie. <b>En contrepartie, nous avons besoin de vos dons car, même si nous sommes bénévoles, nous avons des frais de fonctionnement.</b>
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     </p>
                     
                     <p class="mt-20">
-                        antiswipe a démarré comme un organisateur d'événements. Mais c'est devenu l'ambition de changer la perspective sur la rencontre et d'aider les personnes qui se sentent isolées au milieu d'un océan de profils. Vos dons nous permettent de voir toujours plus loin.
+                        antiswipe a démarré comme un organisateur d'événements. Mais c'est devenu l'ambition de changer la perspective sur la rencontre et d'aider les personnes qui se sentent isolées au milieu d'un océan de profils. <b>Vos dons nous permettent de voir toujours plus loin.</b>
                     </p>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                     </p>
                     
                     <p class="mt-20">
-                        Les adhérent·e·s ont la possibilité de devenir Helpers. C'est-à-dire, s'impliquer ponctuellement & bénévolement sur certains projets de l'asso : animer un événement, participer à des ateliers de création, donner son avis sur un logo... C'est optionnel et sans engagement.
+                        Les adhérent·e·s ont la possibilité de devenir bénévoles. C'est-à-dire, s'impliquer ponctuellement sur certains projets de l'asso : <b>animer un événement, participer à des ateliers de création, donner son avis sur un logo...</b> C'est optionnel et sans engagement.
                     </p>
                 </div>
             </div>

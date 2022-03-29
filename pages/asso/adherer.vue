@@ -2,14 +2,14 @@
     <div class="Page pv-150 pv-100@s">
         <div class="Wrapper Wrapper--2xs">
             
-            <p class="ft-2xl-medium color-cherry mb-20">Adhérer à antiswipe</p>
+            <p class="ft-title-2xl mb-20">Adhérer à antiswipe</p>
             
             <div v-if="alreadySubbed">
                 Wow, on apprécie mais il semblerait que tu sois déjà adhérent·e pour l'année {{ SEASON }}. On ne voudrait pas abuser... Reviens l'année prochaine !
             </div>
             <div class="br-8 o-hidden" v-else>
                 <div class="bg-cherry-xweak p-40 p-20@s" v-if="!user">
-                    <p class="ft-l-medium color-cherry mb-20">Ton espace membre</p>
+                    <p class="ft-l-medium color-cherry mb-20">Créer ton espace membre</p>
                     <register-form />
                 </div>
                 <div class="fx-center bg-cherry-xweak p-20" v-else>

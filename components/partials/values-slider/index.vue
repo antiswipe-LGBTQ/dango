@@ -1,28 +1,25 @@
 <template>
-    <section class="ValuesSlider" :style="{ '--height': maxHeight + 'px' }" @click="onClick">
-        <div
-            v-for="(slide, i) in items"
-            class="ValuesSlider_slide"
-            :class="[ `ValuesSlider_slide--${slide.color}`, { 'is-active': i <= state.current } ]"
-            ref="slide"
-            :key="slide.id"
-        >
-            <div class="ValuesSlider_wrapper Wrapper Wrapper--s">
-                <div class="ValuesSlider_nav">
-                    <div class="ValuesSlider_link" :class="{ 'is-active': i >= 0 }">tangible</div>
-                    <div class="ValuesSlider_separator" :class="{ 'is-active': i >= 2 }"></div>
-                    <div class="ValuesSlider_link" :class="{ 'is-active': i >= 1 }">bienveillant</div>
-                    <div class="ValuesSlider_separator" :class="{ 'is-active': i >= 2 }"></div>
-                    <div class="ValuesSlider_link" :class="{ 'is-active': i >= 2 }">inattendu</div>
+    <div class="Wrapper pv-60">
+        <p class="ft-title-2xl max-width-s mb-30 mb-0@m">
+            qu'est-ce qui rend antiswipe si spéciale ?
+        </p>
+
+        <section class="ValuesSlider row">
+            <div class="col-4 col-12@m" v-for="(slide, i) in items" :key="slide.id">
+                <div
+                    class="ValuesSlider_slide mt-30@m"
+                    :class="[ `ValuesSlider_slide--${slide.color}`, { 'is-active': i <= state.current } ]"
+                    ref="slide"
+                >
+                    <h2 class="ValuesSlider_title ft-title-3xl d-inline-block mb-10" :class="[ `underline-${slide.color}` ]"><b>{{ slide.title }}</b></h2>
+
+                    <!-- <p class="ValuesSlider_subtitle ft-title-xl ft-title-l@s"><b>{{ slide.subtitle }}</b></p> -->
+
+                    <div v-html="slide.text"></div>
                 </div>
-                <div class="fx-no-shrink ValuesSlider_left">
-                    <h2 class="ValuesSlider_title ft-title-5xl d-inline-block ft-title-2xl@s" :class="[ `underline-${slide.color}` ]"><b>{{ slide.title }}</b></h2>
-                    <p class="ValuesSlider_subtitle ft-title-xl ft-title-l@s"><b>{{ slide.subtitle }}</b></p>
-                </div>
-                <div class="max-width-m m-auto" v-html="slide.text"></div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
 
 <script>

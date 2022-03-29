@@ -24,11 +24,11 @@ export default {
     name: 'ThanksSection',
     components: { ScrollerText },
     async fetch () {
-        await this.$store.dispatch('subscribers/fetch')
+        await this.$store.dispatch('members/fetch')
     },
     computed: {
         subscribers () {
-            return randomizeArray(Object.values(this.$store.state.subscribers.items))
+            return randomizeArray(Object.values(this.$store.getters['members/find']({ isSubscriber: true })))
         }
     }
 }

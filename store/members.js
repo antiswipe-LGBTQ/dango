@@ -48,14 +48,16 @@ export default {
     getters: {
         items: (state) => {
             return Object.values(state.items).map(item => {
+
                 return {
-                    ...item
+                    ...item,
+                    isSubscriber: item.subscriptions ? item.subscriptions.reduce((t, s) => t += s.succeeded ? 1 : 0, 0) > 0 : false
                 }
             })
         },
         find: (state, getters) => (search, raw = false) => {
             let items = raw ? Object.values(state.items) : getters.items
-            return items
+            return search ? items.filter(item => item[Object.keys(search)[0]] == Object.values(search)[0]) : items
         },
         findOne: (state, getters) => (search, raw = false) => {
             let items = raw ? Object.values(state.items) : getters.items

@@ -1,96 +1,26 @@
 .ValuesSlider {
-    user-select: none;
     position: relative;
-    height: var(--height, auto);
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.ValuesSlider_left {
-    width: 40%;
-}
-
-.ValuesSlider_nav {
-    padding-right: 60px;
-}
-
-.ValuesSlider_separator {
-    height: 10px;
-    margin: 5px 0;
-    width: 2px;
-    border-radius: 1px;
-    opacity: 0.25;
-
-    &.is-active {
-        opacity: 1;
-    }
-}
-
-.ValuesSlider_link {
-    cursor: pointer;
-    opacity: 0.25;
-    
-    &.is-active {
-        opacity: 1;
-    }
+    display: flex;
 }
 
 .ValuesSlider_slide {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    transform: translateY(100%);
-    transition: all 400ms ease-out;
 
     &.is-active {
-        transform: translateY(0);
+
     }
 }
 
 .ValuesSlider_wrapper {
-    display: flex;
-    align-items: center;
-    min-height: var(--height, auto);
-    padding: 60px 0;
+
 }
 
 @each $color in ("cherry", "blueberry", "pineapple") {
     
     .ValuesSlider_slide--#{$color} {
         color: var(--color-#{$color});
-        background-color: var(--color-#{$color}-xweak);
-        
-        .ValuesSlider_separator {
-            background-color: var(--color-#{$color});
-        }
     }
 }
 
 @include breakpoint-s {
 
-    .ValuesSlider {
-        height: auto;
-    }
-
-    .ValuesSlider_wrapper {
-        height: auto;
-        min-height: 0;
-        padding: 40px 0;
-        display: block;
-    }
-
-    .ValuesSlider_slide {
-        position: relative;
-        width: auto;
-        transform: none;
-    }
-
-    .ValuesSlider_nav {
-        display: none;
-    }
-
-    .ValuesSlider_left {
-        width: auto;
-        margin-bottom: 40px;
-    }
 }

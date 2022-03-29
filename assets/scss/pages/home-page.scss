@@ -1,7 +1,7 @@
 .HomePage_heading {
     display: flex;
     align-items: stretch;
-    height: 75vh;
+    height: 65vh;
     overflow: hidden;
 }
 
@@ -9,6 +9,31 @@
     font: var(--ft-4xl);
     font-weight: bold;
     line-height: 1;
+}
+
+.HomePage_activities {
+    font: var(--ft-title-l);
+    line-height: 1;
+    color: var(--color-white);
+    background: linear-gradient(to right, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3));
+    padding: 15px 0 20px;
+    overflow: hidden;
+
+    & > div {
+        width: fit-content;
+        white-space: nowrap;
+        animation: banner 100s linear 0ms infinite;
+    }
+}
+
+@keyframes banner {
+    0% {
+        transform: translateX(0);
+    }
+    
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .HomePage_values {
@@ -32,7 +57,6 @@
 }
 
 .HomePage_event {
-    width: 320px;
 }
 
 .HomePage_images {
@@ -52,10 +76,6 @@
 
 .Homepage_faq {
     background-color: var(--color-pineapple-xweak);
-}
-
-.Homepage_follow {
-    background-color: var(--color-white);
 }
 
 .Homepage_about {
@@ -107,7 +127,7 @@
     height: 250px;
     margin: 0 40px;
     font: var(--ft-title-xl);
-    line-height: 1.5;
+    line-height: 1.3;
     font-weight: bold;
     flex-shrink: 0;
 }
@@ -150,7 +170,8 @@
     }
 
     .HomePage_event {
-        width: 300px;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .HomePage_heading {

@@ -17,9 +17,9 @@ export function randomizeArray(array) {
     return array
 }
 
-export function sortDate (items, property = 'date') {
+export function sortDate (items, property = 'date', invert = false) {
     items = items.slice()
-    return items.sort((a, b) => b[property].diff(a[property]))
+    return items.sort((a, b) => invert ? a[property].diff(b[property]): b[property].diff(a[property]))
 }
 
 export function sortPastFuture (items, property = 'date') {

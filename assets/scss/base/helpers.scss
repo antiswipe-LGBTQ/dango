@@ -20,13 +20,27 @@
         display: block;
         position: absolute;
         width: 100%;
-        height: 20%;
-        bottom: 15%;
+        height: 18%;
+        bottom: 5%;
         left: 7.5%;
         border-radius: 50px;
         transition: all 350ms ease;
     }
 }
+
+@each $color in $main-colors {
+    
+    .is-#{$color} {
+        --color-current-xstrong: var(--color-#{$color}-xstrong);
+        --color-current-strong: var(--color-#{$color}-strong);
+        --color-current: var(--color-#{$color});
+        --color-current-weak: var(--color-#{$color}-weak);
+        --color-current-xweak: var(--color-#{$color}-xweak);
+    }
+}
+
+.color-current { color: var(--color-current, var(--color-cherry)); }
+.color-current-weak { color: var(--color-current-weak, var(--color-cherry-weak)); }
 
 .anchor {
     position: absolute;

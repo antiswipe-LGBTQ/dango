@@ -65,15 +65,22 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/moment',
     ['@nuxtjs/google-analytics', {
         id: 'UA-156956427-2'
     }],
     
   ],
+
+  moment: {
+    defaultLocale: 'fr',
+    locales: ['fr']
+  },
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/moment',
     '@nuxtjs/axios',
     'nuxt-i18n',
     '@nuxtjs/auth',
