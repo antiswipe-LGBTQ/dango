@@ -1,14 +1,15 @@
 <template>
     <div class="EventBlock" :class="[ { 'EventBlock--past': isPast, 'EventBlock--placeholder': !title }, `is-${color}`]">
         <div class="EventBlock_main">
-            <a :href="link" target="_blank" class="EventBlock_container" v-if="title">
+            <component :is="status == 'announced' ? 'a' : 'div'" :href="link" target="_blank" class="EventBlock_container" v-if="title">
                 <div class="EventBlock_image" :style="{ backgroundImage: `url(${thumbnail})` }"></div>
 
                 <div class="EventBlock_content">
                     <h3 class="ft-title-xl ellipsis-2 color-current">
                         <b>{{ shortTitle ? shortTitle : title }}</b>
                     </h3>
-                    <p class="ft-title-s color-current-weak">{{ location }}</p>
+                    <p class="ft-title-s color-current-weak mb-15" v-if="status == 'announced'">{{ location }}</p>
+                    <p class="Tag Tag--s" v-else>Annoncé bientôt</p>
 
                     <!-- <p class="mt-10 mb-10">
                         <b>{{ fullDate }}</b>
@@ -36,10 +37,10 @@
                     <button-base tag="a" :modifiers="isPast ? ['blueberry', 'secondary', 's', 'no-shadow'] : ['blueberry', 's', 'no-shadow']" :link="link" target="_blank">Plus de détails</button-base>
                 </div> -->
             
-                <div class="EventBlock_tag" v-if="isNext">
+                <div class="EventBlock_tag" v-if="isNext && status == 'announced'">
                     Prochain
                 </div>
-            </a>
+            </component>
         </div>
 
         <p class="EventBlock_date ft-m-bold mt-15" v-if="startDate">{{ startDate.format('dddd D MMMM') }}</p>
@@ -54,6 +55,7 @@ export default {
     props: {
         title: { type: String, default: '' },
         shortTitle: { type: String, default: '' },
+        status: { type: String, default: '' },
         color: { type: String, default: 'blueberry' },
         isNext: { type: Boolean, default: false },
         thumbnail: { type: String, default: '' },

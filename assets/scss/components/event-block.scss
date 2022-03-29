@@ -48,7 +48,7 @@
     background-color: var(--color-white);
     transition: all 100ms ease;
     border-radius: 5px;
-    padding: 6%;
+    padding: 6% 6% 3% 6%;
 }
 
 .EventBlock_tag {
@@ -74,7 +74,7 @@
 }
 
 .EventBlock_content {
-    padding: 2%;
+    padding: 2% 2% 0 2%;
     text-transform: uppercase;
     flex-grow: 1;
     display: flex;

@@ -110,7 +110,7 @@
         components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection, ThanksSection },
         async fetch () {
             await this.$store.dispatch('events/fetch', {
-                query: { status: 'published' }
+                query: { $orStatus: 'announced,published' }
             })
         },
         data: () => ({
