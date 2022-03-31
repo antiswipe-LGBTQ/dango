@@ -2,9 +2,17 @@
     <div class="DiscordPage Page">
         <div class="bg-cherry-2xweak pt-100 pb-40">
             <div class="Wrapper Wrapper--xs text-center">
-                <h1 class="ft-title-2xl mb-30">
-                    Un mois de <b class="color-blueberry">{{ $moment().format('MMMM').toUpperCase() }}</b><br>chez antiswipe...
+                <h1 class="ft-title-2xl mb-10">
+                    Un mois de <b class="color-blueberry">{{ $moment().add(this.offset, 'months').format('MMMM').toUpperCase() }}</b><br>chez antiswipe...
                 </h1>
+
+                <div class="mb-30">
+                    <link-base @click="offset--" v-if="currentMonth !== '202203'">Mois précédent</link-base>
+
+                    
+                    <link-base @click="offset++" v-if="currentMonth !== $moment().format('YYYYMM')">Mois suivant</link-base>
+                </div>
+
                 <ranking-graph :items="members.slice(0, 6)" title="Celles & ceux qui ont fait vivre le serveur" v-if="members.length > 0" />
             </div>
         </div>
@@ -105,13 +113,15 @@ export default {
         await this.$store.dispatch('discord-message/fetch', { query: {} })
     },
     data: () => ({
-        currentMonth: '',
-        search: ''
+        search: '',
+        offset: 0,
     }),
     created () {
-        this.currentMonth = this.$moment().format('YYYYMM')
     },
     computed: {
+        currentMonth () {
+            return this.$moment().add(this.offset, 'months').format('YYYYMM')
+        },
         members () {
             let members = this.$store.getters['user-discord/find']()
             return this.mapCurrentMonth(members).filter(m => m.monthly > 0)
@@ -123,19 +133,19 @@ export default {
         },
         gifs () {
             let gifs = this.$store.getters['discord-message/find']({ type: 'gif' })
-            return this.mapCurrentMonth(gifs.filter(i => i.monthly > 0 && !i.content.includes('youtube.com')), 'pointsPerMonth', true)
+            return this.mapCurrentMonth(gifs.filter(i => !i.content.includes('youtube.com')), 'pointsPerMonth', true).filter(i => i.monthly > 0)
         },
         messages () {
             let messages = this.$store.getters['discord-message/find']({ type: 'message' })
 
-            return this.mapCurrentMonth(messages.filter(i => i.content && i.monthly > 0), 'pointsPerMonth', true).map(m => ({
+            return this.mapCurrentMonth(messages.filter(i => i.content), 'pointsPerMonth', true).map(m => ({
                 ...m, content: m.content.replace(/(\<.*?\>)/g, '')
-            }))
+            })).filter(i => i.monthly > 0)
         },
         images () {
             let images = this.$store.getters['discord-message/find']({ type: 'image' })
             
-            return this.mapCurrentMonth(images.filter(i => i.content && i.monthly > 0), 'pointsPerMonth', true)
+            return this.mapCurrentMonth(images.filter(i => i.content), 'pointsPerMonth', true).filter(i => i.monthly > 0)
         }
     },
     mounted () {
