@@ -73,6 +73,8 @@ export default {
   ],
 
   moment: {
+    timezone: true,
+    defaultTimezone: 'Europe/Paris',
     defaultLocale: 'fr',
     locales: ['fr']
   },
