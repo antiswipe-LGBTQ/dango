@@ -60,6 +60,11 @@
 .color-current { color: var(--color-current, var(--color-cherry)); }
 .color-current-weak { color: var(--color-current-weak, var(--color-cherry-weak)); }
 
+.bg-current { background-color: var(--color-current, var(--color-cherry)); }
+.bg-current-weak { background-color: var(--color-current-weak, var(--color-cherry-weak)); }
+.bg-current-xweak { background-color: var(--color-current-xweak, var(--color-cherry-xweak)); }
+.bg-current-2xweak { background-color: var(--color-current-2xweak, var(--color-cherry-2xweak)); }
+
 .anchor {
     position: absolute;
     top: calc(-1 * var(--header-scroll));
@@ -67,6 +72,20 @@
 
 .br-8 { border-radius: 8px; }
 .br-12 { border-radius: 12px; }
+
+.br-s { border-radius: 6px; }
+.br-m { border-radius: 8px; }
+.br-l { border-radius: 12px; }
+
+.image-round {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-size: cover;
+    background-color: var(--color-current-weak, var(--color-cherry-weak));
+}
 
 @include breakpoint-s {
 
@@ -104,4 +123,18 @@
     height: 20px;
     font: var(--ft-xs-bold);
     line-height: 1;
+}
+
+.spin {
+    animation: spin 700ms cubic-bezier(0.39, 0.12, 0.46, 0.84) 0ms infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
 }
