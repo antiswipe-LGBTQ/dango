@@ -24,7 +24,7 @@
 
                 <div class="row-xs fx-justify-center mt-20">
                     <div class="col-4 d-flex mt-10 col-12@s" v-for="(message, i) in messages.slice(0, 5)" :key="i">
-                        <div class="bg-current-xweak p-20 br-s fx-grow">
+                        <div class="bg-current-xweak p-20 br-s fx-grow d-flex fx-dir-column fx-justify-end">
                             <div class="text-left mb-30" v-if="message.replyTo">
                                 <div class="d-inline-block bg-current-weak color-ft ft-s-medium pv-10 ph-15 br-m mr-15">
                                     {{ message.replyTo.content }}
