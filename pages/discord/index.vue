@@ -39,7 +39,7 @@
                                     {{ message.replyTo.content }}
                                 </div>
 
-                                <div class="ft-title-s mt-5 line-1">
+                                <div class="ft-title-s mt-5 line-1" v-if="getUser(message.replyTo.owner)">
                                     <div class="image-round mr-5" :style="{ backgroundImage: `url(${getUser(message.replyTo.owner).picture ? getUser(message.replyTo.owner).picture : ''})` }"></div>
                                     {{ getUser(message.replyTo.owner).username }}
                                 </div>
@@ -50,7 +50,7 @@
                                     {{ message.content }}
                                 </div>
 
-                                <div class="ft-title-s mt-5 line-1">
+                                <div class="ft-title-s mt-5 line-1" v-if="getUser(message.owner)">
                                     {{ getUser(message.owner).username }}
                                     <div class="image-round ml-5" :style="{ backgroundImage: `url(${getUser(message.owner).picture ? getUser(message.owner).picture : ''})` }"></div>
                                 </div>
