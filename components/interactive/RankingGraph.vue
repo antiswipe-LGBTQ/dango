@@ -4,10 +4,10 @@
         <div>
             <div class="RankingGraph_bar" v-for="(bar, i) in bars" :key="i" :style="{ '--percentage': bar.percentage }">
                 <div class="RankingGraph_barValue">
-                    {{ bar[valueId] }} messages
+                    <!-- {{ bar[valueId] }} messages -->
                 </div>
                 <div class="RankingGraph_label ellipsis-1">
-                    <div class="image-round mr-5" :style="{ backgroundImage: `url(${bar.picture ? bar.picture : ''})` }"></div> {{ bar[labelId] }}
+                    <div class="image-round mr-5" :style="{ backgroundImage: `url(${bar.picture ? bar.picture : ''})` }"></div> {{ bar[labelId].split('#')[0] }}
                 </div>
             </div>
         </div>

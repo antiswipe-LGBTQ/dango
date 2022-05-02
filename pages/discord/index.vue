@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="fx-grow ml-5 o-hidden">
-                                <p class="ellipsis-1">{{ member.username }}</p>
+                                <p class="ellipsis-1">{{ member.username.split('#')[0] }}</p>
                                 <p class="ft-s">{{ member.pointsCount }} points</p>
                             </div>
                         </div>
