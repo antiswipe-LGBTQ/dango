@@ -3,10 +3,10 @@
         <div class="ImageLine_rail" ref="rail">
             <div class="ImageLine_image" v-for="(image, i) in images" :key="i">
                 <img :height="image.height" :src="image.content" v-if="image.subType == 'gif' || !image.subType" @load="() => loaded += 1">
-                <video :height="image.height" muted autoplay loop v-else-if="image.subType == 'gifv'" @canplay="() => loaded += 1">
+
+                <video :height="image.height" muted autoplay loop v-else-if="image.subType == 'gifv'" @canplay="() => loaded += 1" :key="image.content">
                     <source :src="image.content">
                 </video>
-
             </div>
         </div>
         <div class="ImageLine_railPlaceholder">
@@ -36,6 +36,12 @@ export default {
     watch: {
         loaded (v) {
             if (v == this.items.length && !this.isReady) this.onLoaded()
+        },
+        items (v) {
+            this.availableWidth = this.$refs.container.offsetWidth
+            this.loaded = 0
+            this.currentWidth = 0
+            this.isReady = false
         }
     },
     computed: {
@@ -91,6 +97,11 @@ export default {
     flex-grow: 1;
     overflow: hidden;
     position: relative;
+    max-height: 300px;
+
+    & > * {
+        max-height: 300px;
+    }
 
     &:last-child {
         margin-right: 0;

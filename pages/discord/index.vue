@@ -23,7 +23,6 @@
 
                 <image-line :items="gifs.slice(0, 3)" />
                 <image-line class="mt-5" :items="gifs.slice(3, 6)" />
-                <image-line class="mt-5" :items="gifs.slice(6, 8)" />
             </div>
         </div>
 
@@ -67,7 +66,6 @@
 
                 <image-line :items="images.slice(0, 3)" />
                 <image-line class="mt-5" :items="images.slice(3, 6)" />
-                <image-line class="mt-5" :items="images.slice(6, 8)" />
             </div>
         </div>
 
@@ -135,6 +133,7 @@ export default {
         },
         gifs () {
             let gifs = this.$store.getters['discord-message/find']({ type: 'gif' })
+
             return this.mapCurrentMonth(gifs.filter(i => !i.content.includes('youtube.com')), 'pointsPerMonth', true).filter(i => i.monthly > 0)
         },
         messages () {
@@ -155,7 +154,7 @@ export default {
     },
     methods: {
         mapCurrentMonth (items, value = 'messagesPerMonth', byLength = false) {
-            return items.map(m => ({
+            return items.slice().map(m => ({
                 ...m,
                 monthly: m[value] && m[value][this.currentMonth] ? (byLength ? m[value][this.currentMonth].length : m[value][this.currentMonth]) : 0
             })).sort((a, b) => b.monthly - a.monthly)
