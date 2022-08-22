@@ -25,8 +25,8 @@
                     <b>D'autres questions ?</b>
                 </h3>
 
-                <button-base :modifiers="['banana', 'secondary']" @click="openChat">
-                    On vous répond en direct !
+                <button-base :modifiers="['banana', 'secondary']" href="https://discord.gg/ckdjYscrwQ" target="_blank">
+                    Rejoindre la communauté
                 </button-base>
             </div>
         </div>

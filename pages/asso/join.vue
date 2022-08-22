@@ -6,7 +6,7 @@
 
                 <div class="row row--l d-block@xs">
                     <div class="col-4 text-center col-12@xs">
-                        <p class="Homepage_aboutNumber ft-bold color-cherry">+130</p>
+                        <p class="Homepage_aboutNumber ft-bold color-cherry">+150</p>
                         <p class="ft-s ph-5 m-auto width-2xs@xs">événements réussis depuis juin 2019</p>
                     </div>
 
@@ -44,7 +44,7 @@
 
             <ul class="mt-10 pl-40">
                 <li><b>Elle est optionnelle</b>, tu peux continuer à venir à nos événements sans jamais payer.</li>
-                <li><b>Ce n'est pas un abonnement</b>, ce sera à toi de la renouveller l'année prochaine, si tu en as envie.</li>
+                <li><b>Ton adhésion se terminera le 31 décembre 2022.</b> Ce sera à toi de la renouveller l'année prochaine, si tu en as envie.</li>
             </ul>
 
             <p class="ft-title-xl-bold text-center mv-60">

@@ -4,7 +4,7 @@
             
             <div class="FooterBase_logoContainer mr-60 mr-0@xs mt-40@xs">
                 <nuxt-link :to="localePath('/')">
-                    <icon-base class="FooterBase_logo" name="logos/antiswipe" />
+                    <img class="FooterBase_logo" :src="assets.logo" />
                 </nuxt-link>
 
                 <p class="ft-s-medium mt-20 color-cherry">Créé avec 💖 par la Team antiswipe. </p>
@@ -39,9 +39,12 @@
 </template>
 
 <script>
+import logo from '@/assets/img/logo/logo-lgbt.png'
+
 export default {
     name: 'FooterBase',
     data: () => ({
+        assets: { logo },
         navigation: []
     }),
     computed: {
@@ -56,9 +59,19 @@ export default {
                         { label: `Page d'accueil`, tag: 'nuxt-link', attrs: {
                             to: this.localePath('/')
                         } },
+                        { label: `Saison du Phoenix`, link: 'https://www.antiswipe.lgbt/pages/phoenix-2022' },
                         { label: `Charte de conduite`, tag: 'nuxt-link', attrs: {
                             to: this.localePath({ name: 'pages-slug', params: { slug: 'charte' } })
-                        } },
+                        } }
+                    ]
+                },
+            ],
+            [
+                {
+                    title: 'Nos réseaux',
+                    items: [
+                        { label: `Communauté Discord`, link: 'https://discord.gg/ckdjYscrwQ', target: '_blank' },
+                        { label: `Instagram`, link: 'https://www.instagram.com/antiswipe.lgbt', target: '_blank' },
                         { label: `Groupe Meetup`, link: 'https://www.meetup.com/fr-FR/antiswipe-lgbt', target: '_blank' }
                     ]
                 },

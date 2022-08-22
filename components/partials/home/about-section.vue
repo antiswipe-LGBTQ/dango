@@ -11,7 +11,7 @@
 
                     <div class="row row--l d-block@xs">
                         <div class="col-4 text-center col-12@xs">
-                            <p class="Homepage_aboutNumber ft-bold color-cherry">+70</p>
+                            <p class="Homepage_aboutNumber ft-bold color-cherry">+150</p>
                             <p class="ft-s ph-5 m-auto width-2xs@xs">événements réussis depuis juin 2019</p>
                         </div>
 
@@ -32,10 +32,8 @@
                     </div>
 
                     <p class="mt-40">Nous sommes une association à but non-lucratif. Nous proposons une <b>adhésion à 15€ / an pour les personnes qui souhaitent nous soutenir ou s’impliquer un peu plus dans le projet</b>.</p>
-
-                    <p class="mt-20">Vos adhésions & vos dons nous permettent de créer des icebreakers, financer des jeux de société ou faire connaître antiswipe à un max de monde ! <b>Tout est réinvesti pour vous.</b></p>
                     
-                    <p class="mt-20 ft-s color-ft-weak">Cette adhésion est entièrement facultative : elle n’est pas obligatoire pour venir à nos événements.</p>
+                    <p class="mt-20 color-ft-weak">Cette adhésion n’est pas obligatoire pour venir à nos événements.</p>
 
                     <div class="text-center@s mt-40">
                         <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }">

@@ -5,7 +5,7 @@
         <button-base class="TeamSection_right" @click="next" :modifiers="[ (state.member ? state.member.color : ''), 'secondary', 'round']" icon-before="chevron-right" />
         
         <div class="TeamSection_slider" :style="{ '--position': state.position }">
-            <div
+            <!-- <div
                 v-for="(member, i) in members"
                 class="TeamSection_slide"
                 :class="{ 'is-active': i == state.position }"
@@ -29,7 +29,7 @@
                         <truncated-text class="mt-5" :modifiers="[ member.color ]" :text="member.questions.custom.text" :max="100" ref="truncated" />
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -60,7 +60,7 @@ export default {
         }
     },
     mounted () {
-        this.goTo(0)
+        // this.goTo(0)
     },
     methods: {
         prev () {

@@ -10,7 +10,7 @@
     z-index: 100;
     width: 100%;
     height: var(--header-full);
-    padding: 0 20px;
+    padding: 0 20px 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,7 +25,7 @@
         padding: 0 10px;
 
         .HeaderBase_logo {
-            --width: 55px;
+            width: 85px;
         }
     }
 }
@@ -35,8 +35,8 @@
 }
 
 .HeaderBase_logo {
-    fill: var(--color-cherry);
-    --width: 75px;
+    width: 100px;
+    margin-top: 10px;
     transition: all 100ms ease;
 }
 
