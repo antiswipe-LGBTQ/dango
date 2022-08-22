@@ -82,7 +82,6 @@
 
         <values-slider />
 
-
         <faq-section />
 
         <about-section />

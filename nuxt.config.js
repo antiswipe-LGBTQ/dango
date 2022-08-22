@@ -43,8 +43,8 @@ export default {
   */
     plugins: [
         { src: '~/plugins/base.js' },
-        { src: '~/plugins/hotjar.js' },
-        { src: '~/plugins/messenger.js', ssr: false }
+        // { src: '~/plugins/hotjar.js' },
+        // { src: '~/plugins/messenger.js', ssr: false }
     ],
   /*
   ** Auto import components
