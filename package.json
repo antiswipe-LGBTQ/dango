@@ -16,7 +16,6 @@
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/recaptcha": "^1.0.4",
-    "faker": "^5.1.0",
     "hammerjs": "^2.0.8",
     "instant-coffee-core": "^1.2.16",
     "js-cookie": "^2.2.1",
@@ -24,13 +23,10 @@
     "nuxt": "^2.13.0",
     "nuxt-i18n": "^6.15.4",
     "nuxt-stripe-module": "^3.2.0",
-    "shortid": "^2.2.16",
-    "slugify": "^1.4.0",
     "stripe": "^8.201.0",
     "throttle-debounce": "^2.3.0",
     "tiptap": "^1.30.0",
-    "tiptap-extensions": "^1.33.2",
-    "vue-fb-customer-chat": "^0.2.0"
+    "tiptap-extensions": "^1.33.2"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
