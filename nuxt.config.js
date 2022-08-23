@@ -16,11 +16,11 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: 'antiswipe, rencontres réelles entres jeunes LGBTQ',
+    title: 'antiswipe, la communauté pour les jeunes LGBTQ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: `antiswipe c'est sorties en région parisienne pour les LGBTQ de moins de 35 ans pour qu’on puisse se rencontrer hors des applis, dans une ambiance plus conviviale et humaine.` }
+      { hid: 'description', name: 'description', content: `antiswipe c'est des sorties les LGBTQ+ de moins de 35 ans, pour se faire des amis hors des applis, dans une ambiance plus conviviale et humaine.` }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
