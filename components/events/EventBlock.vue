@@ -5,16 +5,18 @@
                 <div class="EventBlock_image" :style="{ backgroundImage: `url(${thumbnail})` }"></div>
 
                 <div class="EventBlock_content">
-                    <h3 class="ft-title-xl ellipsis-2 color-current">
+                    <h3 class="EventBlock_title ellipsis-2 color-current">
                         <b>{{ shortTitle ? shortTitle : title }}</b>
                     </h3>
-                    <p class="ft-title-s color-current-weak mb-15" v-if="status == 'announced'">{{ location }}</p>
+                    <p class="ft-title-s color-current-weak mb-5" v-if="status == 'announced'">{{ location }}{{ city ? ` · ${city}` : '' }}</p>
                     <p class="Tag Tag--s" v-else>Annoncé bientôt</p>
 
                     <!-- <p class="mt-10 mb-10">
                         <b>{{ fullDate }}</b>
                         <span class="ft-xs color-ft-weak">({{ offsetDate }})</span>
                     </p> -->
+
+                    <p class="EventBlock_date ft-m-bold mt-5" v-if="startDate">{{ startDate.format('dddd D MMMM') }}</p>
                 </div>
                 <!-- <div class="EventBlock_actions">
                     <p>
@@ -37,13 +39,11 @@
                     <button-base tag="a" :modifiers="isPast ? ['blueberry', 'secondary', 's', 'no-shadow'] : ['blueberry', 's', 'no-shadow']" :link="link" target="_blank">Plus de détails</button-base>
                 </div> -->
             
-                <div class="EventBlock_tag" v-if="isNext && status == 'announced'">
+                <!-- <div class="EventBlock_tag" v-if="isNext && status == 'announced'">
                     Prochain
-                </div>
+                </div> -->
             </component>
         </div>
-
-        <p class="EventBlock_date ft-m-bold mt-15" v-if="startDate">{{ startDate.format('dddd D MMMM') }}</p>
     </div>
 </template>
 
@@ -54,6 +54,7 @@ export default {
     name: 'EventBlock',
     props: {
         title: { type: String, default: '' },
+        city: { type: String, default: '' },
         shortTitle: { type: String, default: '' },
         status: { type: String, default: '' },
         color: { type: String, default: 'blueberry' },

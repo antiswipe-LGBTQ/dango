@@ -32,52 +32,58 @@
             </div>
         </div>
 
-        <images-slider />
 
         <section class="HomePage_events p-relative">
             <div id="events" class="anchor"></div>
 
-            <div class="Wrapper Wrapper--xs pv-60" v-if="currentMonth">
-                <div class="fx-center text-center">
-                    <link-base :modifiers="['blueberry']" @click="onPrev">Précédent</link-base>
+            <div class="Wrapper Wrapper--xs pv-60">
+                <div class="d-flex">
+                    <div class="HomePage_city" :class="{ 'is-active': city.value == currentCity }" v-for="city in CITIES" :style="{ backgroundImage: `url(${city.image})` }" @click="currentCity = city.value" :key="city.value">
+                        <span><i class="fal fa-map-marker-alt mr-5" v-if="city.value == currentCity"></i> {{ city.label }}</span>
+                    </div>
 
-                    <h2 class="ft-title-4xl color-blueberry ft-title-2xl@s">
-                        <b>{{ $moment(currentMonth, 'YYYYMM').format('MMMM YYYY') }}</b>
-                    </h2>
-
-                    <link-base :modifiers="['blueberry']" @click="onNext">Suivant</link-base>
+                    <div class="HomePage_city is-add">
+                        <span>Ta ville ?</span>
+                    </div>
                 </div>
-                    
-                <div class="row-s">
+
+                <div class="row-s" v-if="shownEvents.length > 0">
                     <div class="col-4 col-6@s col-12@xs mt-20" v-for="event in shownEvents" :key="event.id">
                         <event-block
                             class="HomePage_event"
                             v-bind="event"
-                            :is-next="event._id == nextEvent._id"
-                        />
-                    </div>
-                    <div class="col-4 col-6@s col-12@xs mt-20 d-none@m" v-for="placeholder in placeholders" :key="placeholder">
-                        <event-block
-                            class="HomePage_event"
                         />
                     </div>
                 </div>
+                <div class="text-center b mt-10 br-s p-20" v-else>
+                    <p class="ft-title-l color-cherry">Mince, pas d'événements prévus à {{ CITIES.find(c => c.value == currentCity).label }}.</p>
 
-                <div class="text-center mt-40">
-                    <h2 class="ft-title-3xl color-blueberry mb-20 ft-title-2xl@xs">
-                        <b>Reste à l'écoute !</b>
+                    <p class="mt-10"><b>Et si tu nous aidais à organiser le prochain ?</b></p>
+
+                    <link-base :modifiers="['cherry']">Organiser un événement</link-base>
+                </div>
+
+                <div class="text-center mt-30">
+                    <h2 class="ft-title-2xl color-blueberry mb-20 max-width-m m-auto">
+                        <b>Annonce des nouveaux événements tous les mardis soir.</b>
                     </h2>
 
-                    <p class="max-width-m m-auto">Nous avons toujours des événements en préparation pour tous les goûts, et de belles surprises ! Sois toujours informé·e en nous suivant sur nos réseaux :</p>
+                    <p v-if="countdown">{{ countdown }}</p>
+                    <p v-if="nextTuesday">{{ nextTuesday.format('DD MMMM YYYY')}}</p>
 
-                    <div class="mt-30">
-                        <button-base class="d-block@xs" tag="a" link="https://www.meetup.com/fr-FR/antiswipe-lgbt" :modifiers="['blueberry']" target="_blank">Rejoindre le groupe Meetup</button-base>
-                        <button-base class="ml-5 d-block@xs mt-10@xs ml-0@xs" tag="a" target="_blank" :modifiers="['secondary', 's', 'blueberry']" link="https://www.instagram.com/antiswipe.lgbt/">Nous suivre sur Instagram</button-base>
+                    <p class="max-width-m m-auto">Reçois directement les nouveaux événements dans ta boîte mail pour ne rien rater :</p>
+
+                    <div class="d-flex mt-30 max-width-m m-auto">
+                        <input-base placeholder="Entre ton adresse e-mail" :value="formData.email" />
+
+                        <button-base class="ml-5" :modifiers="['s', 'blueberry']">Je m'inscris</button-base>
                     </div>
                 </div>
             </div>
         </section>
         
+        <images-slider />
+
         <follow-section />
 
         <values-slider />
@@ -90,79 +96,134 @@
     </div>
 </template>
 
-    <script>
+<script>
+import TestimonyCards from '@/components/partials/testimony-cards'
+import SliderSimple from '@/components/interactive/SliderSimple'
+import EventBlock from '@/components/events/EventBlock.vue'
+import ValuesSlider from '@/components/partials/values-slider'
+import ImagesSlider from '@/components/partials/home/images-slider'
+import FaqSection from '@/components/partials/home/faq-section'
+import FollowSection from '@/components/partials/home/follow-section'
+import AboutSection from '@/components/partials/home/about-section'
+import ThanksSection from '@/components/partials/home/thanks-section'
 
-    import TestimonyCards from '@/components/partials/testimony-cards'
-    import SliderSimple from '@/components/interactive/SliderSimple'
-    import EventBlock from '@/components/events/EventBlock.vue'
-    import ValuesSlider from '@/components/partials/values-slider'
-    import ImagesSlider from '@/components/partials/home/images-slider'
-    import FaqSection from '@/components/partials/home/faq-section'
-    import FollowSection from '@/components/partials/home/follow-section'
-    import AboutSection from '@/components/partials/home/about-section'
-    import ThanksSection from '@/components/partials/home/thanks-section'
+import { sortDate } from '@/utils/base-utils'
+import moment from 'moment'
+import LinkBase from '~/components/base/LinkBase.vue'
 
-    import { sortDate } from '@/utils/base-utils'
+const CITIES = [
+    { id: 0, label: 'Paris', value: 'paris', image: 'https://www.paris.fr/images/meta/parisfr.jpg' },
+    { id: 1, label: 'Lille', value: 'lille', image: 'https://www.okvoyage.com/wp-content/uploads/2009/12/la-grand-place-de-lille.jpg' },
+]
 
-    export default {
-        name: 'Homepage',
-        components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection, ThanksSection },
-        async fetch () {
-            await this.$store.dispatch('events/fetch', {
-                query: { $orStatus: 'announced,published' }
-            })
+export default {
+    name: 'Homepage',
+    components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection, ThanksSection, LinkBase },
+    async fetch () {
+        await this.$store.dispatch('events/fetch', {
+            query: { $orStatus: 'announced,published' }
+        })
+    },
+    data: () => ({
+        CITIES,
+        currentCity: 'paris',
+        currentMonth: null,
+        countdown: '',
+        nextTuesday: null,
+        formData: {
+            email: ''
+        }
+    }),
+    mounted () {
+        // this.nextTuesday = moment().isoWeekday() <= 2 ? moment().isoWeekday(2) :  moment().add(1, 'weeks').isoWeekday(2)
+
+        // setInterval(() => {
+        //     let duration = moment.duration(this.nextTuesday - moment())
+        //     this.countdown = `${duration.days()}j ${duration.hours()}h ${duration.minutes()}m ${duration.seconds()}s` 
+        // }, 500)
+    },
+    computed: {
+        events () {
+            return sortDate(this.$store.getters['events/find']({
+                city: this.currentCity
+            }), 'startDate', true)
         },
-        data: () => ({
-            currentMonth: null
-        }),
-        mounted () {
-            let maxFutureMonths = 3
-            let showEvents = false
-            let increment = 0
+        shownEvents () {
+            return this.events.filter(e => this.$moment(e.startDate).isAfter(this.$moment()))
+        }
+    }
+}
+</script>
 
-            while (!showEvents && maxFutureMonths > 0) {
-                this.currentMonth = this.$moment().add(increment, 'months').format('YYYYMM')
+<style lang="scss" scoped>
+.HomePage_city {
+    width: 140px;
+    height: 75px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font: var(--ft-title-l);
+    // text-transform: uppercase;
+    color: var(--color-white);
+    border-radius: 6px;
+    padding-bottom: 4px;
+    background-color: var(--color-blueberry-xweak);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
 
-                let eventsLeft = this.events.filter(e => e.startDate.format('YYYYMM') == this.currentMonth && e.startDate.isAfter(this.$moment()))
+    & + & {
+        margin-left: 5px;
+    }
 
-                if (eventsLeft.length > 0) showEvents = true
+    span {
+        position: relative;
+    }
 
-                increment++
-                maxFutureMonths--
-            }
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--color-blueberry-xweak);
+        opacity: 0.75;
+        transition: all 150ms ease;
+    }
 
-            if (!showEvents) this.currentMonth = this.$moment().format('YYYYMM')
-        },
-        computed: {
-            events () {
-                return sortDate(this.$store.getters['events/find'](), 'startDate', true)
-            },
-            shownEvents () {
-                return this.events.filter(e => this.$moment(e.startDate).format('YYYYMM') == this.currentMonth)
-            },
-            futureEvents () {
-                return this.events.filter(e => this.$moment(e.startDate).isAfter(this.$moment()))
-            },
-            nextEvent () {
-                return this.futureEvents[0] ? this.futureEvents[0] : null
-            },
-            placeholders () {
-                let number = 0
+    &.is-active {
 
-                if (this.shownEvents.length < 6) {
-                    number = 6 - this.shownEvents.length
-                }
+        &::before {
+            background-color: black;
+            opacity: 0.5;
+        }
+    }
 
-                return number
-            }
-        },
-        methods: {
-            onPrev () {
-                this.currentMonth = this.$moment(this.currentMonth, 'YYYYMM').subtract(1, 'months').format('YYYYMM')
-            },
-            onNext () {
-                this.currentMonth = this.$moment(this.currentMonth, 'YYYYMM').add(1, 'months').format('YYYYMM')
+    &:hover {
+        
+        &::before {
+            background-color: black;
+            opacity: 0.5;
+        }
+    }
+
+    &.is-add {
+
+        &::before {
+            opacity: 1;
+        }
+
+        &:hover {
+
+            &::before {
+                opacity: 1;
+                background-color: var(--color-blueberry-weak);
             }
         }
     }
-</script>
+}
+</style>
