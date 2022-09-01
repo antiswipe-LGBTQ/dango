@@ -4,14 +4,14 @@
             <div class="Wrapper">
                 <div class="row height-100">
                     <div class="HomePage_titles col-6 d-flex fx-dir-column fx-justify-center col-12@xs">
-                        <h1 class="HomePage_mainTitle ft-title-3xl color-cherry ft-title-2xl@s">
-                            l'humain au cœur
-                            <span class="HomePage_mainTitleBold d-block n-mt-10 mt-3@s">
-                                <b>de la rencontre lgbtq+</b>
+                        <h1 class="HomePage_mainTitle ft-title-3xl ft-title-2xl@s">
+                            Allez viens, on se rencontre
+                            <span class="HomePage_mainTitleBold color-cherry d-block n-mt-10 mt-3@s">
+                                <b>sans filtres.</b>
                             </span>
                         </h1>
 
-                        <p class="mv-30 ft-l max-width-s ft-m@s">Des rencontres en réel, dans une ambiance conviviale et des lieux originaux. <b>Pas d'appli, pas de filtres, pas de swipe.</b></p>
+                        <p class="mv-30 ft-l max-width-m ft-m@s">Nous créons des événements où il est plus simple de rencontrer. Hors des applications qui nous filtrent, loin des boîtes où l'on ne s'entend pas.</p>
 
                         <div>
                             <button-base tag="a" link="#events">
@@ -39,11 +39,17 @@
             <div class="Wrapper Wrapper--xs pv-60">
                 <div class="d-flex">
                     <div class="HomePage_city" :class="{ 'is-active': city.value == currentCity }" v-for="city in CITIES" :style="{ backgroundImage: `url(${city.image})` }" @click="currentCity = city.value" :key="city.value">
-                        <span><i class="fal fa-map-marker-alt mr-5" v-if="city.value == currentCity"></i> {{ city.label }}</span>
+                        <div class="d-flex fxa-center">
+                            <i class="fal fa-map-marker-alt mr-10" v-if="city.value == currentCity"></i> 
+                            <div>
+                                <div>{{ city.label }}</div>
+                                <div class="ft-s">18 à 35 ans</div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="HomePage_city is-add">
-                        <span>Ta ville ?</span>
+                        <div>Ta ville ?</div>
                     </div>
                 </div>
 
@@ -73,11 +79,14 @@
 
                     <p class="max-width-m m-auto">Reçois directement les nouveaux événements dans ta boîte mail pour ne rien rater :</p>
 
-                    <div class="d-flex mt-30 max-width-m m-auto">
-                        <input-base placeholder="Entre ton adresse e-mail" :value="formData.email" />
+                    <form @submit.prevent="onNewsletter" class="d-flex mt-30 max-width-m m-auto">
+                        <input-base placeholder="Entre ton adresse e-mail" v-model="formData.email" type="emails" />
 
-                        <button-base class="ml-5" :modifiers="['s', 'blueberry']">Je m'inscris</button-base>
-                    </div>
+                        <button-base class="ml-5" :modifiers="['s', 'blueberry']" :loading="isLoading">Je m'inscris</button-base>
+                    </form>
+
+                    <div class="mt-10 max-width-m m-auto text-left" v-if="error">{{ error }}</div>
+                    <div class="mt-10 max-width-m m-auto text-left" v-else-if="success">Tu es abonné·e à nos news, merci ! On se voit dans la prochaine newsletter.</div>
                 </div>
             </div>
         </section>
@@ -88,7 +97,7 @@
 
         <values-slider />
 
-        <faq-section />
+        <!-- <faq-section /> -->
 
         <about-section />
 
@@ -126,6 +135,9 @@ export default {
     },
     data: () => ({
         CITIES,
+        isLoading: false,
+        error: '',
+        success: false,
         currentCity: 'paris',
         currentMonth: null,
         countdown: '',
@@ -150,6 +162,34 @@ export default {
         },
         shownEvents () {
             return this.events.filter(e => this.$moment(e.startDate).isAfter(this.$moment()))
+        }
+    },
+    methods: {
+        async onNewsletter () {
+            if (this.isLoading) return 
+
+            this.success = false
+            this.error = ''
+            this.isLoading = true 
+
+            try {
+                const token = await this.$recaptcha.execute('login')
+                const response = await this.$axios.$post('/user/newsletter', {
+                    email: this.formData.email, token
+                })
+
+                if (response.status !== 1) {
+                    throw Error('NOOO')
+                }
+                
+                this.success = true
+                this.formData.email = ''
+            } catch (e) {
+                console.error(e)
+                this.error = 'Une erreur est survenue, vérifie ton adresse email ou réessaye plus tard :('
+            }
+
+            this.isLoading = false 
         }
     }
 }
@@ -178,7 +218,7 @@ export default {
         margin-left: 5px;
     }
 
-    span {
+    & > div {
         position: relative;
     }
 
@@ -196,6 +236,7 @@ export default {
     }
 
     &.is-active {
+        text-align: left;
 
         &::before {
             background-color: black;

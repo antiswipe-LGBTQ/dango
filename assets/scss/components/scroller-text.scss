@@ -25,10 +25,10 @@
         content: "";
         @include absolute-fill;
         background: linear-gradient(180deg,
-            rgba(255, 245, 249, 1) 10%,
-            rgba(255, 245, 249, 0) 40%, 
-            rgba(255, 245, 249, 0) 60%, 
-            rgba(255, 245, 249, 1) 90%
+            rgba(255, 252, 249, 1) 10%,
+            rgba(255, 252, 249, 0) 40%, 
+            rgba(255, 252, 249, 0) 60%, 
+            rgba(255, 252, 249, 1) 90%
         );
     }
 }

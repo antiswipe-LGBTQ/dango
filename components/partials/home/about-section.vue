@@ -32,8 +32,6 @@
                     </div>
 
                     <p class="mt-40">Nous sommes une association à but non-lucratif. Nous proposons une <b>adhésion à 15€ / an pour les personnes qui souhaitent nous soutenir ou s’impliquer un peu plus dans le projet</b>.</p>
-                    
-                    <p class="mt-20 color-ft-weak">Cette adhésion n’est pas obligatoire pour venir à nos événements.</p>
 
                     <div class="text-center@s mt-40">
                         <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }">
