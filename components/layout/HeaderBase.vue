@@ -9,6 +9,18 @@
         <nav class="HeaderBase_nav">
             <button-base class="HeaderBase_close" :modifiers="['round', 's', 'secondary']" icon-before="times" @click="state.open = false"/>
 
+            <a href="https://www.meetup.com/fr-FR/antiswipe-lgbt" target="_blank" class="d-inline-block mr-20 d-none@s">
+                <img class="d-block" :src="assets.meetup" :width="18" />
+            </a>
+            
+            <a href="https://www.instagram.com/antiswipe.lgbt/" target="_blank" class="d-inline-block mr-20 d-none@s">
+                <img class="d-block" :src="assets.instagram" :width="18" />
+            </a>
+
+            <a href="https://discord.gg/ckdjYscrwQ" target="_blank" class="d-inline-block mr-20 d-none@s">
+                <img class="d-block" :src="assets.discord" :width="18" />
+            </a>
+
             <link-base
                 v-for="item in navigation"
                 class="HeaderBase_link"
@@ -22,20 +34,37 @@
                 {{ item.title }}
             </link-base>
 
-            <button-base class="HeaderBase_cta" tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-join' }) }" :modifiers="['s']" @click="state.open = false">
+            <button-base class="HeaderBase_cta mt-20@s" tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-join' }) }" :modifiers="['s']" @click="state.open = false">
                 Adhérer à l'asso
             </button-base>
+
+            <div class="mt-20 fxa-center d-none d-flex@s">
+                <a href="https://www.meetup.com/fr-FR/antiswipe-lgbt" target="_blank" class="d-inline-block mh-10">
+                    <img class="d-block" :src="assets.meetup" :width="22" />
+                </a>
+                
+                <a href="https://www.instagram.com/antiswipe.lgbt/" target="_blank" class="d-inline-block mh-10">
+                    <img class="d-block" :src="assets.instagram" :width="22" />
+                </a>
+
+                <a href="https://discord.gg/ckdjYscrwQ" target="_blank" class="d-inline-block mh-10">
+                    <img class="d-block" :src="assets.discord" :width="22" />
+                </a>
+            </div>
         </nav>
     </header>
 </template>
 
 <script>
 import logo from '@/assets/img/logo/logo-lgbt.png'
+import instagram from '@/assets/img/svg/instagram.svg'
+import discord from '@/assets/img/svg/discord.svg'
+import meetup from '@/assets/img/svg/meetup.svg'
 
 export default {
     name: 'HeaderBase',
     data: () => ({
-        assets: { logo },
+        assets: { logo, instagram, discord, meetup },
         state: {
             scrolled: 0,
             open: false

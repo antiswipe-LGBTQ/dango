@@ -94,10 +94,25 @@
 
                     <p class="max-width-m m-auto">Reçois directement les nouveaux événements dans ta boîte mail pour ne rien rater :</p>
 
-                    <form @submit.prevent="onNewsletter" class="d-flex mt-30 max-width-m m-auto">
-                        <input-base placeholder="Entre ton adresse e-mail" v-model="formData.email" type="emails" required />
+                    <form @submit.prevent="onNewsletter" class="mt-30 max-width-m m-auto">
+                        <div class="d-flex">
+                            <input-base placeholder="Entre ton adresse e-mail" v-model="formData.email" type="emails" required />
 
-                        <button-base class="ml-5" :modifiers="['s', 'blueberry']" :loading="isLoading">Je m'inscris</button-base>
+                            <button-base class="ml-5" :modifiers="['s', 'blueberry']" :loading="isLoading" :disabled="formData.cities.length <= 0">Je m'inscris</button-base>
+                        </div>
+                        <div class="mt-5 ft-m-medium d-flex">
+                            <label class="d-flex fxa-center">
+                                <input type="checkbox" class="mr-5" @input="toggleCity('paris')" :checked="formData.cities.includes('paris')">
+                                Paris
+                            </label>
+
+                            <label class="d-flex fxa-center ml-10">
+                                <input type="checkbox" class="mr-5" @input="toggleCity('lille')" :checked="formData.cities.includes('lille')">
+                                Lille
+                            </label>
+                        </div>
+
+                        <div class="text-left" v-if="formData.cities.length <= 0">Sélectionne au moins une ville !</div>
                     </form>
 
                     <div class="mt-10 max-width-m m-auto text-left" v-if="error">{{ error }}</div>
@@ -160,7 +175,8 @@ export default {
         countdown: '',
         nextTuesday: null,
         formData: {
-            email: ''
+            email: '',
+            cities: ['paris']
         }
     }),
     mounted () {
@@ -185,6 +201,13 @@ export default {
         onCityChange (v) {
             this.currentCity = v
         },
+        toggleCity (v) {
+            if (this.formData.cities.includes(v)) {
+                this.formData.cities = this.formData.cities.filter(c => c != v)
+            } else {
+                this.formData.cities = [ ...this.formData.cities, v ]
+            }
+        },
         async onNewsletter () {
             if (this.isLoading) return 
 
@@ -195,7 +218,7 @@ export default {
             try {
                 const token = await this.$recaptcha.execute('login')
                 const response = await this.$axios.$post('/user/newsletter', {
-                    email: this.formData.email, token
+                    ...this.formData, token
                 })
 
                 if (response.status !== 1) {
