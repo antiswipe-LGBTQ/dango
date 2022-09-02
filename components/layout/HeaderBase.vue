@@ -4,7 +4,7 @@
             <img class="HeaderBase_logo" :src="assets.logo" />
         </nuxt-link>
 
-        <button-base class="HeaderBase_burger" :modifiers="['round', 's', 'secondary']" icon-before="bars" @click="state.open = true"/>
+        <button-base class="HeaderBase_burger" :modifiers="['round', 's', 'secondary']" icon-before="bars" @click="state.open = true" />
 
         <nav class="HeaderBase_nav">
             <button-base class="HeaderBase_close" :modifiers="['round', 's', 'secondary']" icon-before="times" @click="state.open = false"/>
@@ -44,9 +44,7 @@ export default {
     }),
     mounted () {
         this.$data.navigation = [
-            { id: 0, title: `Nos événements`, to: { path: '/', hash: '#events' } },
-            { id: 1, title: `La communauté`, href: 'https://discord.gg/ckdjYscrwQ' }
-        ]
+            { id: 0, title: `Nos événements`, to: { path: '/events' } }        ]
 
         this.onScroll()
 

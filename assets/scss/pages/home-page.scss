@@ -102,25 +102,15 @@
     font-weight: bold;
 }
 
-.Homepage_aboutContent,
-.Homepage_aboutTeam {
-    position: sticky;
-    top: var(--header-full);
-}
-
-.Homepage_aboutContent {
-    padding: 60px;
-}
-
 
 .HomePage_thanks {
-    background: var(--color-cherry-2xweak);
+    background: var(--color-banana-2xweak);
 }
 
 .HomePage_thanksContainer {
     display: flex;
     align-items: center;
-    color: var(--color-cherry);
+    color: var(--color-banana);
 }
 
 .HomePage_scroller {
@@ -170,17 +160,26 @@
     }
 
     .HomePage_event {
-        max-width: 300px;
+        max-width: 3000px;
         margin: 0 auto;
     }
 
     .HomePage_heading {
         height: auto;
-        padding: 80px 0;
+        padding: 40px 0;
         margin-top: var(--header-full);
     }
 
     .HomePage_mainTitleBold {
         line-height: 1.2;
+    }
+
+    .Homepage_aboutTeam {
+        height: 60vh !important;
+    }
+
+    .Homepage_aboutContent,
+    .ChatWindow {
+        padding: 20px !important;
     }
 }

@@ -12,6 +12,6 @@ Vue.mixin({
     },
 })
 
-Vue.component('ButtonBase', ButtonBase)
+// Vue.component('ButtonBase', ButtonBase)
 Vue.component('PopinBase', PopinBase)
 Vue.component('LinkBase', LinkBase)

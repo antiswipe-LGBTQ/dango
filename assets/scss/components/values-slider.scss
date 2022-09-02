@@ -3,11 +3,8 @@
     display: flex;
 }
 
-.ValuesSlider_slide {
-
-    &.is-active {
-
-    }
+.ValuesSlider_content {
+    color: var(--color-ft);
 }
 
 .ValuesSlider_wrapper {
@@ -18,6 +15,10 @@
     
     .ValuesSlider_slide--#{$color} {
         color: var(--color-#{$color});
+
+        .ValuesSlider_content b {
+            color: var(--color-#{$color});
+        }
     }
 }
 
