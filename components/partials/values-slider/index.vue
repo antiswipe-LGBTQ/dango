@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-cherry-2xweak">
+    <div class="bg-banana-2xweak">
         <div class="Wrapper pv-60">
             <p class="ft-title-2xl max-width-s mb-30 mb-0@m">
                 qu'est-ce qui rend antiswipe si spéciale ?

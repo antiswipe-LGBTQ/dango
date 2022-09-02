@@ -80,7 +80,7 @@
                     <p class="max-width-m m-auto">Reçois directement les nouveaux événements dans ta boîte mail pour ne rien rater :</p>
 
                     <form @submit.prevent="onNewsletter" class="d-flex mt-30 max-width-m m-auto">
-                        <input-base placeholder="Entre ton adresse e-mail" v-model="formData.email" type="emails" />
+                        <input-base placeholder="Entre ton adresse e-mail" v-model="formData.email" type="emails" required />
 
                         <button-base class="ml-5" :modifiers="['s', 'blueberry']" :loading="isLoading">Je m'inscris</button-base>
                     </form>

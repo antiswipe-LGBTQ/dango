@@ -16,7 +16,7 @@
             </span>
 
             <span class="ButtonBase_iconBefore" v-if="iconBefore">
-                <fa :icon="`far fa-${iconBefore}`" fixed-width />
+                <i class="fal" :class="[`fa-${iconBefore}`]"></i>
             </span>
 
             <span class="ButtonBase_iconBefore ButtonBase_emoji" v-if="emojiBefore">
@@ -42,7 +42,7 @@
             </span>
 
             <span class="ButtonBase_iconAfter" v-if="iconAfter">
-                <fa :icon="`far fa-${iconAfter}`" fixed-width />
+                <i class="fal" :class="[`fa-${iconAfter}`]"></i>
             </span>
             <span class="ButtonBase_iconAfter ButtonBase_emoji" v-if="emojiAfter">
                 {{ emojiAfter }}
