@@ -37,10 +37,10 @@
             <div id="events" class="anchor"></div>
 
             <div class="Wrapper Wrapper--xs pv-60">
-                <div class="d-flex">
-                    <div class="HomePage_city" :class="{ 'is-active': city.value == currentCity }" v-for="city in CITIES" :style="{ backgroundImage: `url(${city.image})` }" @click="currentCity = city.value" :key="city.value">
+                <div class="d-flex d-none@xs">
+                    <div class="HomePage_city" :class="{ 'is-active': city.value == CITIES[currentCity].value }" v-for="city in CITIES" :style="{ backgroundImage: `url(${city.image})` }" @click="currentCity = city.id" :key="city.value">
                         <div class="d-flex fxa-center">
-                            <i class="fal fa-map-marker-alt mr-10" v-if="city.value == currentCity"></i> 
+                            <i class="fal fa-map-marker-alt mr-10" v-if="city.value == CITIES[currentCity].value"></i> 
                             <div>
                                 <div>{{ city.label }}</div>
                                 <div class="ft-s">18 à 35 ans</div>
@@ -48,28 +48,43 @@
                         </div>
                     </div>
 
-                    <div class="HomePage_city is-add">
+                    <!-- <div class="HomePage_city is-add">
                         <div>Ta ville ?</div>
-                    </div>
+                    </div> -->
                 </div>
 
-                <div class="row-s" v-if="shownEvents.length > 0">
-                    <div class="col-4 col-6@s col-12@xs mt-20" v-for="event in shownEvents" :key="event.id">
-                        <event-block
-                            class="HomePage_event"
-                            v-bind="event"
-                        />
+                <select-base
+                    label="Ville"
+                    :value="currentCity"
+                    @input="onCityChange"
+                    :options="CITIES"
+                    :multiple="false"
+                    class="d-none d-flex@s"
+                />
+
+                <div v-if="shownEvents.length > 0">
+                    <div class="row-s">
+                        <div class="col-4 col-6@s col-12@xs mt-20 mt-10@s" v-for="event in shownEvents.slice(0, 6)" :key="event.id">
+                            <event-block
+                                class="HomePage_event"
+                                v-bind="event"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-30" v-if="shownEvents.length > 6">
+                        <button-base :modifiers="['s', 'blueberry']" icon-before="long-arrow-right" :to="{ name: 'events' }">Voir tous les événements</button-base>
                     </div>
                 </div>
                 <div class="text-center b mt-10 br-s p-20" v-else>
-                    <p class="ft-title-l color-cherry">Mince, pas d'événements prévus à {{ CITIES.find(c => c.value == currentCity).label }}.</p>
+                    <p class="ft-title-l color-cherry">Mince, pas d'événements prévus à {{ CITIES.find(c => c.value == CITIES[currentCity].value).label }}.</p>
 
-                    <p class="mt-10"><b>Et si tu nous aidais à organiser le prochain ?</b></p>
+                    <!-- <p class="mt-10"><b>Et si tu nous aidais à organiser le prochain ?</b></p>
 
-                    <link-base :modifiers="['cherry']">Organiser un événement</link-base>
+                    <link-base :modifiers="['cherry']">Organiser un événement</link-base> -->
                 </div>
 
-                <div class="text-center mt-30">
+                <div class="text-center mt-40">
                     <h2 class="ft-title-2xl color-blueberry mb-20 max-width-m m-auto">
                         <b>Annonce des nouveaux événements tous les mardis soir.</b>
                     </h2>
@@ -116,6 +131,8 @@ import FollowSection from '@/components/partials/home/follow-section'
 import AboutSection from '@/components/partials/home/about-section'
 import ThanksSection from '@/components/partials/home/thanks-section'
 
+import { SelectBase } from 'instant-coffee-core'
+
 import { sortDate } from '@/utils/base-utils'
 import moment from 'moment'
 import LinkBase from '~/components/base/LinkBase.vue'
@@ -127,7 +144,7 @@ const CITIES = [
 
 export default {
     name: 'Homepage',
-    components: { TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection, ThanksSection, LinkBase },
+    components: { SelectBase, TestimonyCards, SliderSimple, EventBlock, ValuesSlider, ImagesSlider, FaqSection, FollowSection, AboutSection, ThanksSection, LinkBase },
     async fetch () {
         await this.$store.dispatch('events/fetch', {
             query: { $orStatus: 'announced,published' }
@@ -138,7 +155,7 @@ export default {
         isLoading: false,
         error: '',
         success: false,
-        currentCity: 'paris',
+        currentCity: 0,
         currentMonth: null,
         countdown: '',
         nextTuesday: null,
@@ -157,7 +174,7 @@ export default {
     computed: {
         events () {
             return sortDate(this.$store.getters['events/find']({
-                city: this.currentCity
+                city: CITIES[this.currentCity].value
             }), 'startDate', true)
         },
         shownEvents () {
@@ -165,6 +182,9 @@ export default {
         }
     },
     methods: {
+        onCityChange (v) {
+            this.currentCity = v
+        },
         async onNewsletter () {
             if (this.isLoading) return 
 

@@ -6,8 +6,6 @@
         v-bind="computedAttrs"
         v-on="$listeners"
     >
-        <div class="G_cosmoz"></div>
-
         <div class="ButtonBase_content">
             <span class="ButtonBase_image" :style="{ backgroundImage: `url(${image})` }" v-if="image"></span>
 
@@ -48,8 +46,6 @@
                 {{ emojiAfter }}
             </span>
         </div>
-
-        <ripples class="ButtonBase_ripples" v-show="!disabled" />
 
         <div class="ButtonBase_iconLoading">
             <i class="fal" :class="[`fa-${iconLoading}`]"></i>

@@ -44,7 +44,7 @@ export default {
     }),
     mounted () {
         this.$data.navigation = [
-            { id: 0, title: `Nos événements`, to: { path: '/', hash: '#events' } }        ]
+            { id: 0, title: `Nos événements`, to: { path: '/events' } }        ]
 
         this.onScroll()
 

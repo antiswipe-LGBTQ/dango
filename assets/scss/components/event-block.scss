@@ -151,3 +151,39 @@
         }
     }
 }
+
+@include breakpoint-s {
+
+    .EventBlock_main {
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .EventBlock_container {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .EventBlock_image {
+        width: 65px;
+        height: 65px;
+        flex-shrink: 0;
+    }
+
+    .EventBlock_content {
+        padding: 0 0 0 15px;
+        text-align: left;
+    }
+
+    .EventBlock_title {
+        font: var(--ft-title-l);
+    }
+
+    .EventBlock_date {
+        font: var(--ft-s-medium) !important;
+    }
+} 
