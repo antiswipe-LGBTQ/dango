@@ -28,8 +28,8 @@
                 />
 
                 <div v-if="shownEvents.length > 0">
-                    <div class="mt-30" v-for="(month, id) in eventsByMonth" :key="id">
-                        <p class="ft-title-xl mb-20">
+                    <div class="mt-30" v-for="month in eventsByMonth" :key="month.id">
+                        <p class="ft-title-2xl mb-20">
                             {{ $moment(month.$groupData.startDate).format('MMMM YYYY') }}
                         </p>
 
@@ -89,9 +89,9 @@ export default {
             return this.events.filter(e => this.$moment(e.startDate).isAfter(this.$moment()))
         },
         eventsByMonth () {
-            return groupBy(this.events, { 'startDate': '$month' }, {
-
-            })
+            return Object.values(groupBy(this.events, { 'startDate': '$month' }, {
+                reverseItems: true
+            })).filter(g => g.items.filter(i => i.startDate.isAfter(this.$moment())).length > 0)
         }
     },
     methods: {

@@ -34,7 +34,7 @@
                 {{ item.title }}
             </link-base>
 
-            <button-base class="HeaderBase_cta mt-20@s" tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-join' }) }" :modifiers="['s']" @click="state.open = false">
+            <button-base class="HeaderBase_cta mt-20@s" tag="nuxt-link" :to="{ name: 'asso-join' }" :modifiers="['s']" @click="state.open = false">
                 Adhérer à l'asso
             </button-base>
 

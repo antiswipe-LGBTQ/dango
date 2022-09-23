@@ -41,7 +41,7 @@ export function setPropertyFor (items, search, value) {
 export function groupBy (items, types, params = {}) {
     if (!Array.isArray(types)) types = [ types ]
 
-    const groupItem = function (item, types, total) {
+    const groupItem = function (item, types, total, params) {
         let $groupData = {}
         let stop = false
         let id = ''
@@ -108,7 +108,7 @@ export function groupBy (items, types, params = {}) {
             } else {
                 total[id] = {
                     ...total[id],
-                    items: [ ...total[id].items, item ]
+                    items: params?.reverseItems ? [ item, ...total[id].items ] : [ ...total[id].items, item ]
                 }
             }
         }
@@ -119,7 +119,9 @@ export function groupBy (items, types, params = {}) {
     let result = {}
     
     items.forEach(item => {
-        result = groupItem(item, types, result)
+        result = groupItem(item, types, result, {
+            reverseItems: params.reverseItems
+        })
     })
 
     if (params.orderBy) {

@@ -176,7 +176,7 @@ export default {
     border-radius: 4px;
     
     &.is-focused {
-        border-color: var(--color-bg-light);
+        border-color: var(--color-white);
 
         .InputBase_label {
             color: var(--color-ft-light);

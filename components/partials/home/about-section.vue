@@ -34,7 +34,7 @@
                     <p class="mt-40">Nous sommes une association à but non-lucratif. Nous proposons une <b>adhésion à 15€ / an pour les personnes qui souhaitent nous soutenir ou s’impliquer un peu plus dans le projet</b>.</p>
 
                     <div class="text-center@s mt-40">
-                        <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }">
+                        <button-base tag="nuxt-link" :to="{ name: 'asso-adherer' }">
                             Je deviens adhérent·e
                         </button-base>
                         <button-base class="ml-3 ml-0@s mt-5@s" tag="a" :link="localePath({ name: 'asso-join' })" :modifiers="['secondary', 's']">

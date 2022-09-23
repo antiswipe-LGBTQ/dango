@@ -27,7 +27,7 @@
                 </div>
 
                 
-                <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }" class="mt-30">
+                <button-base tag="nuxt-link" :to="{ name: 'asso-adherer' }" class="mt-30">
                     Je deviens adhérent·e
                 </button-base>
             </div>
