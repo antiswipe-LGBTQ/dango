@@ -12,7 +12,7 @@
                         :class="[ `ValuesSlider_slide--${slide.color}`, { 'is-active': i <= state.current } ]"
                         ref="slide"
                     >
-                        <h2 class="ValuesSlider_title ft-title-3xl d-inline-block mb-10" :class="[ `underline-${slide.color}` ]"><b>{{ slide.title }}</b></h2>
+                        <h2 class="ValuesSlider_title ft-title-3xl d-inline-block mb-10" :class="[ `underline-${slide.color}` ]">{{ slide.title }}</h2>
 
                         <!-- <p class="ValuesSlider_subtitle ft-title-xl ft-title-l@s"><b>{{ slide.subtitle }}</b></p> -->
 

@@ -7,7 +7,7 @@
                         <h1 class="HomePage_mainTitle ft-title-3xl ft-title-2xl@s">
                             Allez viens, on se rencontre
                             <span class="HomePage_mainTitleBold color-cherry d-block n-mt-10 mt-3@s">
-                                <b>sans filtres.</b>
+                                sans filtres.
                             </span>
                         </h1>
 
@@ -84,9 +84,9 @@
                     <link-base :modifiers="['cherry']">Organiser un événement</link-base> -->
                 </div>
 
-                <div class="text-center mt-40">
+                <!-- <div class="text-center mt-40">
                     <h2 class="ft-title-2xl color-blueberry mb-20 max-width-m m-auto">
-                        <b>Annonce des nouveaux événements tous les mardis soir.</b>
+                        Annonce des nouveaux événements tous les mardis soir.
                     </h2>
 
                     <p v-if="countdown">{{ countdown }}</p>
@@ -117,7 +117,7 @@
 
                     <div class="mt-10 max-width-m m-auto text-left" v-if="error">{{ error }}</div>
                     <div class="mt-10 max-width-m m-auto text-left" v-else-if="success">Tu es abonné·e à nos news, merci ! On se voit dans la prochaine newsletter.</div>
-                </div>
+                </div> -->
             </div>
         </section>
         

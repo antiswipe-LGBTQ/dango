@@ -31,7 +31,9 @@
                 <div class="ft-s col-4 col-6@s col-12@xs mb-20@xs" v-if="user">
                     Connecté·e en tant que <b>{{ user.email }}</b>
 
-                    <link-base class="d-block mt-15" tag="nuxt-link" :to="localePath({ name: 'compte-logout' })">Se déconnecter</link-base>
+                    <link-base class="d-block mt-15" tag="nuxt-link" :attrs="{ to: localePath({ name: 'compte-logout' }) }">
+                        Se déconnecter
+                    </link-base>
                 </div>
             </div>
         </div>

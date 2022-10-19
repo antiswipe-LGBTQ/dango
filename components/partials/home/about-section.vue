@@ -6,7 +6,7 @@
             <div class="col-6 col-12@s">
                 <div class="Homepage_aboutContent">
                     <h1 class="ft-title-3xl color-cherry mb-40 text-center@s ft-title-2xl@xs">
-                        <b>L'association</b>
+                        L'association
                     </h1>
 
                     <div class="row row--l d-block@xs">

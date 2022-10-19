@@ -6,7 +6,7 @@
 
                 <div class="EventBlock_content">
                     <h3 class="EventBlock_title ellipsis-2 color-current">
-                        <b>{{ shortTitle ? shortTitle : title }}</b>
+                        {{ shortTitle ? shortTitle : title }}
                     </h3>
                     <p class="ft-title-s color-current-weak mb-5" v-if="status == 'announced'">{{ location }}{{ city ? ` · ${city}` : '' }}</p>
                     <p class="Tag Tag--s" v-else>Annoncé bientôt</p>

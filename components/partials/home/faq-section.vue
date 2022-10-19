@@ -6,7 +6,7 @@
             <div class="row d-block@xs">
                 <div class="col-6 col-12@xs" v-for="(questions, i) in cols" :key="i">
                     <h2 class="ft-title-3xl color-banana mb-60 ft-title-2xl@s text-center@s mb-40@s ft-title-2xl@xs" v-if="i == 0">
-                        <b>Questions fréquentes</b>
+                        Questions fréquentes
                     </h2>
 
                     <div
@@ -22,7 +22,7 @@
 
             <div class="text-center mt-10">
                 <h3 class="ft-title-2xl color-banana mb-20 ft-title-xl@xs">
-                    <b>D'autres questions ?</b>
+                    D'autres questions ?
                 </h3>
 
                 <button-base :modifiers="['banana', 'secondary']" href="https://discord.gg/ckdjYscrwQ" target="_blank">
