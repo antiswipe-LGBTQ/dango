@@ -11,7 +11,7 @@
 
                     <div class="row row--l d-block@xs">
                         <div class="col-4 text-center col-12@xs">
-                            <p class="Homepage_aboutNumber ft-bold color-cherry">+150</p>
+                            <p class="Homepage_aboutNumber color-cherry">+150</p>
                             <p class="ft-s ph-5 m-auto width-2xs@xs">événements réussis depuis juin 2019</p>
                         </div>
 
@@ -31,7 +31,7 @@
                         </div>
                     </div>
 
-                    <p class="mt-40">Nous sommes une association à but non-lucratif. Nous proposons une <b>adhésion à 15€ / an pour les personnes qui souhaitent nous soutenir ou s’impliquer un peu plus dans le projet</b>.</p>
+                    <p class="mt-40">Nous sommes une association à but non-lucratif. <b>L'adhésion est fixée à 15€ / an</b> et nous permet régler nos frais divers et vous proposer des événements toujours plus cools !</p>
 
                     <div class="text-center@s mt-40">
                         <button-base tag="nuxt-link" :to="{ name: 'asso-adherer' }">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="Homepage_aboutTeam col-6 p-relative col-12@s">
+            <div class="Homepage_aboutTeam col-6 p-relative col-12@s" style="background: black">
                 <transition-group tag="div" name="fade" class="ChatWindow">
                     <div class="ChatBubble" :class="[`is-${chat.position}`]" v-for="chat in chats" :key="chat.id">
                         {{ chat.text }}

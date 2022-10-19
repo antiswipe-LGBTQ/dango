@@ -5,17 +5,17 @@
                 <div class="row height-100">
                     <div class="HomePage_titles col-6 d-flex fx-dir-column fx-justify-center col-12@xs">
                         <h1 class="HomePage_mainTitle ft-title-3xl ft-title-2xl@s">
-                            Allez viens, on se rencontre
+                            Une communauté, 
                             <span class="HomePage_mainTitleBold color-cherry d-block n-mt-10 mt-3@s">
-                                sans filtres.
+                                de belles rencontres
                             </span>
                         </h1>
 
-                        <p class="mv-30 ft-l max-width-m ft-m@s">Nous créons des événements où il est plus simple de rencontrer. Hors des applications qui nous filtrent, loin des boîtes où l'on ne s'entend pas.</p>
+                        <p class="mv-30 ft-l max-width-m ft-m@s">On a créé une communauté safe de personnes diverses, ouvertes, bienveillantes et qui ont toujours envie de faire de nouvelles rencontres.</p>
 
                         <div>
                             <button-base tag="a" link="#events">
-                                Découvrir nos événements
+                                Envie de nous rejoindre ?
                             </button-base>
                         </div>
                     </div>
@@ -32,39 +32,21 @@
             </div>
         </div>
 
+        <images-slider />
 
         <section class="HomePage_events p-relative">
             <div id="events" class="anchor"></div>
 
-            <div class="Wrapper Wrapper--xs pv-60">
-                <div class="d-flex d-none@xs">
-                    <div class="HomePage_city" :class="{ 'is-active': city.value == CITIES[currentCity].value }" v-for="city in CITIES" :style="{ backgroundImage: `url(${city.image})` }" @click="currentCity = city.id" :key="city.value">
-                        <div class="d-flex fxa-center">
-                            <i class="fal fa-map-marker-alt mr-10" v-if="city.value == CITIES[currentCity].value"></i> 
-                            <div>
-                                <div>{{ city.label }}</div>
-                                <div class="ft-s">18 à 35 ans</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="Wrapper Wrapper--s pv-60">
+                <h3 class="ft-title-2xl">
+                    1. Participe à un événement d'accueil
+                </h3>
 
-                    <!-- <div class="HomePage_city is-add">
-                        <div>Ta ville ?</div>
-                    </div> -->
-                </div>
-
-                <select-base
-                    label="Ville"
-                    :value="currentCity"
-                    @input="onCityChange"
-                    :options="CITIES"
-                    :multiple="false"
-                    class="d-none d-flex@s"
-                />
+                <p class="mt-10 max-width-l">On organise régulièrement des journées pour que tu puisses découvrir l'ambiance et une partie de la communauté. Si ça t'a plu, tu pourras rejoindre le groupe et avoir accès à tous les événements et sorties entre membres.</p>
 
                 <div v-if="shownEvents.length > 0">
                     <div class="row-s">
-                        <div class="col-4 col-6@s col-12@xs mt-20 mt-10@s" v-for="event in shownEvents.slice(0, 6)" :key="event.id">
+                        <div class="col-3 col-6@s col-12@xs mt-20 mt-10@s" v-for="event in shownEvents.slice(0, 6)" :key="event.id">
                             <event-block
                                 class="HomePage_event"
                                 v-bind="event"
@@ -75,13 +57,6 @@
                     <div class="text-center mt-30" v-if="shownEvents.length > 6">
                         <button-base :modifiers="['s', 'blueberry']" icon-before="long-arrow-right" :to="{ name: 'events' }">Voir tous les événements</button-base>
                     </div>
-                </div>
-                <div class="text-center b mt-10 br-s p-20" v-else>
-                    <p class="ft-title-l color-cherry">Mince, pas d'événements prévus à {{ CITIES.find(c => c.value == CITIES[currentCity].value).label }}.</p>
-
-                    <!-- <p class="mt-10"><b>Et si tu nous aidais à organiser le prochain ?</b></p>
-
-                    <link-base :modifiers="['cherry']">Organiser un événement</link-base> -->
                 </div>
 
                 <!-- <div class="text-center mt-40">
@@ -120,12 +95,52 @@
                 </div> -->
             </div>
         </section>
+
+        <section class="bg-cherry-2xweak">
+            <div class="Wrapper Wrapper--s pv-60">
+                <h3 class="ft-title-2xl">
+                    2. Bienvenue dans la communauté !
+                </h3>
+
+                <p class="mt-10 max-width-l">Entrer dans la communauté n'est que le début ! Tu as accès à toutes nos activités pour une adhésion de seulement 15€ / an.</p>
+
+                <div class="row row-m mt-40">
+                    <div class="col-4 col-12@m">
+                        <div
+                            class="mt-30@m"
+                        >
+                            <h2 class="ft-title-xl d-inline-block mb-10">Événements spéciaux</h2>
+
+                            <p>L'association organise régulièrement des événements à thème, parfois plus calmes, parfois plus festifs !</p>
+                        </div>
+                    </div>
+                    <div class="col-4 col-12@m">
+                        <div
+                            class="mt-30@m"
+                        >
+                            <h2 class="ft-title-xl d-inline-block mb-10">Sorties entre membres</h2>
+
+                            <p>Nos adhérent·e·s font vivre la communauté. Des sorties sont organisées chaque semaine, il y en a pour tous les goûts !</p>
+                        </div>
+                    </div>
+                    <div class="col-4 col-12@m">
+                        <div
+                            class="mt-30@m"
+                        >
+                            <h2 class="ft-title-xl d-inline-block mb-10">Communauté en ligne</h2>
+
+                            <p>Nos salons de discussions en ligne nous permettent de garder le contact, nous entraider et jouer ensemble.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         
-        <images-slider />
 
         <follow-section />
 
-        <values-slider />
+        <!-- <values-slider /> -->
 
         <!-- <faq-section /> -->
 
