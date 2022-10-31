@@ -99,37 +99,70 @@
         <section class="bg-cherry-2xweak">
             <div class="Wrapper Wrapper--s pv-60">
                 <h3 class="ft-title-2xl">
-                    2. Bienvenue dans la communauté !
+                    2. Fais le plein de sorties & d'activités
                 </h3>
 
-                <p class="mt-10 max-width-l">Entrer dans la communauté n'est que le début ! Tu as accès à toutes nos activités pour une adhésion de seulement 15€ / an.</p>
+                <p class="mt-10 max-width-l">Bienvenue dans la communauté ! Tu as maintenant accès à tous les événements & les sorties qu'on organise.</p>
 
                 <div class="row row-m mt-40">
                     <div class="col-4 col-12@m">
                         <div
                             class="mt-30@m"
                         >
-                            <h2 class="ft-title-xl d-inline-block mb-10">Événements spéciaux</h2>
+                            <h2 class="ft-title-xl d-inline-block color-banana">Événements spéciaux</h2>
 
-                            <p>L'association organise régulièrement des événements à thème, parfois plus calmes, parfois plus festifs !</p>
+                            <p class="mb-20">organisés par l'association</p>
+
+                            <div class="Tag bg-banana-xweak mb-5" style="transform: rotate(-2deg)">Quizz mensuel</div>
+                            <div class="Tag bg-banana-weak mb-5" style="transform: rotate(1deg)">Brunchs</div>
+                            <div class="Tag bg-banana-weak mb-5" style="transform: rotate(1deg)">Soirées déguisées</div>
+                            <div class="Tag bg-banana-2xweak mb-5" style="transform: rotate(-2.5deg)">Secret Santa</div>
+                            <div class="Tag bg-banana-xweak mb-5" style="transform: rotate(1.5deg)">Chasse aux trésors</div>
+                            <div class="Tag bg-banana mb-5" style="transform: rotate(-2deg)">Olympiades</div>
+
+                            <!-- <ul class="mt-5 pl-30 pt-10">
+                                <li>Quizz mensuel, jeux de piste</li>
+                                <li>Brunchs participatifs, randonnées</li>
+                                <li>Soirées déguisées, Secret Santa</li>
+                                <li>...et pleins d'autres !</li>
+                            </ul> -->
                         </div>
                     </div>
                     <div class="col-4 col-12@m">
                         <div
                             class="mt-30@m"
                         >
-                            <h2 class="ft-title-xl d-inline-block mb-10">Sorties entre membres</h2>
+                            <h2 class="ft-title-xl d-inline-block color-cherry">Sorties entre membres</h2>
 
-                            <p>Nos adhérent·e·s font vivre la communauté. Des sorties sont organisées chaque semaine, il y en a pour tous les goûts !</p>
+                            <p class="mb-20">organisés par nos adhérent·e·s</p>
+
+                            <div class="Tag bg-cherry-2xweak mb-5" style="transform: rotate(-2deg)">Restaurants</div>
+                            <div class="Tag bg-cherry mb-5" style="transform: rotate(1deg)">Karaoké</div>
+                            <div class="Tag bg-cherry-weak mb-5" style="transform: rotate(1deg)">Soirées ciné</div>
+                            <div class="Tag bg-cherry-xweak mb-5" style="transform: rotate(-2.5deg)">Balades & randos</div>
+                            <div class="Tag bg-cherry-xweak mb-5" style="transform: rotate(1.5deg)">Expositions</div>
+                            <div class="Tag bg-cherry-2xweak mb-5" style="transform: rotate(-2deg)">Jeux de société</div>
+
+                            <!-- <ul class="mt-5 pl-30 pt-10">
+                                <li>Quizz mensuel, jeux de piste</li>
+                                <li>Brunchs participatifs, randonnées</li>
+                                <li>Soirées déguisées, Secret Santa</li>
+                                <li>...et pleins d'autres !</li>
+                            </ul> -->
                         </div>
                     </div>
                     <div class="col-4 col-12@m">
                         <div
                             class="mt-30@m"
                         >
-                            <h2 class="ft-title-xl d-inline-block mb-10">Communauté en ligne</h2>
+                            <h2 class="ft-title-xl d-inline-block color-blueberry">Communauté en ligne</h2>
 
-                            <p>Nos salons de discussions en ligne nous permettent de garder le contact, nous entraider et jouer ensemble.</p>
+                            <p class="mb-20">sur notre serveur Discord</p>
+
+                            <div class="Tag bg-blueberry-2xweak mb-5" style="transform: rotate(-2deg)">Débats & entraide</div>
+                            <div class="Tag bg-blueberry-xweak mb-5" style="transform: rotate(1deg)">Jeux en ligne</div>
+                            <div class="Tag bg-blueberry-weak mb-5" style="transform: rotate(1deg)">Partage de bons plans</div>
+                            <div class="Tag bg-blueberry-2xweak mb-5" style="transform: rotate(-2.5deg)">Soirées films & séries</div>
                         </div>
                     </div>
 

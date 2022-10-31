@@ -8,8 +8,8 @@
     padding: 5px 15px;
     border-radius: 35px;
     font: var(--ft-s-medium);
-    letter-spacing: 0.08em;
     color: var(--color-current, var(--color-ft));
+    border: 1px solid var(--color-ft);
     background-color: var(--color-current-2xweak, var(--color-onyx-2xweak));
     transition: all 100ms ease;
 

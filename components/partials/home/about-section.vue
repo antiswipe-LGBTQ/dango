@@ -5,45 +5,21 @@
         <div class="row row-no-gutters d-block@s">
             <div class="col-6 col-12@s">
                 <div class="Homepage_aboutContent">
-                    <h1 class="ft-title-3xl color-cherry mb-40 text-center@s ft-title-2xl@xs">
-                        L'association
+                    <h1 class="ft-title-2xl mb-20 text-center@s">
+                        3. Des nouvelles rencontres
                     </h1>
 
-                    <div class="row row--l d-block@xs">
-                        <div class="col-4 text-center col-12@xs">
-                            <p class="Homepage_aboutNumber color-cherry">+150</p>
-                            <p class="ft-s ph-5 m-auto width-2xs@xs">événements réussis depuis juin 2019</p>
-                        </div>
+                    <p class="ft-title-l">Bienveillance &</p>
+                    <p>Timides</p>
 
-                        <div class="col-4 text-center col-12@xs mt-20@xs">
-                            <p class="Homepage_aboutNumber color-cherry">9</p>
-                            <p class="ft-s ph-5 m-auto width-2xs@xs">organisateurs·trices super motivé·e·s</p>
-                        </div>
+                    <p class="ft-title-l mt-20">Diversité & ouverture d'espirt</p>
+                    <p>Diversité / mixité</p>
 
-                        <div class="col-4 text-center col-12@xs mt-20@xs">
-                            <div class="Homepage_aboutNumber Homepage_aboutNumber--animated color-cherry">
-                                <scroller-text class="Homepage_aboutCounter" :speed="400" :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]" />
-                                <scroller-text class="Homepage_aboutCounter" :speed="380" :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" />
-                                <scroller-text class="Homepage_aboutCounter" :speed="340" :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" />
-                                <scroller-text class="Homepage_aboutCounter" :speed="300" :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" />
-                            </div>
-                            <p class="ft-s ph-5 m-auto width-2xs@xs">un nombre incalculable de belles rencontres</p>
-                        </div>
-                    </div>
-
-                    <p class="mt-40">Nous sommes une association à but non-lucratif. <b>L'adhésion est fixée à 15€ / an</b> et nous permet régler nos frais divers et vous proposer des événements toujours plus cools !</p>
-
-                    <div class="text-center@s mt-40">
-                        <button-base tag="nuxt-link" :to="{ name: 'asso-adherer' }">
-                            Je deviens adhérent·e
-                        </button-base>
-                        <button-base class="ml-3 ml-0@s mt-5@s" tag="a" :link="localePath({ name: 'asso-join' })" :modifiers="['secondary', 's']">
-                            En savoir plus
-                        </button-base>
-                    </div>
+                    <p class="ft-title-l mt-20">Des potes, et plus si affinités</p>
+                    <p>Que tu sois célibataire, en couple, en recherche ou pas, nous ne faisons pas de distinction. Certains de nos membres trouvent un super groupe de potes, un partenaire de sport, ou le grand amour !</p>
                 </div>
             </div>
-            <div class="Homepage_aboutTeam col-6 p-relative col-12@s" style="background: black">
+            <div class="Homepage_aboutTeam col-6 p-relative col-12@s">
                 <transition-group tag="div" name="fade" class="ChatWindow">
                     <div class="ChatBubble" :class="[`is-${chat.position}`]" v-for="chat in chats" :key="chat.id">
                         {{ chat.text }}
