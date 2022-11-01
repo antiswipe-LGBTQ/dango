@@ -27,7 +27,8 @@
                                 <div class="Tile Block Block--cherry Tile--cherry">
                                     <div class="Tile_content Block_container">
                                         <p class="ft-m-medium">Adhésion pour la saison {{ SEASON }}</p>
-                                        <p class="ft-4xl-bold">15€</p>
+                                        <p style="text-decoration: line-through;">15€</p>
+                                        <p class="ft-4xl-bold">5€</p>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +135,7 @@ export default {
         formData: {
             agreement: false,
             age: false,
-            subscription: 15,
+            subscription: 5,
             extra: 0
         }
     }),
