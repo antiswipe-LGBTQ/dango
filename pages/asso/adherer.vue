@@ -4,7 +4,8 @@
             
             <p class="ft-title-2xl mb-20">Adhérer à antiswipe</p>
             
-            <div v-if="alreadySubbed">
+            <p class="mt-30 ft-bold ft-l">Les adhésions pour 2023 ouvrent le 21 Janvier.</p>
+            <!-- <div v-if="alreadySubbed">
                 Wow, on apprécie mais il semblerait que tu sois déjà adhérent·e pour l'année {{ SEASON }}. On ne voudrait pas abuser... Reviens l'année prochaine !
             </div>
             <div class="br-8 o-hidden" v-else>
@@ -107,7 +108,7 @@
                         <button-base :class="{ 'is-loading': isLoading }" v-else-if="user">J'adhère !!</button-base>
                     </div>
                 </form>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

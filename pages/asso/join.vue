@@ -27,9 +27,11 @@
                 </div>
 
                 
-                <button-base tag="nuxt-link" :to="{ name: 'asso-adherer' }" class="mt-30">
+                <!-- <button-base tag="nuxt-link" :to="{ name: 'asso-adherer' }" class="mt-30">
                     Je deviens adhérent·e
-                </button-base>
+                </button-base> -->
+
+                <p class="mt-30 ft-bold ft-l">Les adhésions pour 2023 ouvrent le 21 Janvier.</p>
             </div>
         </div>
 
@@ -40,11 +42,11 @@
 
             <p>Le 21 avril 2020, antiswipe est officiellement devenu une association à but non-lucratif. Cela nous permet notamment d'accepter des dons et des adhésions, en toute transparence.</p>
 
-            <p class="mt-20">Le prix d'une adhésion est fixé à <span class="ft-title-xl-bold color-blueberry">15€</span> pour la saison 2022 :</p>
+            <p class="mt-20">Le prix d'une adhésion est fixé à <span class="ft-title-xl-bold color-blueberry">10€</span> pour la saison 2023 :</p>
 
             <ul class="mt-10 pl-40">
                 <li><b>Elle est optionnelle</b>, tu peux continuer à venir à nos événements sans jamais payer.</li>
-                <li><b>Ton adhésion se terminera le 31 décembre 2022.</b> Ce sera à toi de la renouveller l'année prochaine, si tu en as envie.</li>
+                <li><b>Ton adhésion se terminera le 31 décembre 2023.</b> Ce sera à toi de la renouveller l'année prochaine, si tu en as envie.</li>
             </ul>
 
             <p class="ft-title-xl-bold text-center mv-60">
@@ -90,7 +92,7 @@
 
         <div class="bg-blueberry-2xweak">
             <div class="Wrapper Wrapper--s pv-60">
-                <p class="ft-title-xl-bold color-blueberry max-width-s">Comment sont investis mes 15€ / an d'adhésion ?</p>
+                <p class="ft-title-xl-bold color-blueberry max-width-s">Comment sont investis mes 10€ / an d'adhésion ?</p>
 
                 <div class="JoinPage_chart mt-40">
                     <div class="JoinPage_category JoinPage_category--1">
@@ -127,9 +129,11 @@
                     Alors, si toi aussi tu sais que la beauté d'une personne ne peut pas se résumer en 3 photos et 250 caractères, rejoins-nous !
                 </p>
 
-                <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }">
+                <p class="mt-30 ft-bold ft-l">Les adhésions pour 2023 ouvrent le 21 Janvier.</p>
+
+                <!-- <button-base tag="nuxt-link" :attrs="{ to: localePath({ name: 'asso-adherer' }) }">
                     Je soutiens antiswipe
-                </button-base>
+                </button-base> -->
             </div>
         </div>
 
