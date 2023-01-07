@@ -12,8 +12,6 @@
                     
                     <link-base @click="offset++" v-if="currentMonth !== $moment().format('YYYYMM')">Mois suivant</link-base>
                 </div>
-
-                <ranking-graph :items="members.slice(0, 6)" title="Celles & ceux qui ont fait vivre le serveur" v-if="members.length > 0" />
             </div>
         </div>
 
@@ -26,7 +24,7 @@
             </div>
         </div>
 
-        <div class="bg-current-2xweak is-banana pv-40" v-if="messages.length > 0">
+        <!-- <div class="bg-current-2xweak is-banana pv-40" v-if="messages.length > 0">
             <div class="Wrapper Wrapper--s text-center">
                 <p class="ft-title-xl color-current">Les messages qui vous ont marqué<br>(pour le meilleur et surtout le pire)</p>
 
@@ -67,37 +65,7 @@
                 <image-line :items="images.slice(0, 3)" />
                 <image-line class="mt-5" :items="images.slice(3, 6)" />
             </div>
-        </div>
-
-        <div class="bg-current-2xweak is-pineapple pv-40">
-            <div class="Wrapper Wrapper--xs text-center">
-                <p class="ft-title-2xl color-current mb-5">Les niveaux</p>
-
-                <div class="max-width-m m-auto">
-                    <p class="ft-m color-current mb-20">Les niveaux sont là dans le seul but de t'encourager à interagir avec la communauté mais ce n'est pas une compétition !</p>
-
-                    <input-base
-                        label="Chercher mon pseudo"
-                        v-model="search"
-                    />
-                </div>
-
-                <div class="row-xs text-left mt-20">
-                    <div class="col-4 col-12@s mb-10" v-for="(member, i) in membersByPoints" :key="i">
-                        <div class="fx-center ft-title-s bg-white br-s p-15">
-                            <div class="round bg-current-xweak color-current fx-no-shrink mr-5">
-                                {{ member.level }}
-                            </div>
-
-                            <div class="fx-grow ml-5 o-hidden">
-                                <p class="ellipsis-1">{{ member.username.split('#')[0] }}</p>
-                                <p class="ft-s">{{ member.pointsCount }} points</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -122,21 +90,22 @@ export default {
         currentMonth () {
             return this.$moment().add(this.offset, 'months').format('YYYYMM')
         },
-        members () {
-            let members = this.$store.getters['user-discord/find']()
-            return this.mapCurrentMonth(members).filter(m => m.monthly > 0)
-        },
-        membersByPoints () {
-            let members = this.$store.getters['user-discord/find']()
-
-            return sortDate(members.map(m => ({ ...m, updatedAt: this.$moment(m) })), 'updatedAt').filter(m => (!this.search && m.pointsCount > 1) || (this.search && m.username.toLowerCase().includes(this.search.toLowerCase())))
-        },
         gifs () {
             let gifs = this.$store.getters['discord-message/find']({ type: 'gif' })
+            
+            const test = gifs.map(m => {
 
-            return this.mapCurrentMonth(gifs.filter(i => !i.content.includes('youtube.com')), 'pointsPerMonth', true).filter(i => i.monthly > 0)
+                return {
+                    ...m,
+                    totalPoints: m.content.includes('youtube.com') ? 0 : Object.values(m.pointsPerMonth).reduce((t, c) => t + c.length, 0)
+                }
+            })
+
+            return test.filter(i => i.totalPoints > 4).filter(i => i._id != '6284aeaf2db1ae0004c472b7' && i._id != '62db1299b46aab000427fa6d').sort((a, b) => b.totalPoints - a.totalPoints).slice(0, 20)
         },
         messages () {
+            return []
+
             let messages = this.$store.getters['discord-message/find']({ type: 'message' })
 
             return this.mapCurrentMonth(messages.filter(i => i.content), 'pointsPerMonth', true).map(m => ({
@@ -144,13 +113,12 @@ export default {
             })).filter(i => i.monthly > 0)
         },
         images () {
+            return []
+
             let images = this.$store.getters['discord-message/find']({ type: 'image' })
             
             return this.mapCurrentMonth(images.filter(i => i.content), 'pointsPerMonth', true).filter(i => i.monthly > 0)
         }
-    },
-    mounted () {
-     
     },
     methods: {
         mapCurrentMonth (items, value = 'messagesPerMonth', byLength = false) {
